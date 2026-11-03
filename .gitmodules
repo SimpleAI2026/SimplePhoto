@@ -1,0 +1,3 @@
+[submodule "thirdparty/photocraft"]
+	path = thirdparty/photocraft
+	url = git@github.com:storytold/photocraft
