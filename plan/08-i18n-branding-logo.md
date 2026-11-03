@@ -292,6 +292,19 @@ Expected: 构建成功；图标替换不显著抬高 wasm 体积（`include_byte
 
 ---
 
+
+### Task 4 实现备注（相对原计划的偏离）
+
+原计划的 `patches/0003-simplephoto-titlebar-icon.patch` **未采用**（避免巨大二进制 patch）。改为根仓库脚本：
+
+```bash
+./scripts/apply-branding-assets.sh
+# cp branding/simplephoto-app-128.png \
+#   thirdparty/photocraft/assets/app-icon/hicolor/128x128/apps/ai.storyteller.photocraft.png
+```
+
+扩展侧 `extension/icons/icon{16,48,128}.png` 与 `branding/` 已在根仓库；`brand.rs` 的 `include_bytes!` 路径不变，仅替换目标 PNG 文件内容。`apply-patches.sh` 结束后会提示运行本脚本。
+
 ### Task 5: Load unpacked 总验收
 
 - [ ] **Step 1: 干净复现路径**
@@ -328,7 +341,7 @@ Expected: 三个 patch 按序成功；`thirdparty/photocraft` 无未进 patch �
 - [x] `plan/README.md` 索引含 step 08
 - [x] `plan/07-v0-milestone.md`「下一里程碑」指向 08
 - [x] `plan/patches.md` 允许 branding/i18n chrome patch
-- [ ] （实现阶段）三枚 patch 可重复 `apply-patches.sh`；验收剧本通过
+- [x] （实现阶段）`0001`+`0002` 可重复 `apply-patches.sh` + `apply-branding-assets.sh`；全量 `build-web-assets.sh` 已通过（Load unpacked 手工清单见下方）
 
 ## 非目标（08 不做）
 
@@ -341,8 +354,12 @@ Expected: 三个 patch 按序成功；`thirdparty/photocraft` 无未进 patch �
 
 ## 执行记录（实现阶段填写）
 
-- 开放决策确认日期：
-- Website / GitHub / Issues URL：
-- Discord / ArtCraft 行：保留并改链 / 删除：
-- About 最终文案：
-- Patch SHA / 提交：
+- 开放决策确认日期：2026-11-04（Asia/Shanghai）
+- Website / GitHub / Issues URL：`https://github.com/SimpleAI2026/SimplePhoto` ；Issues：`https://github.com/SimpleAI2026/SimplePhoto/issues`
+- Discord / ArtCraft 行：**删除**（Help 菜单与 splash / About 不再显示）
+- About 最终文案：`SimplePhoto — PhotoCraft-powered local image editor.`
+- Logo：使用已有 `branding/simplephoto-logo-1024.png`、`branding/simplephoto-app-128.png`（不重新生成）；扩展图标已在根仓库
+- 顶栏图标：**不用** `0003` 二进制 patch；改用 `scripts/apply-branding-assets.sh`，在 `apply-patches.sh` 之后把 `branding/simplephoto-app-128.png` 复制到 `thirdparty/photocraft/assets/app-icon/hicolor/128x128/apps/ai.storyteller.photocraft.png`
+- Patches：`patches/0001-top-right-language-selector.patch`、`patches/0002-simplephoto-help-about-splash-branding.patch`
+- 复现：`bootstrap-submodule` → `apply-patches` → `apply-branding-assets` → `build-web-assets`
+- Patch SHA / 提交： (root main)

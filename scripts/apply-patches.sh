@@ -1,15 +1,24 @@
 #!/usr/bin/env bash
-# Apply patches/*.patch onto thirdparty/photocraft (submodule).
+# Apply patches/*.patch onto thirdparty/photocraft (submodule) from the pinned baseline.
 # No-op success when patches/ has no *.patch files (e.g. only .gitkeep).
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 PC="$ROOT/thirdparty/photocraft"
 PATCH_DIR="$ROOT/patches"
+PIN="287352bf92d56817db9a510e506551f394a68ea4"
 
 if [ ! -d "$PC/.git" ] && [ ! -f "$PC/.git" ]; then
   echo "error: photocraft submodule missing at $PC — run ./scripts/bootstrap-submodule.sh" >&2
   exit 1
 fi
+
+cd "$PC"
+HEAD=$(git rev-parse HEAD)
+if [[ "$HEAD" != "$PIN" ]]; then
+  echo "error: photocraft HEAD=$HEAD, expected $PIN (refuse to apply on wrong base)" >&2
+  exit 1
+fi
+git reset --hard "$PIN"
 
 shopt -s nullglob
 patches=("$PATCH_DIR"/*.patch)
@@ -18,10 +27,11 @@ if [ "${#patches[@]}" -eq 0 ]; then
   exit 0
 fi
 
-cd "$PC"
 for p in "${patches[@]}"; do
   echo "applying $(basename "$p")"
   git apply --check "$p"
   git apply "$p"
 done
-echo "apply-patches: applied ${#patches[@]} patch(es)"
+echo "apply-patches: applied ${#patches[@]} patch(es) on $PIN"
+git status -sb
+echo "note: run ./scripts/apply-branding-assets.sh after patches to install SimplePhoto app icon"

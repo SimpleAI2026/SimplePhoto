@@ -1,0 +1,56 @@
+diff --git a/crates/ui-egui/src/panels/title_bar.rs b/crates/ui-egui/src/panels/title_bar.rs
+index fd760ec71..48bbc61f8 100644
+--- a/crates/ui-egui/src/panels/title_bar.rs
++++ b/crates/ui-egui/src/panels/title_bar.rs
+@@ -91,17 +91,20 @@ pub fn title_bar(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
+                     let options = crate::workspace_ui::switcher_options(app);
+                     let opts: Vec<(String, &str)> = options.iter().map(|(k, l)| (k.clone(), l.as_str())).collect();
+                     // A narrow bar drops what is also in a menu, the theme toggle first
+-                    // (Preferences), then search (Edit › Search), and narrows the switcher
+-                    // (Window › Workspace) before anything runs over.
++                    // (Preferences), then search (Edit › Search), then the language picker,
++                    // and narrows the switcher (Window › Workspace) before anything runs over.
+                     let room = ui.available_width();
+-                    let icons_shown: u8 = if room >= WORKSPACE_MIN + 2.0 * ICON_SLOT {
++                    let show_lang = room >= WORKSPACE_MIN + LANG_SLOT;
++                    let after_lang = WORKSPACE_MIN + if show_lang { LANG_SLOT } else { 0.0 };
++                    let icons_shown: u8 = if room >= after_lang + 2.0 * ICON_SLOT {
+                         2
+-                    } else if room >= WORKSPACE_MIN + ICON_SLOT {
++                    } else if room >= after_lang + ICON_SLOT {
+                         1
+                     } else {
+                         0
+                     };
+-                    let ws_width = (room - f32::from(icons_shown) * ICON_SLOT - 6.0).clamp(WORKSPACE_MIN, 130.0);
++                    let reserved = f32::from(icons_shown) * ICON_SLOT + if show_lang { LANG_SLOT } else { 0.0 };
++                    let ws_width = (room - reserved - 6.0).clamp(WORKSPACE_MIN, 130.0);
+                     if room >= WORKSPACE_MIN && widgets::dropdown(ui, "workspace", tl!("Workspace"), &mut ws, &opts, ws_width) {
+                         app.ui.workspace = ws;
+                         crate::menus::apply_workspace(app);
+@@ -124,6 +127,15 @@ pub fn title_bar(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
+                         }
+                         button.context_menu(|ui| crate::prefs_ui::appearance_context_menu(app, ui));
+                     }
++                    // SimplePhoto: language selector next to appearance; writes interface.language.
++                    if show_lang {
++                        let mut lang = app.session.prefs().interface.language.clone();
++                        let mut pairs: Vec<(String, &str)> = vec![("auto".into(), tl!("Auto"))];
++                        pairs.extend(crate::i18n::Lang::for_picker().into_iter().map(|l| (l.code().to_string(), l.name())));
++                        if widgets::dropdown(ui, "titlebar-language", tl!("Language"), &mut lang, &pairs, LANG_SLOT - 6.0) {
++                            let _ = app.run("prefs.set", serde_json::json!({"values": {"interface.language": lang}}));
++                        }
++                    }
+                     if rtl { ui.min_rect().right() } else { ui.min_rect().left() }
+                 };
+                 free = if rtl { (controls_end, menus_end) } else { (menus_end, controls_end) };
+@@ -200,6 +212,9 @@ const WORKSPACE_MIN: f32 = 90.0;
+ 
+ const ICON_SLOT: f32 = 34.0;
+ 
++/// Room for the title-bar language dropdown (Auto + registered langs).
++const LANG_SLOT: f32 = 100.0;
++
+ /// Left edge for a title `width` wide: centred on `center` when it fits in the free gap from
+ /// `left` to `right` (the menus' and the controls' facing edges, whichever side each is on),
+ /// else slid into that gap; None when the gap is too small for the whole title.

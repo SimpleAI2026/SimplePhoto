@@ -10,6 +10,7 @@ Chrome MV3 扩展：把 [PhotoCraft](https://github.com/storytold/photocraft) �
 cd /Volumes/my/github/SimplePhoto
 ./scripts/bootstrap-submodule.sh
 ./scripts/apply-patches.sh          # 无 patch 时 no-op 成功
+./scripts/apply-branding-assets.sh  # 安装 SimplePhoto 顶栏图标（避免二进制 patch）
 ./scripts/build-web-assets.sh       # 需要 trunk；已有产物可用 --skip-build
 ./scripts/check-extension-size.sh
 ```

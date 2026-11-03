@@ -173,3 +173,14 @@ echo "refreshed $out ($(wc -l <"$out") lines)"
 
 - [ ] `apply-patches.sh` 在干净 pin 上可重复得到一致结果（先 hard reset 再 apply）
 - [ ] 协作者只需：`submodule update` + `apply-patches.sh` + `build-web-assets.sh`
+
+## SimplePhoto 品牌图标（非 patch）
+
+顶栏 `include_bytes!` 图标不走二进制 patch。在 `./scripts/apply-patches.sh` 之后运行：
+
+```bash
+./scripts/apply-branding-assets.sh
+```
+
+它把根仓库 `branding/simplephoto-app-128.png` 覆盖到 submodule 的
+`assets/app-icon/hicolor/128x128/apps/ai.storyteller.photocraft.png`。该复制是本地工作区变更，**不要**提交进 submodule gitlink；每次 bootstrap / reset 后需重跑。
