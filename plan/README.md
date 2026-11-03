@@ -38,6 +38,10 @@
 - 完整 craft-fonts 分发（可选后续；web 本就不嵌入 craft-fonts）
 - 用 `photocraft-web-boot` 分片方案作为扩展默认路径（那是为 CDN 单文件 25 MiB 上限；扩展包无此硬限，优先单文件 Trunk 产物）
 
+## 下一里程碑（post-v0）
+
+v0 已完成后的三项计划见 [`08-i18n-branding-logo.md`](08-i18n-branding-logo.md)：（1）patches：顶栏右上角语言选择器（复用现有 `interface.language` i18n）；（2）patches：Help / About / splash / 左上角标改为 SimplePhoto 品牌；（3）生成 SimplePhoto logo，用于顶栏图标与 `extension/icons` 16/48/128。尚未实现——只更新计划文档。
+
 ## 架构决策（摘要）
 
 1. **Extension page 直接托管静态站，而不是跨域 iframe 嵌远程站。** `chrome-extension://` 是 secure context，WebGPU/剪贴板与现有 web shell 假设一致；也避免第三方存储分区问题（见 `packaging/web/README.md` iframe 说明）。
@@ -81,6 +85,7 @@ SimplePhoto/
 | [`05-platform-bridges.md`](05-platform-bridges.md) | 打开/保存/剪贴板与扩展 vs 静态宿主差异 |
 | [`06-testing-packaging.md`](06-testing-packaging.md) | Load unpacked、打包、体积预算 |
 | [`07-v0-milestone.md`](07-v0-milestone.md) | v0 完成定义与验收清单 |
+| [`08-i18n-branding-logo.md`](08-i18n-branding-logo.md) | 下一里程碑：右上角语言选择器、SimplePhoto Help/About/splash 品牌化、logo（UI + 扩展 16/48/128）；patches only |
 | [`patches.md`](patches.md) | patch 的编写、存放、应用、再生 |
 
 ## 执行方式

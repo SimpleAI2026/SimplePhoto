@@ -35,6 +35,8 @@ SimplePhoto/
 
 **不要**为纯 CSS/欢迎页/manifest 去 patch PhotoCraft。
 
+**SimplePhoto 例外（post-v0 / `08`）：** 允许用 patch 改 photocraft **UI chrome** 以适配扩展产品壳——包括顶栏右上角语言选择器（复用现有 `interface.language` / i18n，不新建 locale 系统）、Help / About / splash 的 SimplePhoto 品牌文案与链接、以及 `panels/brand.rs` 顶栏图标 `include_bytes!`。扩展侧 `extension/icons/` 与根仓库 `branding/` 资产 **不** 进 submodule。仍须最小 diff、可 `git apply`、不把脏 submodule 当真相源。详见 [`08-i18n-branding-logo.md`](08-i18n-branding-logo.md)。
+
 ---
 
 ## 编写第一个 patch

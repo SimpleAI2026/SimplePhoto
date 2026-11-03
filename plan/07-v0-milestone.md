@@ -78,6 +78,10 @@ Expected: 全程针对钉死 SHA，无需跟踪浮动 `main`。
 
 ### Task 3: 下一里程碑（仅记录，不在 v0 做）
 
+**优先（已开计划）：** [`08-i18n-branding-logo.md`](08-i18n-branding-logo.md) — 右上角语言选择器、SimplePhoto Help/About/splash/左上角品牌化、SimplePhoto logo（顶栏 + 扩展 16/48/128）。patches only；计划已写、实现另开。
+
+其它仍可后续排期：
+
 1. File System Access / downloads 确认写盘，改善 unsaved 语义
 2. 可选 fonts/`manifest.txt` 打包
 3. 商店上架：隐私政策、截图、heif 政策评估

@@ -27,3 +27,4 @@ Chrome → `chrome://extensions` → 开发者模式 → **加载已解压的扩
 - v0：全页编辑器、web 下载语义；无 downloads 桥、无 PhotoCraft 源码 patch。
 - 平台约定：`extension/PLATFORM.md`
 - Patch 工作流：`plan/patches.md`
+- 下一里程碑（i18n / SimplePhoto 品牌 / logo）：[`plan/08-i18n-branding-logo.md`](plan/08-i18n-branding-logo.md)
