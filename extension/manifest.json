@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "SimplePhoto",
+  "version": "0.1.0",
+  "description": "PhotoCraft-powered local image editor (WASM) as a Chrome extension page.",
+  "action": {
+    "default_title": "Open SimplePhoto",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'; worker-src 'self'"
+  },
+  "permissions": []
+}
