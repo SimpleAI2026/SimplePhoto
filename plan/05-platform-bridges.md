@@ -157,3 +157,15 @@ git commit -m "feat: document and wire extension platform bridges for open/save"
 - [ ] Open + 拖放 + Save/Export 在扩展内可用（有证据：截图或操作记录）
 - [ ] 任何 PhotoCraft 源码 diff 都以 `patches/*.patch` 形式存在
 - [ ] `extension/PLATFORM.md` 写明与静态宿主差异
+
+---
+
+## 实测记录
+
+**日期：** 2026-11-04（Asia/Shanghai）
+
+- Editor loads past the Loading splash after Trunk `trunk-boot.js` inline-script extraction (MV3 CSP).
+- Splash UI confirmed 2026-11-04：New / Open visible and usable (user confirmed editor opens).
+- **Task 2 skipped** — no `chrome.downloads` bridge; no photocraft patches; no `downloads` permission.
+- Save semantics accepted as web download：`<a download>` + `write_unconfirmed`（v0）.
+- Open：rfd / same as web；prefs / WebGPU treated as working on extension page for load baseline.
