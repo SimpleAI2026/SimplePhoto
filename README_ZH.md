@@ -6,6 +6,19 @@
 
 本仓库是 PhotoCraft 的**包装层 / 产品壳**，**不主张**拥有 PhotoCraft。上游 PhotoCraft 仍归其作者与贡献者所有（[storytold/photocraft](https://github.com/storytold/photocraft)），通常采用 MIT / Apache-2.0。SimplePhoto 提供 Chrome 扩展打包、品牌壳、patch 工作流与构建脚本（见下文）。
 
+## 截图
+
+Chrome 网上应用店可用的 **1280×800** PNG（深色背景 `#262626` 留白居中）放在 [`docs/store/`](docs/store/)。提交扩展时请上传这些文件：
+
+| 预览 | 文件 |
+|------|------|
+| 启动 / 欢迎页 | [`docs/store/screenshot-01-splash-1280x800.png`](docs/store/screenshot-01-splash-1280x800.png) |
+| 编辑画笔 `icon128` | [`docs/store/screenshot-02-editor-1280x800.png`](docs/store/screenshot-02-editor-1280x800.png) |
+
+![SimplePhoto 启动页](docs/store/screenshot-01-splash-1280x800.png)
+
+![SimplePhoto 编辑画笔图标](docs/store/screenshot-02-editor-1280x800.png)
+
 ## 功能
 
 - **本地 WASM 编辑器** — PhotoCraft 运行在扩展页（`extension/editor/`），遵循 MV3 CSP（`wasm-unsafe-eval`）。

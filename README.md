@@ -6,6 +6,19 @@
 
 This repository is a **wrapper / product shell** around PhotoCraft. It does **not** claim ownership of PhotoCraft. Upstream PhotoCraft remains copyright its authors and contributors ([storytold/photocraft](https://github.com/storytold/photocraft)), typically under MIT / Apache-2.0. SimplePhoto adds the Chrome extension packaging, branding chrome, patches workflow, and build scripts described below.
 
+## Screenshots
+
+Chrome Web Store–ready **1280×800** PNGs (letterboxed on `#262626`) live under [`docs/store/`](docs/store/). Upload these when submitting the extension:
+
+| Preview | File |
+|---------|------|
+| Start / splash screen | [`docs/store/screenshot-01-splash-1280x800.png`](docs/store/screenshot-01-splash-1280x800.png) |
+| Editing paintbrush `icon128` | [`docs/store/screenshot-02-editor-1280x800.png`](docs/store/screenshot-02-editor-1280x800.png) |
+
+![SimplePhoto splash screen](docs/store/screenshot-01-splash-1280x800.png)
+
+![SimplePhoto editor with paintbrush icon](docs/store/screenshot-02-editor-1280x800.png)
+
 ## Features
 
 - **Local WASM editor** — PhotoCraft runs in an extension page (`extension/editor/`) with MV3 CSP (`wasm-unsafe-eval`).
