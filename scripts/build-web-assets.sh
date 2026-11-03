@@ -31,6 +31,56 @@ mkdir -p "$DEST"
 cp -R "$DIST"/. "$DEST"/
 # 保留目录可被 git 跟踪的占位在清理后消失；构建后不需要 .gitkeep
 
+# MV3 extension_pages CSP allows script-src 'self' 'wasm-unsafe-eval' — not 'unsafe-inline'.
+# Trunk emits an inline <script type="module"> boot; extract it to external file(s).
+python3 - "$DEST/index.html" <<'PY'
+import re
+import sys
+from pathlib import Path
+
+index_path = Path(sys.argv[1])
+html = index_path.read_text(encoding="utf-8")
+pattern = re.compile(
+    r"<script\s+type=[\"']module[\"']\s*>(.*?)</script>",
+    re.IGNORECASE | re.DOTALL,
+)
+matches = list(pattern.finditer(html))
+if not matches:
+    # Already external-only is fine; still fail if any other inline <script> remains later.
+    print("note: no inline <script type=\"module\"> found in index.html", file=sys.stderr)
+else:
+    out = []
+    last = 0
+    for i, m in enumerate(matches):
+        body = m.group(1)
+        # Preserve contents exactly (including surrounding newlines from Trunk).
+        name = "trunk-boot.js" if len(matches) == 1 else f"trunk-boot-{i}.js"
+        (index_path.parent / name).write_text(body, encoding="utf-8", newline="\n")
+        replacement = f'<script type="module" src="./{name}"></script>'
+        out.append(html[last:m.start()])
+        out.append(replacement)
+        last = m.end()
+        print(f"extracted inline module -> {name} ({len(body)} bytes)")
+    out.append(html[last:])
+    html = "".join(out)
+    index_path.write_text(html, encoding="utf-8", newline="\n")
+
+# Fail if any inline <script ...>body</script> remains (src= external scripts are OK).
+inline_left = re.findall(
+    r"<script(?![^>]*\bsrc=)[^>]*>\s*\S",
+    html,
+    flags=re.IGNORECASE,
+)
+if inline_left:
+    print(
+        "error: inline <script> still present in index.html after rewrite "
+        f"(count={len(inline_left)})",
+        file=sys.stderr,
+    )
+    sys.exit(1)
+print("index.html: no inline scripts remain")
+PY
+
 {
   echo "photocraft_sha=$HEAD"
   echo "built_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
