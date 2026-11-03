@@ -6,6 +6,8 @@
 
 **Architecture notes:** 默认使用 **单文件** `photocraft-web` Trunk 产物（`apps/photocraft-web` → `dist/web`）。不默认运行 `packaging/web/package.sh`（boot+parts 是为 CDN 25 MiB 上限）。扩展包无该上传硬限。
 
+**MV3 CSP 后处理：** Trunk 会在 `index.html` 写入内联 `<script type="module">`（import glue + `init()`）。Chrome MV3 `extension_pages` 的 `script-src` 只有 `'self' 'wasm-unsafe-eval'`，**禁止** `'unsafe-inline'`。因此 `scripts/build-web-assets.sh` 在 `cp dist/web → extension/editor/` 之后，必须把内联 module 抽出为 `trunk-boot.js`（多个则 `trunk-boot-N.js`），并改成 `<script type="module" src="./trunk-boot.js">`；若仍残留内联 `<script` 则脚本失败退出。勿改 `thirdparty/photocraft`。
+
 ## Global Constraints
 
 - 工具：Rust stable（PhotoCraft 文档写 1.95+）、`wasm32-unknown-unknown`、`trunk`

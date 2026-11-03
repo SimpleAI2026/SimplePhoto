@@ -107,6 +107,7 @@ Web 壳（`apps/photocraft-web/src/web.rs` 的 `services()`）已接线：
 | 约束 | 对 SimplePhoto 的影响 |
 |---|---|
 | MV3 `extension_pages` CSP 默认无 eval | 必须显式加 `'wasm-unsafe-eval'` 才能实例化 WASM |
+| 不能 `'unsafe-inline'` | Trunk 内联 boot `<script type="module">` 会被拦；`build-web-assets.sh` 抽成 `trunk-boot.js` 外链 |
 | 不能 `'unsafe-eval'` | 与 PhotoCraft「无自有 JS、仅 wasm-bindgen glue」兼容 |
 | 大资源进 CRX | ~24 MiB wasm 可接受；应用 `web_accessible_resources` 仅当 content script 要读（v0 不需要） |
 | Service worker 无 DOM / 无持久 WASM 重型 UI | 编辑器必须在 **扩展页面/标签页**，不是在 SW 里跑 egui |
