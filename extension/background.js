@@ -1,4 +1,3 @@
-// Open the PhotoCraft editor as an extension page (full tab).
 const EDITOR_PATH = "editor/index.html";
 
 async function openEditor(query = "") {
@@ -7,9 +6,14 @@ async function openEditor(query = "") {
 }
 
 chrome.action.onClicked.addListener(() => {
-  openEditor().catch((err) => console.error("openEditor failed", err));
+  openEditor().catch(console.error);
 });
 
-chrome.runtime.onInstalled.addListener(() => {
-  console.info("SimplePhoto installed; click the action icon to open the editor.");
+chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
+  if (msg?.type === "open-editor") {
+    openEditor(msg.query || "")
+      .then(() => sendResponse({ ok: true }))
+      .catch((e) => sendResponse({ ok: false, error: String(e) }));
+    return true;
+  }
 });

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>SimplePhoto</title>
+  <style>
+    body { font: 14px system-ui, sans-serif; max-width: 40rem; margin: 2rem auto;
+           color: #e8e8e8; background: #262626; }
+    a { color: #9cf; }
+  </style>
+</head>
+<body>
+  <h1>SimplePhoto</h1>
+  <p>基于 PhotoCraft WASM 的本地编辑器（Chrome MV3）。</p>
+  <ul>
+    <li><a href="editor/index.html">打开编辑器（默认 WebGPU）</a></li>
+    <li><a href="editor/index.html?webgl">打开编辑器（强制 WebGL2）</a></li>
+    <li><a href="editor/index.html?cpu">打开编辑器（CPU canvas）</a></li>
+  </ul>
+  <p>构建信息见 <code>editor/BUILD_INFO.txt</code>。</p>
+</body>
+</html>
