@@ -362,4 +362,4 @@ Expected: 三个 patch 按序成功；`thirdparty/photocraft` 无未进 patch �
 - 顶栏图标：**不用** `0003` 二进制 patch；改用 `scripts/apply-branding-assets.sh`，在 `apply-patches.sh` 之后把 `branding/simplephoto-app-128.png` 复制到 `thirdparty/photocraft/assets/app-icon/hicolor/128x128/apps/ai.storyteller.photocraft.png`
 - Patches：`patches/0001-top-right-language-selector.patch`、`patches/0002-simplephoto-help-about-splash-branding.patch`
 - 复现：`bootstrap-submodule` → `apply-patches` → `apply-branding-assets` → `build-web-assets`
-- Patch SHA / 提交： (root main)
+- Patch SHA / 提交：`c0c3d6beb99ff65621aa1f37eb0d41134512e515` (root main)
