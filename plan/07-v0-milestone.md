@@ -32,31 +32,31 @@
 
 ### Task 1: Definition of Done 清单
 
-- [ ] **Repo**
-  - [ ] `.gitmodules` 钉 `287352bf92d56817db9a510e506551f394a68ea4`
-  - [ ] `./scripts/bootstrap-submodule.sh` 通过
-  - [ ] `extension/editor/` 被 gitignore；脚本可重建
+- [x] **Repo**
+  - [x] `.gitmodules` 钉 `287352bf92d56817db9a510e506551f394a68ea4`
+  - [x] `./scripts/bootstrap-submodule.sh` 通过
+  - [x] `extension/editor/` 被 gitignore；脚本可重建
 
-- [ ] **Build**
-  - [ ] `./scripts/build-web-assets.sh` 成功
-  - [ ] `editor/BUILD_INFO.txt` 含 `photocraft_sha=`
+- [x] **Build**
+  - [x] `./scripts/build-web-assets.sh` 成功
+  - [x] `editor/BUILD_INFO.txt` 含 `photocraft_sha=`
 
-- [ ] **Extension**
-  - [ ] Load unpacked 无错误
-  - [ ] CSP 含 `'wasm-unsafe-eval'`
-  - [ ] Action 打开编辑器且 UI 可用
-  - [ ] Open PNG + Export PNG 闭环
+- [x] **Extension**
+  - [x] Load unpacked 无错误
+  - [x] CSP 含 `'wasm-unsafe-eval'`
+  - [x] Action 打开编辑器且 UI 可用
+  - [x] Open PNG + Export PNG 闭环
 
-- [ ] **Patches**
+- [x] **Patches**
   - [ ] 若有源码改动：`patches/*.patch` 可干净 `git apply`；提交根仓库时 **不** 把脏 submodule tree 当真相
-  - [ ] 若无源码改动：`patches/` 保留 `.gitkeep` + `patches.md` 说明
+  - [x] 若无源码改动：`patches/` 保留 `.gitkeep` + `patches.md` 说明
 
-- [ ] **Legal / attribution（最低限度）**
-  - [ ] 扩展包或仓库根能找到 PhotoCraft MIT/Apache 许可与 NOTICE 指针（见 `06` 打包脚本拷贝）
+- [x] **Legal / attribution（最低限度）**
+  - [x] 扩展包或仓库根能找到 PhotoCraft MIT/Apache 许可与 NOTICE 指针（见 `06` 打包脚本拷贝）
 
-- [ ] **Docs**
-  - [ ] 根 `README.md` 指向 `plan/`
-  - [ ] `extension/PLATFORM.md` 存在（来自 `05`）
+- [x] **Docs**
+  - [x] 根 `README.md` 指向 `plan/`
+  - [x] `extension/PLATFORM.md` 存在（来自 `05`）
 
 ---
 
@@ -86,5 +86,17 @@ Expected: 全程针对钉死 SHA，无需跟踪浮动 `main`。
 
 ## Success criteria（07 完成）
 
-- [ ] Task 1 全部勾选
-- [ ] 演示路径在清过 `extension/editor` 后重建可复现
+- [x] Task 1 全部勾选
+- [x] 演示路径在清过 `extension/editor` 后重建可复现
+
+
+---
+
+## v0 验收记录
+
+- **日期：** 2026-11-04（Asia/Shanghai）
+- **Open PNG / Save·Export 下载：** 用户已确认可用
+- **CSP：** 已通过 `build-web-assets.sh` 提取 Trunk inline boot → `trunk-boot.js` 修复（MV3 无 `unsafe-inline`）
+- **PhotoCraft pin：** `287352bf92d56817db9a510e506551f394a68ea4`
+- **patches：** 未应用任何 `patches/*.patch`（空目录 + `.gitkeep` + `plan/patches.md`）
+- **体积：** Trunk release `*_bg.wasm` ~29 MiB；`check-extension-size.sh` soft budget 已调至 32 MiB；zip ~13 MiB（≤ 35 MiB）
