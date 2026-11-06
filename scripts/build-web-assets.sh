@@ -6,7 +6,7 @@ PC="$ROOT/thirdparty/photocraft"
 APP_SRC="$PC/apps/photocraft-web"
 DIST="$PC/dist/web"
 DEST="$ROOT/extension/editor"
-PIN_EXPECTED="287352bf92d56817db9a510e506551f394a68ea4"
+PIN_EXPECTED="3d60ad01f941519307c755eed8e0896d6274cde6"
 
 cd "$PC"
 HEAD="$(git rev-parse HEAD)"

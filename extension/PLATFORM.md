@@ -1,6 +1,6 @@
 # Extension vs static web host
 
-Pinned PhotoCraft: `287352bf92d56817db9a510e506551f394a68ea4`
+Pinned PhotoCraft: `3d60ad01f941519307c755eed8e0896d6274cde6`
 
 | 能力 | 静态 https / localhost | Chrome extension page (v0) |
 |---|---|---|

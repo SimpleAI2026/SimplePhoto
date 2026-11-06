@@ -5,7 +5,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 PC="$ROOT/thirdparty/photocraft"
 PATCH_DIR="$ROOT/patches"
-PIN="287352bf92d56817db9a510e506551f394a68ea4"
+PIN="3d60ad01f941519307c755eed8e0896d6274cde6"
 
 if [ ! -d "$PC/.git" ] && [ ! -f "$PC/.git" ]; then
   echo "error: photocraft submodule missing at $PC — run ./scripts/bootstrap-submodule.sh" >&2

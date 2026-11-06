@@ -1,5 +1,5 @@
 diff --git a/apps/photocraft-web/index.html b/apps/photocraft-web/index.html
-index d090cf47d..3bd2a8f8f 100644
+index 30ea522b6..e4f2a983d 100644
 --- a/apps/photocraft-web/index.html
 +++ b/apps/photocraft-web/index.html
 @@ -3,7 +3,7 @@
@@ -11,7 +11,7 @@ index d090cf47d..3bd2a8f8f 100644
    <link data-trunk rel="rust" data-bin="photocraft-web" data-cargo-profile="wasm-release" data-cargo-features="heif" data-wasm-opt="z" data-wasm-opt-params="--converge" data-weak-refs />
    <style>
      html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #262626; }
-@@ -21,8 +21,8 @@
+@@ -30,8 +30,8 @@
  <body>
    <canvas id="photocraft_canvas"></canvas>
    <div id="photocraft_loading">
@@ -66,45 +66,49 @@ index 3b52c03a0..356b3d316 100644
  
  /// The tools, in toolbar order: shortcut id (`tools.select.<tool>`), Photoshop's name for it
 diff --git a/crates/ui-egui/src/canvas/start_screen.rs b/crates/ui-egui/src/canvas/start_screen.rs
-index e8b6633e5..eb8aaa00e 100644
+index 64fbe541e..b556d22e1 100644
 --- a/crates/ui-egui/src/canvas/start_screen.rs
 +++ b/crates/ui-egui/src/canvas/start_screen.rs
-@@ -33,7 +33,7 @@ pub(super) fn start_screen(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
-     ui.scope_builder(egui::UiBuilder::new().max_rect(card), |ui| {
-         ui.vertical_centered(|ui| {
-             ui.horizontal(|ui| {
--                let title = ui.painter().layout_no_wrap(tl!("PhotoCraft").into(), crate::theme::semibold(38.0), t.text);
-+                let title = ui.painter().layout_no_wrap(tl!("SimplePhoto").into(), crate::theme::semibold(38.0), t.text);
-                 let by = ui.painter().layout_no_wrap(tl!("open source").into(), egui::FontId::proportional(13.0), t.text_faint);
-                 let total = title.size().x + by.size().x + 10.0;
-                 ui.add_space(((card.width() - total) / 2.0).max(0.0));
-@@ -79,8 +79,6 @@ pub(super) fn start_screen(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
-                 home_recent(app, ui, &recent);
-             }
-             ui.add_space(26.0);
--            crate::links::discord_button(app, ui, 190.0);
--            ui.add_space(10.0);
-             crate::links::link_row(app, ui);
-         });
+@@ -164,7 +164,7 @@ fn render_start_rail(app: &mut PhotocraftApp, ui: &mut egui::Ui, rail_w: f32) {
+     }
+ 
+     // 5. Bottom pinned community links
+-    let bottom_h = 100.0;
++    let bottom_h = 72.0;
+     let avail_h = ui.available_height();
+     let spacer = (avail_h - bottom_h - 20.0).max(24.0);
+     ui.add_space(spacer);
+@@ -175,7 +175,6 @@ fn render_start_rail(app: &mut PhotocraftApp, ui: &mut egui::Ui, rail_w: f32) {
+     ui.add_space(8.0);
+ 
+     render_rail_link(app, ui, rail_w, tl!("Website"), "link", crate::links::APP_PAGE);
+-    render_rail_link(app, ui, rail_w, tl!("Discord"), "message-square", crate::links::DISCORD);
+     render_rail_link(app, ui, rail_w, tl!("GitHub"), "link-2", crate::links::GITHUB);
+ }
+ 
+@@ -199,7 +198,7 @@ fn render_start_content(app: &mut PhotocraftApp, ui: &mut egui::Ui, recent: &[St
+     let t = crate::theme::Tokens::get(ui.ctx());
+     ui.add_space(8.0);
+ 
+-    // Top Row: [01] PhotoCraft
++    // Top Row: [01] SimplePhoto
+     ui.horizontal(|ui| {
+         let badge_size = egui::vec2(24.0, 19.0);
+         let (badge_rect, _) = ui.allocate_exact_size(badge_size, Sense::hover());
+@@ -208,7 +207,7 @@ fn render_start_content(app: &mut PhotocraftApp, ui: &mut egui::Ui, recent: &[St
+ 
+         ui.add_space(10.0);
+ 
+-        let title_galley = ui.painter().layout_no_wrap(tl!("PhotoCraft").into(), crate::theme::semibold(20.0), t.text);
++        let title_galley = ui.painter().layout_no_wrap(tl!("SimplePhoto").into(), crate::theme::semibold(20.0), t.text);
+         let (title_r, _) = ui.allocate_exact_size(title_galley.size(), Sense::hover());
+         ui.painter().galley(title_r.min, title_galley, t.text);
      });
-diff --git a/crates/ui-egui/src/canvas/tests.rs b/crates/ui-egui/src/canvas/tests.rs
-index 73ef69697..bfd06c8c0 100644
---- a/crates/ui-egui/src/canvas/tests.rs
-+++ b/crates/ui-egui/src/canvas/tests.rs
-@@ -1419,7 +1419,7 @@ fn start_screen_buttons_stay_inside_a_narrow_canvas() {
-         PhotocraftApp::setup_context(&h.ctx, crate::theme::ThemeKind::default());
-         h.state_mut().1 = true;
-         h.run_steps(3);
--        for label in ["New document", "Join us on Discord"] {
-+        for label in ["New document", "SimplePhoto website"] {
-             for node in h.query_all_by_label_contains(label) {
-                 let r = node.rect();
-                 assert!(r.left() >= 0.0 && r.right() <= width, "`{label}` is clipped in a {width}-point-wide canvas: {r:?}");
 diff --git a/crates/ui-egui/src/dialogs.rs b/crates/ui-egui/src/dialogs.rs
-index a280cafd4..9a4eff574 100644
+index 0cfeb7fdc..213404c24 100644
 --- a/crates/ui-egui/src/dialogs.rs
 +++ b/crates/ui-egui/src/dialogs.rs
-@@ -786,12 +786,10 @@ fn about_tab_body(app: &mut PhotocraftApp, ui: &mut egui::Ui, tab: &str) {
+@@ -802,12 +802,10 @@ fn about_tab_body(app: &mut PhotocraftApp, ui: &mut egui::Ui, tab: &str) {
          "contributors" => crate::credits::contributors_ui(app, ui),
          "models" => crate::credits::models_ui(ui),
          _ => {
@@ -118,7 +122,7 @@ index a280cafd4..9a4eff574 100644
                  crate::links::link_row(app, ui);
              });
              ui.add_space(10.0);
-@@ -826,7 +824,7 @@ pub fn title(d: &Dialog) -> String {
+@@ -842,7 +840,7 @@ pub fn title(d: &Dialog) -> String {
      match d.kind {
          DialogKind::NewDocument => "New Document".into(),
          DialogKind::About if d.fields.get("systemInfo").and_then(Value::as_bool) == Some(true) => "System Info".into(),
@@ -128,7 +132,7 @@ index a280cafd4..9a4eff574 100644
          DialogKind::Command => d.fields.get("__label").and_then(Value::as_str).unwrap_or("Command").trim_end_matches('…').to_string(),
          DialogKind::Error => "Error".into(),
 diff --git a/crates/ui-egui/src/dialogs/credits/ui_tests.rs b/crates/ui-egui/src/dialogs/credits/ui_tests.rs
-index 8201c1960..03d97c7c0 100644
+index b3a93a1ac..b6dc3e895 100644
 --- a/crates/ui-egui/src/dialogs/credits/ui_tests.rs
 +++ b/crates/ui-egui/src/dialogs/credits/ui_tests.rs
 @@ -215,7 +215,7 @@ fn about_window(tab: &str, table: bool) -> (f32, f32, f32) {
@@ -141,7 +145,7 @@ index 8201c1960..03d97c7c0 100644
          .query_all(egui_kittest::kittest::by().predicate(|n| n.bounding_box().is_some()))
          .map(|n| n.rect())
 diff --git a/crates/ui-egui/src/i18n/zh-hans.tsv b/crates/ui-egui/src/i18n/zh-hans.tsv
-index d9b554acf..259da7b4d 100644
+index 4a165910b..7bf1e6904 100644
 --- a/crates/ui-egui/src/i18n/zh-hans.tsv
 +++ b/crates/ui-egui/src/i18n/zh-hans.tsv
 @@ -905,9 +905,9 @@
@@ -178,10 +182,10 @@ index d9b554acf..259da7b4d 100644
  	Pillow Emboss	枕状浮雕
  	Pixel Replacement	像素替换
 diff --git a/crates/ui-egui/src/links.rs b/crates/ui-egui/src/links.rs
-index 2042d996e..d30cb5120 100644
+index dc935b3da..50f96d423 100644
 --- a/crates/ui-egui/src/links.rs
 +++ b/crates/ui-egui/src/links.rs
-@@ -1,20 +1,17 @@
+@@ -1,21 +1,18 @@
  //! Community and project links: the Help menu, the About dialog, the start screen and the title
 -//! bar all open these. URLs follow the crafting-app pattern (`getartcraft.com/apps/<app>`,
 -//! `github.com/storytold/<app>`).
@@ -194,9 +198,10 @@ index 2042d996e..d30cb5120 100644
 -pub const DISCORD: &str = "https://discord.gg/artcraft";
 -pub const ARTCRAFT_WEBSITE: &str = "https://getartcraft.com";
 -pub const APP_PAGE: &str = "https://getartcraft.com/apps/photocraft";
++pub const APP_PAGE: &str = "https://github.com/SimpleAI2026/SimplePhoto";
+ pub const TUTORIALS: &str = "https://getartcraft.com/tutorials";
 -pub const GITHUB: &str = "https://github.com/storytold/photocraft";
 -pub const ISSUES: &str = "https://github.com/storytold/photocraft/issues";
-+pub const APP_PAGE: &str = "https://github.com/SimpleAI2026/SimplePhoto";
 +pub const GITHUB: &str = "https://github.com/SimpleAI2026/SimplePhoto";
 +pub const ISSUES: &str = "https://github.com/SimpleAI2026/SimplePhoto/issues";
  
@@ -207,7 +212,7 @@ index 2042d996e..d30cb5120 100644
  
  pub fn url_for(id: &str) -> Option<&'static str> {
      COMMANDS.iter().find(|c| c.0 == id).map(|c| c.1)
-@@ -32,24 +29,15 @@ pub fn open(app: &mut PhotocraftApp, ctx: &egui::Context, url: &str) -> Value {
+@@ -33,24 +30,15 @@ pub fn open(app: &mut PhotocraftApp, ctx: &egui::Context, url: &str) -> Value {
      json!({"url": url})
  }
  
@@ -235,7 +240,7 @@ index 2042d996e..d30cb5120 100644
      let mut clicked: Option<&str> = None;
      ui.horizontal(|ui| {
          ui.spacing_mut().item_spacing.x = 0.0;
-@@ -74,7 +62,7 @@ mod tests {
+@@ -75,7 +63,7 @@ mod tests {
  
      #[test]
      fn links_open_through_the_platform_service() {
@@ -244,7 +249,7 @@ index 2042d996e..d30cb5120 100644
          // They route through the `open_url` service rather than the unreliable `ctx.open_url`.
          use std::sync::{Arc, Mutex};
          let opened: Arc<Mutex<Vec<String>>> = Arc::new(Mutex::new(Vec::new()));
-@@ -93,9 +81,9 @@ mod tests {
+@@ -94,9 +82,9 @@ mod tests {
              crate::menus::invoke(&mut app, &ctx, id, json!({})).unwrap();
              assert_eq!(opened.lock().unwrap().last().map(String::as_str), Some(*url), "{id}");
          }
@@ -257,7 +262,7 @@ index 2042d996e..d30cb5120 100644
      }
  
      #[test]
-@@ -105,9 +93,7 @@ mod tests {
+@@ -106,9 +94,7 @@ mod tests {
          assert_eq!(
              help,
              [
@@ -267,7 +272,7 @@ index 2042d996e..d30cb5120 100644
                  "help.github",
                  "help.reportIssue",
                  "help.checkForUpdates",
-@@ -126,9 +112,9 @@ mod tests {
+@@ -127,9 +113,9 @@ mod tests {
          let mut app = PhotocraftApp::new(photocraft_engine::Session::new(), Default::default());
          let ctx = egui::Context::default();
          for (id, url) in [
