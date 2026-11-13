@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" data-lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title class="page-title">滤镜与混合模式 · SimplePhoto 教程</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">跳到正文 / Skip to content</a>
+  <header class="top">
+    <a class="brand" href="index.html">SimplePhoto</a>
+    <span class="tag"><span class="zh">教程</span><span class="en">Tutorials</span></span>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="zh" aria-pressed="true">中文</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="Curriculum">
+      <h2><span class="zh">目录</span><span class="en">Contents</span></h2>
+      <ol>
+        <li><a href="index.html"><span class="zh">概览</span><span class="en">Overview</span></a></li>
+<li><a href="01-interface.html"><span class="num">01</span><span class="zh">界面与画布</span><span class="en">Interface and canvas</span></a></li>
+<li><a href="02-open-save.html"><span class="num">02</span><span class="zh">打开、保存与导出</span><span class="en">Open, save, and export</span></a></li>
+<li><a href="03-crop-resize.html"><span class="num">03</span><span class="zh">裁剪、图像大小与画布</span><span class="en">Crop, image size, and canvas</span></a></li>
+<li><a href="04-layers.html"><span class="num">04</span><span class="zh">图层</span><span class="en">Layers</span></a></li>
+<li><a href="05-selections.html"><span class="num">05</span><span class="zh">选区工具</span><span class="en">Selection tools</span></a></li>
+<li><a href="06-brushes.html"><span class="num">06</span><span class="zh">画笔与橡皮擦</span><span class="en">Brushes and eraser</span></a></li>
+<li><a href="07-adjustments.html"><span class="num">07</span><span class="zh">色调与颜色调整</span><span class="en">Tone and color adjustments</span></a></li>
+<li><a href="08-masks.html"><span class="num">08</span><span class="zh">图层蒙版</span><span class="en">Layer masks</span></a></li>
+<li><a href="09-text.html"><span class="num">09</span><span class="zh">文字</span><span class="en">Type and text</span></a></li>
+<li><a href="10-transform.html"><span class="num">10</span><span class="zh">变换</span><span class="en">Transform</span></a></li>
+<li><a href="11-retouch.html"><span class="num">11</span><span class="zh">修饰、修复与仿制</span><span class="en">Retouch, heal, and clone</span></a></li>
+<li><a href="12-filters-blend.html" aria-current="page"><span class="num">12</span><span class="zh">滤镜与混合模式</span><span class="en">Filters and blend modes</span></a></li>
+<li><a href="13-compositing.html"><span class="num">13</span><span class="zh">合成工作流</span><span class="en">Compositing workflow</span></a></li>
+<li><a href="14-nondestructive.html"><span class="num">14</span><span class="zh">非破坏性编辑</span><span class="en">Non-destructive editing</span></a></li>
+<li><a href="15-shortcuts.html"><span class="num">15</span><span class="zh">快捷键</span><span class="en">Keyboard shortcuts</span></a></li>
+      </ol>
+    </nav>
+    <main id="main">
+      <p class="kicker zh">第 12 章 · 效果</p>
+<p class="kicker en">Chapter 12 · Effects</p>
+<h1 class="zh">滤镜与混合模式</h1>
+<h1 class="en">Filters and blend modes</h1>
+<p class="zh">滤镜改变一层（或选区）的像素外观：模糊、锐化、噪点、扭曲等。混合模式决定这一层如何与下面的层合成：变亮、变暗、叠加对比，或只保留纹理。两者都很容易「加过头」，所以要经常做前后对比。</p>
+<p class="en">A filter changes how a layer or selection looks: blur, sharpen, noise, distort, and so on. A blend mode decides how that layer combines with what is under it — lighten, darken, add contrast, or keep texture only. Both are easy to overdo, so compare before and after often.</p>
+<aside class="callout in-app">
+  <h3 class="zh">在 SimplePhoto 中</h3>
+  <h3 class="en">In SimplePhoto</h3>
+  <p class="zh"><strong>滤镜</strong> 菜单按类别组织，例如模糊中的高斯模糊。许多滤镜会打开带预览的对话框，写入历史记录。智能对象可以承载智能滤镜，便于以后改参数或开关（见第 14 章）。混合模式在图层面板的下拉列表中，可键盘或滚轮浏览（以当前控件为准）。常见起点：<strong>正片叠底</strong> 压暗、 <strong>滤色</strong> 提亮、<strong>叠加 / 柔光</strong> 做对比，<strong>明度</strong> 只借用明暗而尽量不改颜色。</p>
+  <p class="en">The <strong>Filter</strong> menu is grouped by category, for example Gaussian Blur under Blur. Many filters open a preview dialog and write a History step. Smart Objects can hold Smart Filters so you can edit or toggle them later (chapter 14). Blend modes live in the Layers panel dropdown (keyboard or wheel may be available, depending on the control). Useful starting points: <strong>Multiply</strong> to darken, <strong>Screen</strong> to lighten, <strong>Overlay / Soft Light</strong> for contrast, and <strong>Luminosity</strong> to borrow lightness without taking as much color.</p>
+</aside>
+<h2 class="zh">实用组合</h2>
+<h2 class="en">Useful combinations</h2>
+<ul class="zh">
+  <li>复制一层，高斯模糊后再把混合模式改为柔光，可做柔和的光感，再靠蒙版限制范围。</li>
+  <li>把纹理层设为叠加或柔光，降低不透明度，给平面色块增加质感。</li>
+  <li>锐化（例如 USM）放在接近完成时，并且先在 100% 视图下判断，避免网上预览被放大后出现白边。</li>
+</ul>
+<ul class="en">
+  <li>Duplicate a layer, apply Gaussian Blur, set the copy to Soft Light, and mask the effect for a gentle glow.</li>
+  <li>Set a texture layer to Overlay or Soft Light and lower opacity to add grain to a flat color.</li>
+  <li>Sharpen (for example Unsharp Mask) near the end, and judge it at 100% zoom so you do not create halos that only show up later.</li>
+</ul>
+<aside class="callout ps-only">
+  <h3 class="zh">仅 Photoshop 的概念</h3>
+  <h3 class="en">Photoshop-only notes</h3>
+  <p class="zh">Neural Filters、部分依赖云的风格化滤镜，以及 Firefly 效果，是 Photoshop 产品功能。若 SimplePhoto 的滤镜菜单里没有同名项，请不要对照网上 Photoshop 截图强行寻找。</p>
+  <p class="en">Neural Filters, some cloud stylization filters, and Firefly effects are Photoshop product features. If the same name is absent from SimplePhoto’s Filter menu, do not hunt for it from a Photoshop screenshot.</p>
+</aside>
+<section class="reading">
+  <h2 class="zh">延伸阅读</h2>
+  <h2 class="en">Further reading</h2>
+  <ul>
+    <li><a href="https://www.adobe.com/learn/photoshop/paths/photo-editing" target="_blank" rel="noopener noreferrer">Adobe Learn: Photo editing (effects units)</a></li>
+  </ul>
+</section>
+
+      <nav class="pager">
+<a href="11-retouch.html"><span class="zh">上一章：修饰、修复与仿制</span><span class="en">Previous: Retouch, heal, and clone</span></a>
+<a href="13-compositing.html"><span class="zh">下一章：合成工作流</span><span class="en">Next: Compositing workflow</span></a>
+</nav>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

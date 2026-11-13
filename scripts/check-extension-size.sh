@@ -2,11 +2,12 @@
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 EDITOR="$ROOT/extension/editor"
-# Soft budget: plan/06 originally suggested 28 MiB. Trunk release wasm on pin
-# 287352bf92d56817db9a510e506551f394a68ea4 measures ~29 MiB (~30,606,192 bytes),
-# so soft budget is 32 MiB for this pin (still well under zip 35 MiB).
-MAX_WASM=$((32 * 1024 * 1024))
-MAX_ZIP=$((35 * 1024 * 1024))
+# Soft budget: plan/06 originally suggested 28 MiB. Trunk release wasm grew with
+# the photocraft pin: ~29 MiB on 287352bf, ~30 MiB on 3d60ad01, ~37.6 MiB on
+# 2239ee9cb (v0.23.1-era tip, catalogs embedded). Allow 40 MiB wasm / 40 MiB zip
+# (still far below Chrome Web Store package limits).
+MAX_WASM=$((40 * 1024 * 1024))
+MAX_ZIP=$((40 * 1024 * 1024))
 
 shopt -s nullglob
 wasms=("$EDITOR"/*_bg.wasm)
@@ -26,18 +27,14 @@ if [ "$bytes" -gt "$MAX_WASM" ]; then
   exit 1
 fi
 
-art=""
 shopt -s nullglob
 zips=("$ROOT"/dist/simplephoto-extension-*.zip)
-if [ "${#zips[@]}" -gt 0 ]; then
-  art="${zips[0]}"
-fi
-if [ -n "${art:-}" ]; then
+for art in "${zips[@]}"; do
   zbytes=$(wc -c <"$art" | tr -d ' ')
   echo "zip=$art bytes=$zbytes"
   if [ "$zbytes" -gt "$MAX_ZIP" ]; then
     echo "error: zip over soft budget $MAX_ZIP" >&2
     exit 1
   fi
-fi
+done
 echo OK

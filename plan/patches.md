@@ -2,7 +2,7 @@
 
 > **硬规则：** 永远不要把「脏的 `thirdparty/photocraft` 工作区」当作长期真相源。根仓库只提交 `patches/*.patch` 与钉死的 submodule **gitlink SHA**。需要改 PhotoCraft 时：改 → 生成 patch → reset submodule → 用脚本 apply。
 
-**Pinned baseline SHA:** `3d60ad01f941519307c755eed8e0896d6274cde6`
+**Pinned baseline SHA:** `2239ee9cb6c87583242ccd247f0a621f3d4d90ee`
 
 对应计划步骤：`01`（钉 SHA）、`05`（何时需要改）、`02`（apply 后重建）。
 
@@ -48,7 +48,7 @@ cd /Volumes/my/github/SimplePhoto
 ./scripts/bootstrap-submodule.sh
 git -C thirdparty/photocraft status -sb
 git -C thirdparty/photocraft rev-parse HEAD
-# 必须是 3d60ad01f941519307c755eed8e0896d6274cde6 且干净
+# 必须是 2239ee9cb6c87583242ccd247f0a621f3d4d90ee 且干净
 ```
 
 - [ ] **Step 2: 在 submodule 内做最小改动**
@@ -75,7 +75,7 @@ Expected: patch 非空；路径相对 submodule 根。
 
 ```bash
 cd /Volumes/my/github/SimplePhoto
-git -C thirdparty/photocraft reset --hard 3d60ad01f941519307c755eed8e0896d6274cde6
+git -C thirdparty/photocraft reset --hard 2239ee9cb6c87583242ccd247f0a621f3d4d90ee
 ./scripts/apply-patches.sh
 git -C thirdparty/photocraft status -sb
 ```
@@ -103,7 +103,7 @@ git submodule status
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 PC="$ROOT/thirdparty/photocraft"
-PIN="3d60ad01f941519307c755eed8e0896d6274cde6"
+PIN="2239ee9cb6c87583242ccd247f0a621f3d4d90ee"
 cd "$PC"
 HEAD=$(git rev-parse HEAD)
 if [[ "$HEAD" != "$PIN" ]]; then

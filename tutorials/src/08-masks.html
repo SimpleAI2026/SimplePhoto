@@ -1,0 +1,39 @@
+<p class="kicker zh">第 08 章 · 核心</p>
+<p class="kicker en">Chapter 08 · Core</p>
+<h1 class="zh">图层蒙版</h1>
+<h1 class="en">Layer masks</h1>
+<p class="zh">蒙版用灰度图控制图层的可见范围：白色显示，黑色隐藏，灰色半透明。它不是橡皮擦——像素还在，以后仍可把隐藏的部分画回来。这是从「会修图」走向「改得起」的关键一步。</p>
+<p class="en">A mask is a grayscale map of a layer’s visibility: white reveals, black hides, gray is partial. It is not an eraser — the pixels remain, so you can paint hidden areas back later. This is the step from “I can retouch” to “I can still change my mind.”</p>
+<aside class="callout in-app">
+  <h3 class="zh">在 SimplePhoto 中</h3>
+  <h3 class="en">In SimplePhoto</h3>
+  <p class="zh">在图层面板为当前层 <strong>添加图层蒙版</strong>（也可在 <strong>图层</strong> 菜单中选择显示全部、隐藏全部，或根据选区显示/隐藏）。有选区时，添加蒙版常会直接按选区生成。用画笔在蒙版上涂黑或涂白来修改；点图层缩略图是改像素，点蒙版缩略图才是改蒙版。也可以添加矢量蒙版，用路径得到更硬、可再编辑的边缘。</p>
+  <p class="en">Add a layer mask from the Layers panel or the <strong>Layer</strong> menu (reveal all, hide all, or reveal/hide based on a selection). If a selection is active, the mask often follows it immediately. Paint black or white on the mask to edit it; click the layer thumbnail to edit pixels, and the mask thumbnail to edit the mask. Vector masks are also available when you want a hard, path-based edge you can still revise.</p>
+</aside>
+<h2 class="zh">常见用法</h2>
+<h2 class="en">Typical uses</h2>
+<ul class="zh">
+  <li>把抠出的人物放到新背景上，用蒙版修发丝，而不是把背景像素删掉。</li>
+  <li>让调整图层只作用于天空或皮肤：给调整图层加蒙版，把不想改的部分涂黑。</li>
+  <li>做渐变过渡（例如上下曝光不同），在蒙版上拉渐变，比直接涂抹像素更容易改。</li>
+</ul>
+<ul class="en">
+  <li>Place a cut-out person on a new background and refine hair on the mask, instead of deleting background pixels.</li>
+  <li>Limit an adjustment layer to a sky or to skin: add a mask and paint out the areas you do not want changed.</li>
+  <li>Build a gradient transition (different exposure top and bottom) on the mask; it is easier to revise than painting the pixels themselves.</li>
+</ul>
+<p class="zh">检查蒙版时，可以对照边缘是否漏光或发虚。错了就换画笔硬度，或回到「选择并遮住」再输出一次蒙版，不必从头重来整张图。</p>
+<p class="en">When you inspect a mask, look for leaks or mushy edges. If something is off, change brush hardness or run Select and Mask again and output a new mask — you do not have to rebuild the whole document.</p>
+<aside class="callout ps-only">
+  <h3 class="zh">仅 Photoshop 的概念</h3>
+  <h3 class="en">Photoshop-only notes</h3>
+  <p class="zh">部分「选择主体并自动生成蒙版」的云端按钮、以及生成式填充工作区里的任务蒙版，是 Photoshop 产品流程。SimplePhoto 用本地选区工具和「选择并遮住」来生成蒙版。</p>
+  <p class="en">Some cloud “select subject and auto-mask” buttons, and task masks inside the Generative Fill workspace, belong to Photoshop’s product flow. SimplePhoto builds masks with local selection tools and Select and Mask.</p>
+</aside>
+<section class="reading">
+  <h2 class="zh">延伸阅读</h2>
+  <h2 class="en">Further reading</h2>
+  <ul>
+    <li><a href="https://helpx.adobe.com/photoshop/using/masking-layers.html" target="_blank" rel="noopener noreferrer">Adobe: Masking layers</a></li>
+  </ul>
+</section>

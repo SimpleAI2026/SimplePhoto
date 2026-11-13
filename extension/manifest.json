@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "SimplePhoto",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "PhotoCraft-powered local image editor (WASM) as a Chrome extension page.",
   "action": {
     "default_title": "Open SimplePhoto",

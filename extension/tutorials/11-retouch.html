@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" data-lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title class="page-title">修饰、修复与仿制 · SimplePhoto 教程</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">跳到正文 / Skip to content</a>
+  <header class="top">
+    <a class="brand" href="index.html">SimplePhoto</a>
+    <span class="tag"><span class="zh">教程</span><span class="en">Tutorials</span></span>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="zh" aria-pressed="true">中文</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="Curriculum">
+      <h2><span class="zh">目录</span><span class="en">Contents</span></h2>
+      <ol>
+        <li><a href="index.html"><span class="zh">概览</span><span class="en">Overview</span></a></li>
+<li><a href="01-interface.html"><span class="num">01</span><span class="zh">界面与画布</span><span class="en">Interface and canvas</span></a></li>
+<li><a href="02-open-save.html"><span class="num">02</span><span class="zh">打开、保存与导出</span><span class="en">Open, save, and export</span></a></li>
+<li><a href="03-crop-resize.html"><span class="num">03</span><span class="zh">裁剪、图像大小与画布</span><span class="en">Crop, image size, and canvas</span></a></li>
+<li><a href="04-layers.html"><span class="num">04</span><span class="zh">图层</span><span class="en">Layers</span></a></li>
+<li><a href="05-selections.html"><span class="num">05</span><span class="zh">选区工具</span><span class="en">Selection tools</span></a></li>
+<li><a href="06-brushes.html"><span class="num">06</span><span class="zh">画笔与橡皮擦</span><span class="en">Brushes and eraser</span></a></li>
+<li><a href="07-adjustments.html"><span class="num">07</span><span class="zh">色调与颜色调整</span><span class="en">Tone and color adjustments</span></a></li>
+<li><a href="08-masks.html"><span class="num">08</span><span class="zh">图层蒙版</span><span class="en">Layer masks</span></a></li>
+<li><a href="09-text.html"><span class="num">09</span><span class="zh">文字</span><span class="en">Type and text</span></a></li>
+<li><a href="10-transform.html"><span class="num">10</span><span class="zh">变换</span><span class="en">Transform</span></a></li>
+<li><a href="11-retouch.html" aria-current="page"><span class="num">11</span><span class="zh">修饰、修复与仿制</span><span class="en">Retouch, heal, and clone</span></a></li>
+<li><a href="12-filters-blend.html"><span class="num">12</span><span class="zh">滤镜与混合模式</span><span class="en">Filters and blend modes</span></a></li>
+<li><a href="13-compositing.html"><span class="num">13</span><span class="zh">合成工作流</span><span class="en">Compositing workflow</span></a></li>
+<li><a href="14-nondestructive.html"><span class="num">14</span><span class="zh">非破坏性编辑</span><span class="en">Non-destructive editing</span></a></li>
+<li><a href="15-shortcuts.html"><span class="num">15</span><span class="zh">快捷键</span><span class="en">Keyboard shortcuts</span></a></li>
+      </ol>
+    </nav>
+    <main id="main">
+      <p class="kicker zh">第 11 章 · 修饰</p>
+<p class="kicker en">Chapter 11 · Retouch</p>
+<h1 class="zh">修饰、修复与仿制</h1>
+<h1 class="en">Retouch, heal, and clone</h1>
+<p class="zh">修饰的目标通常是去掉不需要的小东西（灰尘、痘印、电线），或把纹理从一处借到另一处，同时尽量看不出痕迹。核心是：在新图层或副本上工作，经常放大检查，并与周围光影保持一致。</p>
+<p class="en">Retouching usually removes something small you do not want (dust, a blemish, a wire) or borrows texture from one place to another without leaving a seam. Work on a new layer or a copy, zoom in often, and match the surrounding light.</p>
+<aside class="callout in-app">
+  <h3 class="zh">在 SimplePhoto 中</h3>
+  <h3 class="en">In SimplePhoto</h3>
+  <ul class="zh">
+    <li><strong>污点修复画笔</strong>（<kbd>J</kbd>）：在瑕疵上点涂，适合简单的小斑点。</li>
+    <li><strong>修复画笔</strong>（同组 <kbd>J</kbd>）：先定义源，再涂抹目标，混合纹理与色调。</li>
+    <li><strong>修补工具</strong>：圈出要替换的区域，再拖到一块干净纹理上。</li>
+    <li><strong>仿制图章</strong>（<kbd>S</kbd>）：按源像素精确复制，适合需要「一模一样」的结构（例如栏杆、砖缝）。同组还有图案图章。</li>
+    <li>同组还有移除工具、内容感知移动、红眼工具。另外还有减淡、加深、海绵（<kbd>O</kbd>）做局部明暗和饱和度，以及模糊 / 锐化 / 涂抹工具。</li>
+  </ul>
+  <ul class="en">
+    <li><strong>Spot Healing Brush</strong> (<kbd>J</kbd>): tap a simple blemish.</li>
+    <li><strong>Healing Brush</strong> (same <kbd>J</kbd> group): set a source, then paint the target so texture and tone blend.</li>
+    <li><strong>Patch Tool</strong>: outline the area to replace and drag it onto clean texture.</li>
+    <li><strong>Clone Stamp</strong> (<kbd>S</kbd>): copies source pixels literally — useful when structure must match (a railing, a brick joint). Pattern Stamp is in the same group.</li>
+    <li>The group also includes the Remove Tool, Content-Aware Move, and Red Eye. Dodge, Burn, and Sponge (<kbd>O</kbd>) adjust local lightness and saturation; Blur, Sharpen, and Smudge are available as well.</li>
+  </ul>
+  <p class="zh">修复画笔和仿制图章可以从另一份打开的文档取源（上游已支持跨文档取样）。取样后务必经常换源点，避免纹理「盖章」重复。</p>
+  <p class="en">Healing Brush and Clone Stamp can sample from another open document. Change the source often so you do not stamp a repeating texture.</p>
+</aside>
+<h2 class="zh">流程建议</h2>
+<h2 class="en">A sensible workflow</h2>
+<p class="zh">先处理会抢眼的大缺陷，再处理皮肤或灰尘这类细活。能用污点修复解决的不要一上来就大面积仿制。修饰完成后把图层不透明度略降，看是否做过了。眼睛和轮廓附近尤其要谨慎。</p>
+<p class="en">Remove the distractions that pull the eye first, then finer skin or dust work. If Spot Healing is enough, do not start with a large clone. When you finish, lower the layer opacity briefly to see whether you went too far. Be especially careful around eyes and silhouettes.</p>
+<aside class="callout ps-only">
+  <h3 class="zh">仅 Photoshop 的概念</h3>
+  <h3 class="en">Photoshop-only notes</h3>
+  <p class="zh">生成式填充「去掉这个人并补全背景」、以及部分神经网络辅助的皮肤修饰，是 Photoshop 云功能。SimplePhoto 的移除 / 修复 / 仿制是本地图像处理，复杂遮挡可能需要更多手工修补。</p>
+  <p class="en">Generative Fill “remove this person and complete the background,” and some neural skin tools, are Photoshop cloud features. SimplePhoto’s Remove, Heal, and Clone tools are local; complex occlusions may need more manual work.</p>
+</aside>
+<section class="reading">
+  <h2 class="zh">延伸阅读</h2>
+  <h2 class="en">Further reading</h2>
+  <ul>
+    <li><a href="https://helpx.adobe.com/photoshop/tutorials.html" target="_blank" rel="noopener noreferrer">Adobe: Photoshop tutorials (retouching courses)</a></li>
+  </ul>
+</section>
+
+      <nav class="pager">
+<a href="10-transform.html"><span class="zh">上一章：变换</span><span class="en">Previous: Transform</span></a>
+<a href="12-filters-blend.html"><span class="zh">下一章：滤镜与混合模式</span><span class="en">Next: Filters and blend modes</span></a>
+</nav>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

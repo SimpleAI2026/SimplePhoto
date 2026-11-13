@@ -45,10 +45,10 @@ index db5501594..f96a7033d 100644
      assert_eq!(quit.keyEquivalentModifierMask(), NSEventModifierFlags::Command);
      assert!(!titles(&submenu(&bar, "File")).iter().any(|n| n == "Exit"), "Exit moved to the app menu as Quit");
 diff --git a/crates/engine/src/shell_commands.rs b/crates/engine/src/shell_commands.rs
-index 3b52c03a0..356b3d316 100644
+index 7aaf58ffc..9db1bd5dd 100644
 --- a/crates/engine/src/shell_commands.rs
 +++ b/crates/engine/src/shell_commands.rs
-@@ -90,13 +90,11 @@ pub const SHELL_COMMANDS: &[(&str, &str, &[&str], Option<&str>)] = &[
+@@ -93,13 +93,11 @@ pub const SHELL_COMMANDS: &[(&str, &str, &[&str], Option<&str>)] = &[
      ("window.theme.softLight", "Soft", &["Window", "Theme", "Light Theme"], None),
      ("window.theme.system", "Sync with system", &["Window", "Theme"], None),
      ("edit.search", "Search…", &["Edit"], Some("Cmd+F")),
@@ -66,7 +66,7 @@ index 3b52c03a0..356b3d316 100644
  
  /// The tools, in toolbar order: shortcut id (`tools.select.<tool>`), Photoshop's name for it
 diff --git a/crates/ui-egui/src/canvas/start_screen.rs b/crates/ui-egui/src/canvas/start_screen.rs
-index 64fbe541e..b556d22e1 100644
+index b033500d0..ea8121bc2 100644
 --- a/crates/ui-egui/src/canvas/start_screen.rs
 +++ b/crates/ui-egui/src/canvas/start_screen.rs
 @@ -164,7 +164,7 @@ fn render_start_rail(app: &mut PhotocraftApp, ui: &mut egui::Ui, rail_w: f32) {
@@ -105,10 +105,10 @@ index 64fbe541e..b556d22e1 100644
          ui.painter().galley(title_r.min, title_galley, t.text);
      });
 diff --git a/crates/ui-egui/src/dialogs.rs b/crates/ui-egui/src/dialogs.rs
-index 0cfeb7fdc..213404c24 100644
+index 43a219cc0..8ba7bb8a7 100644
 --- a/crates/ui-egui/src/dialogs.rs
 +++ b/crates/ui-egui/src/dialogs.rs
-@@ -802,12 +802,10 @@ fn about_tab_body(app: &mut PhotocraftApp, ui: &mut egui::Ui, tab: &str) {
+@@ -840,12 +840,10 @@ fn about_tab_body(app: &mut PhotocraftApp, ui: &mut egui::Ui, tab: &str) {
          "contributors" => crate::credits::contributors_ui(app, ui),
          "models" => crate::credits::models_ui(ui),
          _ => {
@@ -122,7 +122,7 @@ index 0cfeb7fdc..213404c24 100644
                  crate::links::link_row(app, ui);
              });
              ui.add_space(10.0);
-@@ -842,7 +840,7 @@ pub fn title(d: &Dialog) -> String {
+@@ -880,7 +878,7 @@ pub fn title(d: &Dialog) -> String {
      match d.kind {
          DialogKind::NewDocument => "New Document".into(),
          DialogKind::About if d.fields.get("systemInfo").and_then(Value::as_bool) == Some(true) => "System Info".into(),
@@ -144,48 +144,11 @@ index b3a93a1ac..b6dc3e895 100644
      let lowest = h
          .query_all(egui_kittest::kittest::by().predicate(|n| n.bounding_box().is_some()))
          .map(|n| n.rect())
-diff --git a/crates/ui-egui/src/i18n/zh-hans.tsv b/crates/ui-egui/src/i18n/zh-hans.tsv
-index 4a165910b..7bf1e6904 100644
---- a/crates/ui-egui/src/i18n/zh-hans.tsv
-+++ b/crates/ui-egui/src/i18n/zh-hans.tsv
-@@ -905,9 +905,9 @@
- 	Timeline	时间轴
- 	Tool Presets	工具预设
- 	Tools	工具
--	About PhotoCraft	关于 PhotoCraft
--	PhotoCraft Website	PhotoCraft 网站
--	PhotoCraft on GitHub	PhotoCraft 的 GitHub 页面
-+	About SimplePhoto	关于 SimplePhoto
-+	SimplePhoto Website	SimplePhoto 网站
-+	SimplePhoto on GitHub	SimplePhoto 的 GitHub 页面
- 	ArtCraft Website	ArtCraft 网站
- 	Join the ArtCraft Discord…	加入 ArtCraft 的 Discord 社区…
- 	Report an Issue…	报告问题…
-@@ -1493,8 +1493,9 @@
- 	Perspective Warp: draw planes along the image's perspective, then switch to Warp	透视变形：沿图像透视绘制平面，然后切换到变形
- 	Photo Filter	照片滤镜
- 	PhotoCraft	PhotoCraft
-+	SimplePhoto	SimplePhoto
- 	PhotoCraft Manages Colors	由 PhotoCraft 管理颜色
--	PhotoCraft — an open-source, native image editor written in Rust.	PhotoCraft — 用 Rust 编写的开源原生图像编辑器。
-+	SimplePhoto — PhotoCraft-powered local image editor.	SimplePhoto — 由 PhotoCraft 驱动的本地图像编辑器。
- 	Pin Depth:	控制点深度：
- 	Pixel Length:	像素长度：
- 	Pixels/Centimeter	像素/厘米
-@@ -1922,7 +1923,7 @@
- 	Pen Tool	钢笔工具
- 	Convert Point Tool	转换点工具
- 	Photo	照片
--	PhotoCraft website	PhotoCraft 网站
-+	SimplePhoto website	SimplePhoto 网站
- 	Picas	派卡
- 	Pillow Emboss	枕状浮雕
- 	Pixel Replacement	像素替换
 diff --git a/crates/ui-egui/src/links.rs b/crates/ui-egui/src/links.rs
-index dc935b3da..50f96d423 100644
+index dc935b3da..9c23db399 100644
 --- a/crates/ui-egui/src/links.rs
 +++ b/crates/ui-egui/src/links.rs
-@@ -1,21 +1,18 @@
+@@ -1,21 +1,21 @@
  //! Community and project links: the Help menu, the About dialog, the start screen and the title
 -//! bar all open these. URLs follow the crafting-app pattern (`getartcraft.com/apps/<app>`,
 -//! `github.com/storytold/<app>`).
@@ -198,10 +161,14 @@ index dc935b3da..50f96d423 100644
 -pub const DISCORD: &str = "https://discord.gg/artcraft";
 -pub const ARTCRAFT_WEBSITE: &str = "https://getartcraft.com";
 -pub const APP_PAGE: &str = "https://getartcraft.com/apps/photocraft";
-+pub const APP_PAGE: &str = "https://github.com/SimpleAI2026/SimplePhoto";
- pub const TUTORIALS: &str = "https://getartcraft.com/tutorials";
+-pub const TUTORIALS: &str = "https://getartcraft.com/tutorials";
 -pub const GITHUB: &str = "https://github.com/storytold/photocraft";
 -pub const ISSUES: &str = "https://github.com/storytold/photocraft/issues";
++pub const APP_PAGE: &str = "https://github.com/SimpleAI2026/SimplePhoto";
++/// Bundled curriculum, relative to the editor page (`chrome-extension://<id>/editor/…`
++/// → `chrome-extension://<id>/tutorials/index.html`). `open` leaves relative URLs as-is so
++/// the web/WASM fallback (`ctx.open_url` in a new tab) resolves against the current page.
++pub const TUTORIALS: &str = "../tutorials/index.html";
 +pub const GITHUB: &str = "https://github.com/SimpleAI2026/SimplePhoto";
 +pub const ISSUES: &str = "https://github.com/SimpleAI2026/SimplePhoto/issues";
  
@@ -212,7 +179,7 @@ index dc935b3da..50f96d423 100644
  
  pub fn url_for(id: &str) -> Option<&'static str> {
      COMMANDS.iter().find(|c| c.0 == id).map(|c| c.1)
-@@ -33,24 +30,15 @@ pub fn open(app: &mut PhotocraftApp, ctx: &egui::Context, url: &str) -> Value {
+@@ -33,24 +33,15 @@ pub fn open(app: &mut PhotocraftApp, ctx: &egui::Context, url: &str) -> Value {
      json!({"url": url})
  }
  
@@ -240,7 +207,7 @@ index dc935b3da..50f96d423 100644
      let mut clicked: Option<&str> = None;
      ui.horizontal(|ui| {
          ui.spacing_mut().item_spacing.x = 0.0;
-@@ -75,7 +63,7 @@ mod tests {
+@@ -75,7 +66,7 @@ mod tests {
  
      #[test]
      fn links_open_through_the_platform_service() {
@@ -249,7 +216,7 @@ index dc935b3da..50f96d423 100644
          // They route through the `open_url` service rather than the unreliable `ctx.open_url`.
          use std::sync::{Arc, Mutex};
          let opened: Arc<Mutex<Vec<String>>> = Arc::new(Mutex::new(Vec::new()));
-@@ -94,9 +82,9 @@ mod tests {
+@@ -94,9 +85,9 @@ mod tests {
              crate::menus::invoke(&mut app, &ctx, id, json!({})).unwrap();
              assert_eq!(opened.lock().unwrap().last().map(String::as_str), Some(*url), "{id}");
          }
@@ -262,7 +229,7 @@ index dc935b3da..50f96d423 100644
      }
  
      #[test]
-@@ -106,9 +94,7 @@ mod tests {
+@@ -106,9 +97,7 @@ mod tests {
          assert_eq!(
              help,
              [
@@ -272,7 +239,7 @@ index dc935b3da..50f96d423 100644
                  "help.github",
                  "help.reportIssue",
                  "help.checkForUpdates",
-@@ -127,9 +113,9 @@ mod tests {
+@@ -127,9 +116,9 @@ mod tests {
          let mut app = PhotocraftApp::new(photocraft_engine::Session::new(), Default::default());
          let ctx = egui::Context::default();
          for (id, url) in [
@@ -315,10 +282,10 @@ index 24fa76e16..025be8e47 100644
      assert_eq!(text(&h), "levels ");
  }
 diff --git a/crates/ui-egui/src/menus/native_menu.rs b/crates/ui-egui/src/menus/native_menu.rs
-index 4dad63c44..2b19733ed 100644
+index 31691476f..54433c8ff 100644
 --- a/crates/ui-egui/src/menus/native_menu.rs
 +++ b/crates/ui-egui/src/menus/native_menu.rs
-@@ -28,7 +28,7 @@ use crate::PhotocraftApp;
+@@ -30,7 +30,7 @@ use crate::PhotocraftApp;
  use crate::i18n::{Lang, tr, tr_id};
  use crate::menus::MenuItem;
  
@@ -328,7 +295,7 @@ index 4dad63c44..2b19733ed 100644
  #[derive(Clone, Debug, Default, PartialEq)]
  pub struct MenuBar {
 diff --git a/crates/ui-egui/src/menus/native_menu/tests.rs b/crates/ui-egui/src/menus/native_menu/tests.rs
-index f01d1257f..1ad544dd0 100644
+index a20761f50..35bf28c6a 100644
 --- a/crates/ui-egui/src/menus/native_menu/tests.rs
 +++ b/crates/ui-egui/src/menus/native_menu/tests.rs
 @@ -30,14 +30,14 @@ fn ids(nodes: &[Node]) -> Vec<String> {
@@ -359,10 +326,10 @@ index f01d1257f..1ad544dd0 100644
  
  /// PhotoCraft keeps Photoshop's ⌘H, ⌘M, ⌘W and ⌘, (Hide Layers): the system items give way.
 diff --git a/crates/ui-egui/src/menus/tests.rs b/crates/ui-egui/src/menus/tests.rs
-index c3ec327b1..ec434d36f 100644
+index 509ad9646..dbb2c354a 100644
 --- a/crates/ui-egui/src/menus/tests.rs
 +++ b/crates/ui-egui/src/menus/tests.rs
-@@ -345,7 +345,7 @@ fn help_search_takes_typing_and_clicks_without_closing_the_menu() {
+@@ -366,7 +366,7 @@ fn help_search_takes_typing_and_clicks_without_closing_the_menu() {
              }
              h.run_steps(3);
          };
@@ -371,7 +338,7 @@ index c3ec327b1..ec434d36f 100644
          let field_id = egui::Id::unique("help-menu-search").with("field");
          let help = h.get_by_label("Help").rect().center();
          click(&mut h, help);
-@@ -384,7 +384,7 @@ fn help_search_letters_are_not_mnemonics() {
+@@ -405,7 +405,7 @@ fn help_search_letters_are_not_mnemonics() {
          h.run_steps(1);
      }
      h.run_steps(3);
@@ -380,7 +347,7 @@ index c3ec327b1..ec434d36f 100644
      for c in "DeSelect all".chars() {
          let key = Key::from_name(&c.to_ascii_uppercase().to_string());
          if let Some(key) = key {
-@@ -397,7 +397,7 @@ fn help_search_letters_are_not_mnemonics() {
+@@ -418,7 +418,7 @@ fn help_search_letters_are_not_mnemonics() {
          }
      }
      h.run_steps(3);
@@ -390,10 +357,10 @@ index c3ec327b1..ec434d36f 100644
      assert_eq!(query, "DeSelect all", "every letter reached the field");
      assert!(h.state().ui.dialogs.is_empty(), "no menu command ran: {:?}", h.state().ui.dialogs);
 diff --git a/crates/ui-egui/src/panels/title_bar.rs b/crates/ui-egui/src/panels/title_bar.rs
-index 48bbc61f8..b175e02a1 100644
+index 5b88024de..8b16e9d0d 100644
 --- a/crates/ui-egui/src/panels/title_bar.rs
 +++ b/crates/ui-egui/src/panels/title_bar.rs
-@@ -47,8 +47,8 @@ pub fn title_bar(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
+@@ -48,8 +48,8 @@ pub fn title_bar(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
              let title = app
                  .session
                  .active()
@@ -404,7 +371,7 @@ index 48bbc61f8..b175e02a1 100644
              // The menus and the far-end controls are laid out first; the title is centred in
              // whatever room is left between them (`free`, left to right: menus then controls, or
              // controls then menus in a right-to-left UI), shortened or dropped rather than drawn
-@@ -181,9 +181,9 @@ pub fn system_title_bar(app: &PhotocraftApp) -> bool {
+@@ -182,9 +182,9 @@ pub fn system_title_bar(app: &PhotocraftApp) -> bool {
  /// drops out and only the app name (and the `*`) remains (#5037).
  pub fn window_title(app: &PhotocraftApp) -> String {
      if !app.session.prefs().interface.show_file_name_in_title {

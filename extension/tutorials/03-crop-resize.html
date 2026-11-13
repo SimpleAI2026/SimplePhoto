@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" data-lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title class="page-title">裁剪、图像大小与画布 · SimplePhoto 教程</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">跳到正文 / Skip to content</a>
+  <header class="top">
+    <a class="brand" href="index.html">SimplePhoto</a>
+    <span class="tag"><span class="zh">教程</span><span class="en">Tutorials</span></span>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="zh" aria-pressed="true">中文</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="Curriculum">
+      <h2><span class="zh">目录</span><span class="en">Contents</span></h2>
+      <ol>
+        <li><a href="index.html"><span class="zh">概览</span><span class="en">Overview</span></a></li>
+<li><a href="01-interface.html"><span class="num">01</span><span class="zh">界面与画布</span><span class="en">Interface and canvas</span></a></li>
+<li><a href="02-open-save.html"><span class="num">02</span><span class="zh">打开、保存与导出</span><span class="en">Open, save, and export</span></a></li>
+<li><a href="03-crop-resize.html" aria-current="page"><span class="num">03</span><span class="zh">裁剪、图像大小与画布</span><span class="en">Crop, image size, and canvas</span></a></li>
+<li><a href="04-layers.html"><span class="num">04</span><span class="zh">图层</span><span class="en">Layers</span></a></li>
+<li><a href="05-selections.html"><span class="num">05</span><span class="zh">选区工具</span><span class="en">Selection tools</span></a></li>
+<li><a href="06-brushes.html"><span class="num">06</span><span class="zh">画笔与橡皮擦</span><span class="en">Brushes and eraser</span></a></li>
+<li><a href="07-adjustments.html"><span class="num">07</span><span class="zh">色调与颜色调整</span><span class="en">Tone and color adjustments</span></a></li>
+<li><a href="08-masks.html"><span class="num">08</span><span class="zh">图层蒙版</span><span class="en">Layer masks</span></a></li>
+<li><a href="09-text.html"><span class="num">09</span><span class="zh">文字</span><span class="en">Type and text</span></a></li>
+<li><a href="10-transform.html"><span class="num">10</span><span class="zh">变换</span><span class="en">Transform</span></a></li>
+<li><a href="11-retouch.html"><span class="num">11</span><span class="zh">修饰、修复与仿制</span><span class="en">Retouch, heal, and clone</span></a></li>
+<li><a href="12-filters-blend.html"><span class="num">12</span><span class="zh">滤镜与混合模式</span><span class="en">Filters and blend modes</span></a></li>
+<li><a href="13-compositing.html"><span class="num">13</span><span class="zh">合成工作流</span><span class="en">Compositing workflow</span></a></li>
+<li><a href="14-nondestructive.html"><span class="num">14</span><span class="zh">非破坏性编辑</span><span class="en">Non-destructive editing</span></a></li>
+<li><a href="15-shortcuts.html"><span class="num">15</span><span class="zh">快捷键</span><span class="en">Keyboard shortcuts</span></a></li>
+      </ol>
+    </nav>
+    <main id="main">
+      <p class="kicker zh">第 03 章 · 基础</p>
+<p class="kicker en">Chapter 03 · Basics</p>
+<h1 class="zh">裁剪、图像大小与画布大小</h1>
+<h1 class="en">Crop, image size, and canvas size</h1>
+<p class="zh">这三项常常被混为一谈，但做的事情不同：<strong>裁剪</strong>丢掉框外的画面；<strong>图像大小</strong>改变像素数量（放大或缩小整张图）；<strong>画布大小</strong>改变工作区域，可以留出空白边，也可以裁掉边缘，但不重新采样主体内容的方式与「图像大小」不同。</p>
+<p class="en">These three are easy to confuse. <strong>Crop</strong> throws away pixels outside a frame. <strong>Image Size</strong> changes how many pixels the picture has (enlarging or shrinking the whole image). <strong>Canvas Size</strong> changes the working area — you can add empty margins or trim edges — without resampling the subject the way Image Size does.</p>
+<aside class="callout in-app">
+  <h3 class="zh">在 SimplePhoto 中</h3>
+  <h3 class="en">In SimplePhoto</h3>
+  <ul class="zh">
+    <li>工具栏 <strong>裁剪工具</strong>（<kbd>C</kbd>）：拖出裁剪框，确认后应用。同组还有透视裁剪，用于矫正有透视的边缘。</li>
+    <li><strong>图像 → 图像大小</strong>（<kbd>⌘⌥I</kbd> / <kbd>Ctrl+Alt+I</kbd>）：改宽高，注意是否勾选约束比例，以及重采样方式。</li>
+    <li><strong>图像 → 画布大小</strong>（<kbd>⌘⌥C</kbd> / <kbd>Ctrl+Alt+C</kbd>）：改画布尺寸和锚点（新空间加在哪一侧）。</li>
+  </ul>
+  <ul class="en">
+    <li>The <strong>Crop Tool</strong> (<kbd>C</kbd>) draws a crop box; confirm to apply. The same group includes Perspective Crop for edges that recede in perspective.</li>
+    <li><strong>Image → Image Size</strong> (<kbd>⌘⌥I</kbd> / <kbd>Ctrl+Alt+I</kbd>) changes width and height. Watch whether proportions are constrained, and which resampling method you chose.</li>
+    <li><strong>Image → Canvas Size</strong> (<kbd>⌘⌥C</kbd> / <kbd>Ctrl+Alt+C</kbd>) changes the canvas and the anchor (which side new space is added on).</li>
+  </ul>
+</aside>
+<h2 class="zh">什么时候用哪一个</h2>
+<h2 class="en">When to use which</h2>
+<ul class="zh">
+  <li>只要重新构图、去掉多余背景：用裁剪。</li>
+  <li>要交一张「最长边 2000 像素」的图：用图像大小。</li>
+  <li>要给海报加一圈白边，或把画布改成正方形而不拉伸照片：用画布大小，再视需要移动图层。</li>
+</ul>
+<ul class="en">
+  <li>To reframe and drop extra background: crop.</li>
+  <li>To deliver an image whose long side is 2000 pixels: Image Size.</li>
+  <li>To add a white border, or to make a square canvas without stretching the photo: Canvas Size, then move the layer if needed.</li>
+</ul>
+<p class="zh">把照片放大很多时，细节不会凭空变清晰，只是像素被估算出来。能拍得更大就不要过分上采样。缩小则通常更安全，但仍要看是否还有文字或细线需要保持清晰。</p>
+<p class="en">Enlarging a photo a long way does not invent real detail; new pixels are estimated. Prefer capturing more resolution over heavy upsampling. Shrinking is usually safer, but check type and thin lines.</p>
+<aside class="callout ps-only">
+  <h3 class="zh">仅 Photoshop 的概念</h3>
+  <h3 class="en">Photoshop-only notes</h3>
+  <p class="zh">生成式扩展（Generative Expand）用 AI 凭空补出裁剪框外的内容，这是 Photoshop 的云端功能，SimplePhoto 没有对等按钮。需要补景时，请改用仿制、修补或自己导入另一张素材。</p>
+  <p class="en">Generative Expand fills crop-frame padding with AI-generated content. That is a Photoshop cloud feature; SimplePhoto has no equivalent button. To extend a scene, clone, patch, or place another image yourself.</p>
+</aside>
+<section class="reading">
+  <h2 class="zh">延伸阅读</h2>
+  <h2 class="en">Further reading</h2>
+  <ul>
+    <li><a href="https://www.adobe.com/learn/photoshop/paths/photo-editing" target="_blank" rel="noopener noreferrer">Adobe Learn: Photo editing (crop / resize units in the official path)</a></li>
+  </ul>
+</section>
+
+      <nav class="pager">
+<a href="02-open-save.html"><span class="zh">上一章：打开、保存与导出</span><span class="en">Previous: Open, save, and export</span></a>
+<a href="04-layers.html"><span class="zh">下一章：图层</span><span class="en">Next: Layers</span></a>
+</nav>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<p class="kicker zh">第 14 章 · 进阶</p>
+<p class="kicker en">Chapter 14 · Intermediate</p>
+<h1 class="zh">非破坏性编辑</h1>
+<h1 class="en">Non-destructive editing</h1>
+<p class="zh">非破坏性的意思是：以后还能改主意，而不必从原图重来。像素一旦被涂掉、被错误裁切或被合并，就很难完美恢复。把「效果」和「像素」分开，是专业流程里最值得养成的习惯。</p>
+<p class="en">Non-destructive means you can still change your mind without starting over from the original file. Once pixels are painted out, cropped wrongly, or flattened, they are hard to restore perfectly. Keeping effects separate from pixels is the habit most worth building.</p>
+<h2 class="zh">建议遵守的规则</h2>
+<h2 class="en">Rules worth keeping</h2>
+<ul class="zh">
+  <li>保留一份原图或原文档，不要只在唯一的 JPEG 上覆盖保存。</li>
+  <li>用调整图层做色阶、曲线、色相/饱和度，而不是每次都把调整直接烙在照片层上。</li>
+  <li>用蒙版隐藏，而不是用橡皮擦删除。</li>
+  <li>把还要缩放、变形的素材转成智能对象，并优先把滤镜做成智能滤镜。</li>
+  <li>用图层组整理，而不是过早「拼合图像」。只有交付必须的扁平文件时才拼合或导出一份副本。</li>
+</ul>
+<ul class="en">
+  <li>Keep the original file; do not Save over your only JPEG.</li>
+  <li>Use adjustment layers for Levels, Curves, and Hue/Saturation instead of stamping those edits into the photo layer every time.</li>
+  <li>Hide with masks instead of erasing pixels.</li>
+  <li>Convert artwork you will keep transforming into a Smart Object, and prefer Smart Filters.</li>
+  <li>Organize with groups rather than flattening early. Flatten or export a flat copy only when delivery requires it.</li>
+</ul>
+<aside class="callout in-app">
+  <h3 class="zh">在 SimplePhoto 中</h3>
+  <h3 class="en">In SimplePhoto</h3>
+  <p class="zh"><strong>图层 → 新建调整图层</strong> 可建立曲线、色相/饱和度等可再编辑的调整。<strong>图层 → 智能对象 → 转换为智能对象</strong> 之后，自由变换和部分滤镜可以以更安全的方式附加。历史记录能撤回最近步骤，但不是长期版本库：重要节点请用「保存为」另存版本。画笔修饰也尽量放在独立图层，用混合模式或剪贴蒙版限制影响范围。</p>
+  <p class="en"><strong>Layer → New Adjustment Layer</strong> creates revisable Curves, Hue/Saturation, and similar. After <strong>Layer → Smart Objects → Convert to Smart Object</strong>, Free Transform and some filters can be attached more safely. History undoes recent steps but is not a long-term version database — use Save As for important milestones. Keep brush retouching on its own layer, and limit it with blend modes or a clipping mask when needed.</p>
+</aside>
+<aside class="callout ps-only">
+  <h3 class="zh">仅 Photoshop 的概念</h3>
+  <h3 class="en">Photoshop-only notes</h3>
+  <p class="zh">云文档自动版本、Creative Cloud 文件历史，以及部分「历史记录画笔从云端快照取样」的工作流，不属于 SimplePhoto。请依靠本机保存的版本和文档内的图层结构。</p>
+  <p class="en">Automatic cloud versions, Creative Cloud file history, and some History Brush workflows that depend on cloud snapshots are not part of SimplePhoto. Rely on versions you save locally and on the layer structure inside the document.</p>
+</aside>
+<section class="reading">
+  <h2 class="zh">延伸阅读</h2>
+  <h2 class="en">Further reading</h2>
+  <ul>
+    <li><a href="https://helpx.adobe.com/photoshop/using/layer-basics.html" target="_blank" rel="noopener noreferrer">Adobe: Layer basics</a></li>
+    <li><a href="https://helpx.adobe.com/photoshop/using/masking-layers.html" target="_blank" rel="noopener noreferrer">Adobe: Masking layers</a></li>
+  </ul>
+</section>

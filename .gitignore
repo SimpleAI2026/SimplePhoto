@@ -28,3 +28,6 @@ thirdparty/photocraft/corpus/
 # Python / node accidental locals
 __pycache__/
 node_modules/
+
+# Local checkouts used by the web/WASM build (craft-i18n catalogs)
+.cache/

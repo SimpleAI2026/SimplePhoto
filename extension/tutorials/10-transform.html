@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" data-lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title class="page-title">变换 · SimplePhoto 教程</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">跳到正文 / Skip to content</a>
+  <header class="top">
+    <a class="brand" href="index.html">SimplePhoto</a>
+    <span class="tag"><span class="zh">教程</span><span class="en">Tutorials</span></span>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="zh" aria-pressed="true">中文</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="Curriculum">
+      <h2><span class="zh">目录</span><span class="en">Contents</span></h2>
+      <ol>
+        <li><a href="index.html"><span class="zh">概览</span><span class="en">Overview</span></a></li>
+<li><a href="01-interface.html"><span class="num">01</span><span class="zh">界面与画布</span><span class="en">Interface and canvas</span></a></li>
+<li><a href="02-open-save.html"><span class="num">02</span><span class="zh">打开、保存与导出</span><span class="en">Open, save, and export</span></a></li>
+<li><a href="03-crop-resize.html"><span class="num">03</span><span class="zh">裁剪、图像大小与画布</span><span class="en">Crop, image size, and canvas</span></a></li>
+<li><a href="04-layers.html"><span class="num">04</span><span class="zh">图层</span><span class="en">Layers</span></a></li>
+<li><a href="05-selections.html"><span class="num">05</span><span class="zh">选区工具</span><span class="en">Selection tools</span></a></li>
+<li><a href="06-brushes.html"><span class="num">06</span><span class="zh">画笔与橡皮擦</span><span class="en">Brushes and eraser</span></a></li>
+<li><a href="07-adjustments.html"><span class="num">07</span><span class="zh">色调与颜色调整</span><span class="en">Tone and color adjustments</span></a></li>
+<li><a href="08-masks.html"><span class="num">08</span><span class="zh">图层蒙版</span><span class="en">Layer masks</span></a></li>
+<li><a href="09-text.html"><span class="num">09</span><span class="zh">文字</span><span class="en">Type and text</span></a></li>
+<li><a href="10-transform.html" aria-current="page"><span class="num">10</span><span class="zh">变换</span><span class="en">Transform</span></a></li>
+<li><a href="11-retouch.html"><span class="num">11</span><span class="zh">修饰、修复与仿制</span><span class="en">Retouch, heal, and clone</span></a></li>
+<li><a href="12-filters-blend.html"><span class="num">12</span><span class="zh">滤镜与混合模式</span><span class="en">Filters and blend modes</span></a></li>
+<li><a href="13-compositing.html"><span class="num">13</span><span class="zh">合成工作流</span><span class="en">Compositing workflow</span></a></li>
+<li><a href="14-nondestructive.html"><span class="num">14</span><span class="zh">非破坏性编辑</span><span class="en">Non-destructive editing</span></a></li>
+<li><a href="15-shortcuts.html"><span class="num">15</span><span class="zh">快捷键</span><span class="en">Keyboard shortcuts</span></a></li>
+      </ol>
+    </nav>
+    <main id="main">
+      <p class="kicker zh">第 10 章 · 变形</p>
+<p class="kicker en">Chapter 10 · Transform</p>
+<h1 class="zh">变换</h1>
+<h1 class="en">Transform</h1>
+<p class="zh">变换用来缩放、旋转、倾斜或透视移动图层或选中的像素。合成一张新图时，几乎总会把素材放到合适的大小和角度。注意：对普通栅格图层反复大幅变换，画质会一次次变差；智能对象可以减轻这个问题（第 14 章）。</p>
+<p class="en">Transform scales, rotates, skews, or applies perspective to a layer or to selected pixels. Almost every composite needs a piece moved to the right size and angle. Beware: repeating large transforms on an ordinary raster layer softens it each time. Smart Objects reduce that problem (chapter 14).</p>
+<aside class="callout in-app">
+  <h3 class="zh">在 SimplePhoto 中</h3>
+  <h3 class="en">In SimplePhoto</h3>
+  <p class="zh"><strong>编辑 → 自由变换</strong>（<kbd>⌘T</kbd> / <kbd>Ctrl+T</kbd>）是最常用入口：拖角缩放，在框外旋转，确认后提交。<strong>编辑 → 变换</strong> 子菜单还提供缩放、旋转、斜切、扭曲、透视和变形。需要先复制再变换时，可使用「自由变换副本」（<kbd>⌘⌥T</kbd> / <kbd>Ctrl+Alt+T</kbd>）。对智能对象还可以使用智能对象变形。</p>
+  <p class="en"><strong>Edit → Free Transform</strong> (<kbd>⌘T</kbd> / <kbd>Ctrl+T</kbd>) is the usual entry: drag a corner to scale, drag outside the box to rotate, and confirm to commit. <strong>Edit → Transform</strong> also offers Scale, Rotate, Skew, Distort, Perspective, and Warp. <strong>Free Transform a Copy</strong> (<kbd>⌘⌥T</kbd> / <kbd>Ctrl+Alt+T</kbd>) transforms a duplicate. Smart Objects can use Smart Object Warp as well.</p>
+</aside>
+<h2 class="zh">操作建议</h2>
+<h2 class="en">Working tips</h2>
+<p class="zh">按住 Shift 是否锁定比例，取决于当前工具选项和偏好设置，变换前先看提示或选项栏，不要想当然。放大超过原图像素时会出现发虚，能换更高分辨率的素材就换。变形和透视适合贴合墙面或包装盒，但要对照消失点，避免「看起来几乎对、其实在漂」。</p>
+<p class="en">Whether Shift constrains proportions depends on the current options and preferences — check the options bar instead of assuming. Scaling far beyond the source resolution looks soft; use a higher-resolution source when you can. Warp and Perspective help a graphic sit on a wall or a box, but watch vanishing points so it does not merely “look almost right.”</p>
+<aside class="callout ps-only">
+  <h3 class="zh">仅 Photoshop 的概念</h3>
+  <h3 class="en">Photoshop-only notes</h3>
+  <p class="zh">有些生成式「扩展并补全变换后的空白」功能属于 Photoshop。SimplePhoto 的变换不会自动用 AI 填补空缺，空白处要自己用其他图层或仿制来补。</p>
+  <p class="en">Some generative “fill the empty area after a transform” features are Photoshop-only. SimplePhoto will not invent pixels with Firefly after a transform; cover gaps yourself with another layer or cloning.</p>
+</aside>
+<section class="reading">
+  <h2 class="zh">延伸阅读</h2>
+  <h2 class="en">Further reading</h2>
+  <ul>
+    <li><a href="https://www.adobe.com/learn/photoshop/paths/photo-editing" target="_blank" rel="noopener noreferrer">Adobe Learn: Photo editing (resizing / transform units)</a></li>
+  </ul>
+</section>
+
+      <nav class="pager">
+<a href="09-text.html"><span class="zh">上一章：文字</span><span class="en">Previous: Type and text</span></a>
+<a href="11-retouch.html"><span class="zh">下一章：修饰、修复与仿制</span><span class="en">Next: Retouch, heal, and clone</span></a>
+</nav>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

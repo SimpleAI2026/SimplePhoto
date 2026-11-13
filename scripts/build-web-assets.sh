@@ -6,7 +6,7 @@ PC="$ROOT/thirdparty/photocraft"
 APP_SRC="$PC/apps/photocraft-web"
 DIST="$PC/dist/web"
 DEST="$ROOT/extension/editor"
-PIN_EXPECTED="3d60ad01f941519307c755eed8e0896d6274cde6"
+PIN_EXPECTED="2239ee9cb6c87583242ccd247f0a621f3d4d90ee"
 
 cd "$PC"
 HEAD="$(git rev-parse HEAD)"
@@ -14,8 +14,44 @@ if [[ "$HEAD" != "$PIN_EXPECTED" ]]; then
   echo "warning: photocraft HEAD=$HEAD (plan pin=$PIN_EXPECTED). Continue only if intentional." >&2
 fi
 
+setup_craft_i18n() {
+  # Catalogs moved out of photocraft into storytold/craft-i18n (see craft-i18n.rev).
+  # Without CRAFT_I18N_DIR the WASM UI is English-only.
+  local rev dir embed ov locale_file locale dest
+  rev="$(tr -d '[:space:]' < "$PC/craft-i18n.rev")"
+  dir="$ROOT/.cache/craft-i18n"
+  embed="$ROOT/.cache/craft-i18n-embed"
+  mkdir -p "$ROOT/.cache"
+  if [[ ! -d "$dir/.git" ]]; then
+    git clone git@github.com:storytold/craft-i18n.git "$dir"
+  fi
+  git -C "$dir" fetch origin
+  git -C "$dir" checkout --detach "$rev"
+  rm -rf "$embed"
+  mkdir -p "$embed"
+  cp -R "$dir/locales" "$embed/locales"
+  ov="$ROOT/branding/i18n-overrides"
+  if [[ -d "$ov" ]]; then
+    for locale_file in "$ov"/*.tsv; do
+      [[ -f "$locale_file" ]] || continue
+      locale="$(basename "$locale_file" .tsv)"
+      dest="$embed/locales/$locale/photocraft.tsv"
+      if [[ -f "$dest" ]]; then
+        printf '\n# SimplePhoto branding overrides\n' >> "$dest"
+        cat "$locale_file" >> "$dest"
+        echo "craft-i18n: appended overrides for $locale"
+      else
+        echo "warning: no photocraft.tsv for override locale $locale" >&2
+      fi
+    done
+  fi
+  export CRAFT_I18N_DIR="$embed"
+  echo "craft-i18n: $rev -> $CRAFT_I18N_DIR"
+}
+
 if [[ "${1:-}" != "--skip-build" ]]; then
   command -v trunk >/dev/null || { echo "error: trunk not found" >&2; exit 1; }
+  setup_craft_i18n
   (cd "$APP_SRC" && trunk build --release)
 fi
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-PIN="3d60ad01f941519307c755eed8e0896d6274cde6"
+PIN="2239ee9cb6c87583242ccd247f0a621f3d4d90ee"
 cd "$ROOT"
 git submodule update --init --recursive
 git -C thirdparty/photocraft fetch origin
