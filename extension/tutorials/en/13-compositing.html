@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Compositing workflow · Tutorials</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="top">
+    <a class="brand" href="index.html">SimplePhoto</a>
+    <span class="tag">Tutorials</span>
+    <div class="lang"><label for="lang-select">Language</label><select id="lang-select" name="lang">
+<option value="en" selected>English</option>
+<option value="ja">日本語</option>
+<option value="zh-hans">简体中文</option>
+<option value="zh-hant">繁體中文</option>
+<option value="fr">Français</option>
+<option value="ko">한국어</option>
+<option value="de">Deutsch</option>
+</select></div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="Contents">
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="index.html">Overview</a></li>
+<li><a href="01-interface.html"><span class="num">01</span>Interface and the canvas</a></li>
+<li><a href="02-open-save.html"><span class="num">02</span>Open, save, and export</a></li>
+<li><a href="03-crop-resize.html"><span class="num">03</span>Crop, image size, and canvas size</a></li>
+<li><a href="04-layers.html"><span class="num">04</span>Layers</a></li>
+<li><a href="05-selections.html"><span class="num">05</span>Selection tools</a></li>
+<li><a href="06-brushes.html"><span class="num">06</span>Brushes and the eraser</a></li>
+<li><a href="07-adjustments.html"><span class="num">07</span>Tone and color adjustments</a></li>
+<li><a href="08-masks.html"><span class="num">08</span>Layer masks</a></li>
+<li><a href="09-text.html"><span class="num">09</span>Type and text</a></li>
+<li><a href="10-transform.html"><span class="num">10</span>Transform</a></li>
+<li><a href="11-retouch.html"><span class="num">11</span>Retouch, heal, and clone</a></li>
+<li><a href="12-filters-blend.html"><span class="num">12</span>Filters and blend modes</a></li>
+<li><a href="13-compositing.html" aria-current="page"><span class="num">13</span>Compositing workflow</a></li>
+<li><a href="14-nondestructive.html"><span class="num">14</span>Non-destructive editing</a></li>
+<li><a href="15-shortcuts.html"><span class="num">15</span>Keyboard shortcuts</a></li>
+      </ol>
+    </nav>
+    <main id="main">
+      <p class="kicker">Chapter 13 · Intermediate</p>
+<h1>Compositing workflow</h1>
+<p>Compositing combines more than one image (or a painted layer) into a picture that feels coherent. The skill is less one magic tool than a sequence: select the subject, place it in a new document, transform it into perspective, refine the edge with a mask, then unify light and color.</p>
+<h2>A repeatable path</h2>
+<ol>
+<li>Prepare the background and the subject as separate documents, or copy the subject onto a new layer in the background file.</li>
+<li>Build a rough outline with a selection or Object Selection, output a layer mask, then refine hair and glass in Select and Mask or on the mask itself.</li>
+<li>Free Transform to match size and the horizon; use Perspective or Warp when the subject must sit on a ground plane or a wall.</li>
+<li>Match the light: highlight and shadow direction on the subject must agree with the background. Curves or Hue/Saturation (preferably as masked adjustment layers) help.</li>
+<li>Add a shadow layer at the contact point (low opacity, Multiply or Soft Light). Without it the subject looks stuck on.</li>
+<li>Finish with a little shared grain or a gentle overall grade so pieces from different cameras feel like one capture.</li>
+</ol>
+<aside class="callout in-app">
+<h3>In SimplePhoto</h3>
+<p>You can open several documents, copy and paste layers, and place or rasterize artwork (according to the current menus). Smart Objects suit pieces you will keep scaling. Layer groups can separate Background, Subject, Color, and Type. Toggle visibility for A/B checks, and avoid flattening the whole stack too early.</p>
+</aside>
+<aside class="callout ps-only">
+<h3>Photoshop-only notes</h3>
+<p>Generative Fill that “blends two pictures from a prompt,” and Firefly reference consistency, are Photoshop generative flows. SimplePhoto compositing relies on your selections, masks, transforms, and color work.</p>
+</aside>
+<section class="reading">
+<h2>Further reading</h2>
+<ul>
+<li><a href="https://helpx.adobe.com/photoshop/tutorials.html" rel="noopener noreferrer" target="_blank">Adobe: Photoshop tutorials (compositing courses)</a></li>
+<li><a href="https://www.adobe.com/learn/photoshop/paths/photo-editing" rel="noopener noreferrer" target="_blank">Adobe Learn: Photo editing path</a></li>
+</ul>
+</section>
+
+      <nav class="pager">
+<a href="12-filters-blend.html">Previous: Filters and blend modes</a>
+<a href="14-nondestructive.html">Next: Non-destructive editing</a>
+</nav>
+    </main>
+  </div>
+  <script src="../app.js"></script>
+</body>
+</html>

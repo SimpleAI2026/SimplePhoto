@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr" data-lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ブラシと消しゴム · チュートリアル</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">本文へスキップ</a>
+  <header class="top">
+    <a class="brand" href="index.html">SimplePhoto</a>
+    <span class="tag">チュートリアル</span>
+    <div class="lang"><label for="lang-select">言語</label><select id="lang-select" name="lang">
+<option value="en">English</option>
+<option value="ja" selected>日本語</option>
+<option value="zh-hans">简体中文</option>
+<option value="zh-hant">繁體中文</option>
+<option value="fr">Français</option>
+<option value="ko">한국어</option>
+<option value="de">Deutsch</option>
+</select></div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="目次">
+      <h2>目次</h2>
+      <ol>
+        <li><a href="index.html">概要</a></li>
+<li><a href="01-interface.html"><span class="num">01</span>インターフェイスとキャンバス</a></li>
+<li><a href="02-open-save.html"><span class="num">02</span>開く、保存、書き出し</a></li>
+<li><a href="03-crop-resize.html"><span class="num">03</span>切り抜き、画像サイズ、キャンバスサイズ</a></li>
+<li><a href="04-layers.html"><span class="num">04</span>レイヤー</a></li>
+<li><a href="05-selections.html"><span class="num">05</span>選択ツール</a></li>
+<li><a href="06-brushes.html" aria-current="page"><span class="num">06</span>ブラシと消しゴム</a></li>
+<li><a href="07-adjustments.html"><span class="num">07</span>色調と色の補正</a></li>
+<li><a href="08-masks.html"><span class="num">08</span>レイヤーマスク</a></li>
+<li><a href="09-text.html"><span class="num">09</span>文字</a></li>
+<li><a href="10-transform.html"><span class="num">10</span>変形</a></li>
+<li><a href="11-retouch.html"><span class="num">11</span>レタッチ、修復、コピー</a></li>
+<li><a href="12-filters-blend.html"><span class="num">12</span>フィルターと描画モード</a></li>
+<li><a href="13-compositing.html"><span class="num">13</span>合成のワークフロー</a></li>
+<li><a href="14-nondestructive.html"><span class="num">14</span>非破壊編集</a></li>
+<li><a href="15-shortcuts.html"><span class="num">15</span>キーボードショートカット</a></li>
+      </ol>
+    </nav>
+    <main id="main">
+      <p class="kicker">第 06 章 · ペイント</p>
+<h1>ブラシと消しゴム</h1>
+<p>ブラシは現在のレイヤーに色や質感を置き、消しゴムはそれを消すか、下を露出します。いつも確認すること：今どのレイヤーがアクティブか、硬さ、不透明度、流量はいくつか。間違ったレイヤーに描くのが、いちばん多いつまずきです。</p>
+<aside class="callout in-app">
+<h3>SimplePhoto では</h3>
+<ul>
+<li><strong>ブラシツール</strong>（<kbd>B</kbd>）は汎用の描画ツールです。同じグループに鉛筆（より硬い画素の端）、混合ブラシ、カラー置換があります。</li>
+<li><strong>消しゴム</strong>（<kbd>E</kbd>）に加え、背景消しゴムとマジック消しゴムは色や背景の論理で消します。まずコピーか予備のレイヤーで試してください。</li>
+<li><strong>ウィンドウ → ブラシ設定</strong>（<kbd>F5</kbd>）とブラシパネルで、サイズ、硬さ、シェイプダイナミクスを変えます。</li>
+<li>多くのキーボード操作は Photoshop に近く、ショートカットを変えていなければ <kbd>[</kbd> / <kbd>]</kbd> でサイズを変えられます。</li>
+</ul>
+</aside>
+<h2>ストロークのコントロール</h2>
+<p>高い硬さははっきりした端、低い硬さはなめらかな遷移向きです。不透明度は一筆でどこまで覆えるかの上限、流量は「絵の具」が載る速さです。ゆっくり両方を試してください。写真のレタッチでは、濃い一筆より、薄い不透明度の軽いストロークを重ねるほうがうまくいくことが多いです。</p>
+<aside class="callout ps-only">
+<h3>Photoshop のみのメモ</h3>
+<p>Photoshop のクラウド同期ブラシ、一部のマーケットプレイスパック、Fresco とのブラシ共有は SimplePhoto にはありません。ローカルのブラシプリセットとブラシ設定パネルを使います。</p>
+</aside>
+<section class="reading">
+<h2>参考資料</h2>
+<ul>
+<li><a href="https://helpx.adobe.com/photoshop/desktop.html" rel="noopener noreferrer" target="_blank">Adobe: Photoshop desktop help (painting topics)</a></li>
+</ul>
+</section>
+
+      <nav class="pager">
+<a href="05-selections.html">前へ：選択ツール</a>
+<a href="07-adjustments.html">次へ：色調と色の補正</a>
+</nav>
+    </main>
+  </div>
+  <script src="../app.js"></script>
+</body>
+</html>

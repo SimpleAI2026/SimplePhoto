@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr" data-lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>切り抜き、画像サイズ、キャンバスサイズ · チュートリアル</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">本文へスキップ</a>
+  <header class="top">
+    <a class="brand" href="index.html">SimplePhoto</a>
+    <span class="tag">チュートリアル</span>
+    <div class="lang"><label for="lang-select">言語</label><select id="lang-select" name="lang">
+<option value="en">English</option>
+<option value="ja" selected>日本語</option>
+<option value="zh-hans">简体中文</option>
+<option value="zh-hant">繁體中文</option>
+<option value="fr">Français</option>
+<option value="ko">한국어</option>
+<option value="de">Deutsch</option>
+</select></div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="目次">
+      <h2>目次</h2>
+      <ol>
+        <li><a href="index.html">概要</a></li>
+<li><a href="01-interface.html"><span class="num">01</span>インターフェイスとキャンバス</a></li>
+<li><a href="02-open-save.html"><span class="num">02</span>開く、保存、書き出し</a></li>
+<li><a href="03-crop-resize.html" aria-current="page"><span class="num">03</span>切り抜き、画像サイズ、キャンバスサイズ</a></li>
+<li><a href="04-layers.html"><span class="num">04</span>レイヤー</a></li>
+<li><a href="05-selections.html"><span class="num">05</span>選択ツール</a></li>
+<li><a href="06-brushes.html"><span class="num">06</span>ブラシと消しゴム</a></li>
+<li><a href="07-adjustments.html"><span class="num">07</span>色調と色の補正</a></li>
+<li><a href="08-masks.html"><span class="num">08</span>レイヤーマスク</a></li>
+<li><a href="09-text.html"><span class="num">09</span>文字</a></li>
+<li><a href="10-transform.html"><span class="num">10</span>変形</a></li>
+<li><a href="11-retouch.html"><span class="num">11</span>レタッチ、修復、コピー</a></li>
+<li><a href="12-filters-blend.html"><span class="num">12</span>フィルターと描画モード</a></li>
+<li><a href="13-compositing.html"><span class="num">13</span>合成のワークフロー</a></li>
+<li><a href="14-nondestructive.html"><span class="num">14</span>非破壊編集</a></li>
+<li><a href="15-shortcuts.html"><span class="num">15</span>キーボードショートカット</a></li>
+      </ol>
+    </nav>
+    <main id="main">
+      <p class="kicker">第 03 章 · 基礎</p>
+<h1>切り抜き、画像サイズ、キャンバスサイズ</h1>
+<p>この三つは混同しやすいです。<strong>切り抜き</strong> は枠の外の画素を捨てます。<strong>画像サイズ</strong> は絵そのものの画素数を変えます（画像全体を拡大または縮小）。<strong>カンバスサイズ</strong> は作業領域を変えます。余白を足したり端を切ったりできますが、画像サイズのように被写体を再サンプルするわけではありません。</p>
+<aside class="callout in-app">
+<h3>SimplePhoto では</h3>
+<ul>
+<li><strong>切り抜きツール</strong>（<kbd>C</kbd>）で切り抜き枠を描き、確定して適用します。同じグループには、遠近で奥へ逃げている辺向けの遠近切り抜きもあります。</li>
+<li><strong>画像 → 画像サイズ</strong>（<kbd>⌘⌥I</kbd> / <kbd>Ctrl+Alt+I</kbd>）は幅と高さを変えます。比率が固定されているか、どの再サンプル方法を選んだかを確認してください。</li>
+<li><strong>画像 → カンバスサイズ</strong>（<kbd>⌘⌥C</kbd> / <kbd>Ctrl+Alt+C</kbd>）はカンバスとアンカー（新しい領域がどの辺に足されるか）を変えます。</li>
+</ul>
+</aside>
+<h2>どれを使うか</h2>
+<ul>
+<li>再フレーミングして余分な背景を落とす：切り抜き。</li>
+<li>長辺を 2000 ピクセルにして納品する：画像サイズ。</li>
+<li>白い枠を足す、または写真を伸ばさずに正方形のカンバスにする：カンバスサイズ。必要ならレイヤーを動かします。</li>
+</ul>
+<p>写真を大きく引き伸ばしても、本物のディテールは生まれません。新しい画素は推定です。無理な拡大より、撮影時に解像度を確保するほうがよいです。縮小は比較的安全ですが、文字や細い線は確認してください。</p>
+<aside class="callout ps-only">
+<h3>Photoshop のみのメモ</h3>
+<p>生成拡張（Generative Expand）は、切り抜き枠の余白を AI 生成で埋めます。これは Photoshop のクラウド機能で、SimplePhoto に同等のボタンはありません。場面を広げるには、自分でコピー、パッチ、別画像の配置を行います。</p>
+</aside>
+<section class="reading">
+<h2>参考資料</h2>
+<ul>
+<li><a href="https://www.adobe.com/learn/photoshop/paths/photo-editing" rel="noopener noreferrer" target="_blank">Adobe Learn: Photo editing (crop / resize units in the official path)</a></li>
+</ul>
+</section>
+
+      <nav class="pager">
+<a href="02-open-save.html">前へ：開く、保存、書き出し</a>
+<a href="04-layers.html">次へ：レイヤー</a>
+</nav>
+    </main>
+  </div>
+  <script src="../app.js"></script>
+</body>
+</html>

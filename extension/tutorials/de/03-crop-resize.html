@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr" data-lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zuschneiden, Bildgröße und Arbeitsfläche · Tutorials</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Zum Inhalt springen</a>
+  <header class="top">
+    <a class="brand" href="index.html">SimplePhoto</a>
+    <span class="tag">Tutorials</span>
+    <div class="lang"><label for="lang-select">Sprache</label><select id="lang-select" name="lang">
+<option value="en">English</option>
+<option value="ja">日本語</option>
+<option value="zh-hans">简体中文</option>
+<option value="zh-hant">繁體中文</option>
+<option value="fr">Français</option>
+<option value="ko">한국어</option>
+<option value="de" selected>Deutsch</option>
+</select></div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="Inhalt">
+      <h2>Inhalt</h2>
+      <ol>
+        <li><a href="index.html">Übersicht</a></li>
+<li><a href="01-interface.html"><span class="num">01</span>Oberfläche und Arbeitsfläche</a></li>
+<li><a href="02-open-save.html"><span class="num">02</span>Öffnen, speichern und exportieren</a></li>
+<li><a href="03-crop-resize.html" aria-current="page"><span class="num">03</span>Zuschneiden, Bildgröße und Arbeitsfläche</a></li>
+<li><a href="04-layers.html"><span class="num">04</span>Ebenen</a></li>
+<li><a href="05-selections.html"><span class="num">05</span>Auswahlwerkzeuge</a></li>
+<li><a href="06-brushes.html"><span class="num">06</span>Pinsel und Radiergummi</a></li>
+<li><a href="07-adjustments.html"><span class="num">07</span>Tonwert- und Farbkorrekturen</a></li>
+<li><a href="08-masks.html"><span class="num">08</span>Ebenenmasken</a></li>
+<li><a href="09-text.html"><span class="num">09</span>Text</a></li>
+<li><a href="10-transform.html"><span class="num">10</span>Transformieren</a></li>
+<li><a href="11-retouch.html"><span class="num">11</span>Retusche, Reparatur und Kopierstempel</a></li>
+<li><a href="12-filters-blend.html"><span class="num">12</span>Filter und Mischmodi</a></li>
+<li><a href="13-compositing.html"><span class="num">13</span>Compositing-Ablauf</a></li>
+<li><a href="14-nondestructive.html"><span class="num">14</span>Nicht-destruktives Bearbeiten</a></li>
+<li><a href="15-shortcuts.html"><span class="num">15</span>Tastenkürzel</a></li>
+      </ol>
+    </nav>
+    <main id="main">
+      <p class="kicker">Kapitel 03 · Grundlagen</p>
+<h1>Zuschneiden, Bildgröße und Arbeitsfläche</h1>
+<p>Diese drei Begriffe werden leicht verwechselt. <strong>Freistellen</strong> verwirft Pixel außerhalb eines Rahmens. <strong>Bildgröße</strong> ändert, wie viele Pixel das Bild hat (das ganze Bild vergrößern oder verkleinern). <strong>Arbeitsfläche</strong> ändert den Arbeitsbereich — Sie können leere Ränder hinzufügen oder Kanten beschneiden — ohne das Motiv so neu zu berechnen wie bei der Bildgröße.</p>
+<aside class="callout in-app">
+<h3>In SimplePhoto</h3>
+<ul>
+<li>Das <strong>Freistellen-Werkzeug</strong> (<kbd>C</kbd>) zeichnet einen Freistellrahmen; zum Anwenden bestätigen. Dieselbe Gruppe enthält Perspektivisches Freistellen für Kanten, die in der Perspektive fluchten.</li>
+<li><strong>Bild → Bildgröße</strong> (<kbd>⌘⌥I</kbd> / <kbd>Ctrl+Alt+I</kbd>) ändert Breite und Höhe. Prüfen Sie, ob die Proportionen gebunden sind und welche Interpolation Sie gewählt haben.</li>
+<li><strong>Bild → Arbeitsfläche</strong> (<kbd>⌘⌥C</kbd> / <kbd>Ctrl+Alt+C</kbd>) ändert die Arbeitsfläche und den Anker (an welcher Seite neuer Raum entsteht).</li>
+</ul>
+</aside>
+<h2>Wann welches</h2>
+<ul>
+<li>Neu rahmen und überflüssigen Hintergrund entfernen: Freistellen.</li>
+<li>Ein Bild mit 2000 Pixel langer Kante liefern: Bildgröße.</li>
+<li>Einen weißen Rand hinzufügen oder eine quadratische Fläche ohne Strecken des Fotos: Arbeitsfläche, danach die Ebene bei Bedarf verschieben.</li>
+</ul>
+<p>Starkes Vergrößern erfindet keine echte Detailtiefe; neue Pixel werden geschätzt. Lieber mehr Auflösung aufnehmen als kräftig hochzurechnen. Verkleinern ist meist sicherer, prüfen Sie aber Schrift und feine Linien.</p>
+<aside class="callout ps-only">
+<h3>Nur in Photoshop</h3>
+<p>Generative Expand füllt den Freistellrahmen mit KI-Inhalt. Das ist eine Photoshop-Cloud-Funktion; SimplePhoto hat keine entsprechende Schaltfläche. Um eine Szene zu erweitern, klonen, flicken oder ein anderes Bild selbst einsetzen.</p>
+</aside>
+<section class="reading">
+<h2>Weiterführende Links</h2>
+<ul>
+<li><a href="https://www.adobe.com/learn/photoshop/paths/photo-editing" rel="noopener noreferrer" target="_blank">Adobe Learn: Photo editing (crop / resize units in the official path)</a></li>
+</ul>
+</section>
+
+      <nav class="pager">
+<a href="02-open-save.html">Zurück: Öffnen, speichern und exportieren</a>
+<a href="04-layers.html">Weiter: Ebenen</a>
+</nav>
+    </main>
+  </div>
+  <script src="../app.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr" data-lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>インターフェイスとキャンバス · チュートリアル</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">本文へスキップ</a>
+  <header class="top">
+    <a class="brand" href="index.html">SimplePhoto</a>
+    <span class="tag">チュートリアル</span>
+    <div class="lang"><label for="lang-select">言語</label><select id="lang-select" name="lang">
+<option value="en">English</option>
+<option value="ja" selected>日本語</option>
+<option value="zh-hans">简体中文</option>
+<option value="zh-hant">繁體中文</option>
+<option value="fr">Français</option>
+<option value="ko">한국어</option>
+<option value="de">Deutsch</option>
+</select></div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="目次">
+      <h2>目次</h2>
+      <ol>
+        <li><a href="index.html">概要</a></li>
+<li><a href="01-interface.html" aria-current="page"><span class="num">01</span>インターフェイスとキャンバス</a></li>
+<li><a href="02-open-save.html"><span class="num">02</span>開く、保存、書き出し</a></li>
+<li><a href="03-crop-resize.html"><span class="num">03</span>切り抜き、画像サイズ、キャンバスサイズ</a></li>
+<li><a href="04-layers.html"><span class="num">04</span>レイヤー</a></li>
+<li><a href="05-selections.html"><span class="num">05</span>選択ツール</a></li>
+<li><a href="06-brushes.html"><span class="num">06</span>ブラシと消しゴム</a></li>
+<li><a href="07-adjustments.html"><span class="num">07</span>色調と色の補正</a></li>
+<li><a href="08-masks.html"><span class="num">08</span>レイヤーマスク</a></li>
+<li><a href="09-text.html"><span class="num">09</span>文字</a></li>
+<li><a href="10-transform.html"><span class="num">10</span>変形</a></li>
+<li><a href="11-retouch.html"><span class="num">11</span>レタッチ、修復、コピー</a></li>
+<li><a href="12-filters-blend.html"><span class="num">12</span>フィルターと描画モード</a></li>
+<li><a href="13-compositing.html"><span class="num">13</span>合成のワークフロー</a></li>
+<li><a href="14-nondestructive.html"><span class="num">14</span>非破壊編集</a></li>
+<li><a href="15-shortcuts.html"><span class="num">15</span>キーボードショートカット</a></li>
+      </ol>
+    </nav>
+    <main id="main">
+      <p class="kicker">第 01 章 · 基礎</p>
+<h1>インターフェイスとキャンバス</h1>
+<p>編集ソフトの画面は作業台だと考えてください。真ん中にカンバス、まわりにツールとパネルがあります。まずこの領域を覚えておくと、あとの章で「どこを見ればよいか」が分かります。</p>
+<h2>画面の見取り図</h2>
+<ul>
+<li><strong>タイトルバー</strong>：ドキュメント名、メニュー、ワークスペース切り替え、外観、言語。</li>
+<li><strong>ツールバー</strong>：選択、切り抜き、ブラシ、文字、レタッチ、シェイプ、手のひら、ズーム。関連ツールは同じショートカットを共有することが多く、長押しまたは右クリックでグループを展開します。</li>
+<li><strong>カンバス</strong>：編集中の画像です。手のひらツールかスペースキーでパンし、<kbd>Z</kbd> でズームします。</li>
+<li><strong>パネル</strong>：レイヤー、ヒストリー、ブラシ設定、プロパティなど。<strong>ウィンドウ</strong> メニューで表示／非表示を切り替えます。</li>
+</ul>
+<aside class="callout in-app">
+<h3>SimplePhoto では</h3>
+<p>ホームのあと、編集画面に入ります。<kbd>V</kbd> は移動、<kbd>H</kbd> は手のひら、<kbd>Z</kbd> はズーム、<kbd>R</kbd> は回転ビュー（表示だけを回し、画素を必ず回転させるわけではありません）。<strong>表示</strong> メニューには画面に合わせる／ピクセル等倍があります。ヒストリーは <strong>ウィンドウ → ヒストリー</strong> です。レイヤーの表示切り替えは <kbd>F7</kbd> です。</p>
+</aside>
+<h2>カンバスとドキュメント</h2>
+<p>カンバスはドキュメントの作業領域で、画素はここにあります。画像はウィンドウより小さいことも、パンが必要な大きさのこともあります。「今どのレイヤーにいて、どの拡大率か」を意識するほうが、いきなりレタッチを急ぐより大切です。取り消しは <strong>編集</strong> メニューか、ヒストリーパネルで一歩戻ります。</p>
+<aside class="callout ps-only">
+<h3>Photoshop のみのメモ</h3>
+<p>Photoshop には Discover パネル、クラウド同期のワークスペース、クラウド連携のコンテキストタスクバー機能もあります。SimplePhoto にもワークスペースとコンテキストタスクバー（<strong>ウィンドウ → コンテキストタスクバー</strong>）はありますが、Adobe のクラウドとは同期しません。</p>
+</aside>
+<section class="reading">
+<h2>参考資料</h2>
+<ul>
+<li><a href="https://helpx.adobe.com/photoshop/using/workspace-basics.html" rel="noopener noreferrer" target="_blank">Adobe: Workspace basics</a></li>
+<li><a href="https://helpx.adobe.com/photoshop/desktop.html" rel="noopener noreferrer" target="_blank">Adobe: Photoshop desktop help</a></li>
+</ul>
+</section>
+
+      <nav class="pager">
+<a href="index.html">前へ：学習の進め方</a>
+<a href="02-open-save.html">次へ：開く、保存、書き出し</a>
+</nav>
+    </main>
+  </div>
+  <script src="../app.js"></script>
+</body>
+</html>

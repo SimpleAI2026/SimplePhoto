@@ -1,0 +1,39 @@
+<p class="kicker">第 03 章 · 基礎</p>
+
+<h1>裁剪、影像尺寸與畫布大小</h1>
+
+<p>這三項常常被混爲一談，但做的事情不同：<strong>裁剪</strong>丟掉框外的畫面；<strong>影像尺寸</strong>改變像素數量（放大或縮小整張圖）；<strong>畫布大小</strong>改變工作區域，可以留出空白邊，也可以裁掉邊緣，但不重新採樣主體內容的方式與「影像尺寸」不同。</p>
+
+<aside class="callout in-app">
+<h3>在 SimplePhoto 中</h3>
+
+<ul>
+<li>工具欄 <strong>裁切工具</strong>（<kbd>C</kbd>）：拖出裁剪框，確認後應用。同組還有透視裁剪，用於矯正有透視的邊緣。</li>
+<li><strong>影像 → 影像尺寸</strong>（<kbd>⌘⌥I</kbd> / <kbd>Ctrl+Alt+I</kbd>）：改寬高，注意是否勾選約束比例，以及重採樣方式。</li>
+<li><strong>影像 → 畫布大小</strong>（<kbd>⌘⌥C</kbd> / <kbd>Ctrl+Alt+C</kbd>）：改畫布尺寸和錨點（新空間加在哪一側）。</li>
+</ul>
+
+</aside>
+<h2>什麼時候用哪一個</h2>
+
+<ul>
+<li>只要重新構圖、去掉多餘背景：用裁剪。</li>
+<li>要交一張「最長邊 2000 像素」的圖：用影像尺寸。</li>
+<li>要給海報加一圈白邊，或把畫布改成正方形而不拉伸照片：用畫布大小，再視需要移動圖層。</li>
+</ul>
+
+<p>把照片放大很多時，細節不會憑空變清晰，只是像素被估算出來。能拍得更大就不要過分上採樣。縮小則通常更安全，但仍要看是否還有文字或細線需要保持清晰。</p>
+
+<aside class="callout ps-only">
+<h3>僅 Photoshop 的概念</h3>
+
+<p>生成式擴充（Generative Expand）用 AI 憑空補出裁剪框外的內容，這是 Photoshop 的雲端功能，SimplePhoto 沒有對等按鈕。需要補景時，請改用仿製、修補或自己導入另一張素材。</p>
+
+</aside>
+<section class="reading">
+<h2>延伸閱讀</h2>
+
+<ul>
+<li><a href="https://www.adobe.com/learn/photoshop/paths/photo-editing" rel="noopener noreferrer" target="_blank">Adobe Learn: Photo editing (crop / resize units in the official path)</a></li>
+</ul>
+</section>

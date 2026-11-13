@@ -1,0 +1,93 @@
+{
+  "en": {
+    "tutorials": "Tutorials",
+    "contents": "Contents",
+    "overview": "Overview",
+    "previous": "Previous: {title}",
+    "next": "Next: {title}",
+    "skip": "Skip to content",
+    "language": "Language",
+    "further_reading": "Further reading (external sources, not copied here)",
+    "further_reading_blurb": "These official Adobe pages are cited so you can compare Photoshop terminology and curricula. This guide is original writing for SimplePhoto and does not reproduce their text.",
+    "redirecting": "Opening tutorials…",
+    "chapter": "Chapter {n}"
+  },
+  "ja": {
+    "tutorials": "チュートリアル",
+    "contents": "目次",
+    "overview": "概要",
+    "previous": "前へ：{title}",
+    "next": "次へ：{title}",
+    "skip": "本文へスキップ",
+    "language": "言語",
+    "further_reading": "参考資料（外部リンク。本文の引用ではありません）",
+    "further_reading_blurb": "用語や学習の進め方を Photoshop と照らし合わせるための Adobe 公式ページです。このガイドの本文は SimplePhoto 向けのオリジナルであり、それらの文章は転載していません。",
+    "redirecting": "チュートリアルを開いています…",
+    "chapter": "第 {n} 章"
+  },
+  "zh-hans": {
+    "tutorials": "教程",
+    "contents": "目录",
+    "overview": "概览",
+    "previous": "上一章：{title}",
+    "next": "下一章：{title}",
+    "skip": "跳到正文",
+    "language": "语言",
+    "further_reading": "延伸阅读（外部资料，非本教程原文）",
+    "further_reading_blurb": "以下链接指向 Adobe 官方帮助与学习路径，便于对照 Photoshop 的术语与课堂结构。正文为 SimplePhoto 原创说明，没有摘录这些页面的正文。",
+    "redirecting": "正在打开教程…",
+    "chapter": "第 {n} 章"
+  },
+  "zh-hant": {
+    "tutorials": "教學",
+    "contents": "目錄",
+    "overview": "概覽",
+    "previous": "上一章：{title}",
+    "next": "下一章：{title}",
+    "skip": "跳到正文",
+    "language": "語言",
+    "further_reading": "延伸閱讀（外部資料，非本教程原文）",
+    "further_reading_blurb": "以下連結指向 Adobe 官方說明與學習路徑，方便對照 Photoshop 的術語與課程結構。正文為 SimplePhoto 原創說明，並未摘錄這些頁面的正文。",
+    "redirecting": "正在開啟教學…",
+    "chapter": "第 {n} 章"
+  },
+  "fr": {
+    "tutorials": "Tutoriels",
+    "contents": "Sommaire",
+    "overview": "Aperçu",
+    "previous": "Précédent : {title}",
+    "next": "Suivant : {title}",
+    "skip": "Aller au contenu",
+    "language": "Langue",
+    "further_reading": "Pour aller plus loin (sources externes, non reproduites ici)",
+    "further_reading_blurb": "Ces pages officielles Adobe permettent de comparer la terminologie et le parcours d’apprentissage de Photoshop. Le texte de ce guide est original et rédigé pour SimplePhoto ; il n’en reprend pas le contenu.",
+    "redirecting": "Ouverture des tutoriels…",
+    "chapter": "Chapitre {n}"
+  },
+  "ko": {
+    "tutorials": "튜토리얼",
+    "contents": "목차",
+    "overview": "개요",
+    "previous": "이전: {title}",
+    "next": "다음: {title}",
+    "skip": "본문으로 건너뛰기",
+    "language": "언어",
+    "further_reading": "더 알아보기 (외부 자료, 본문 인용 아님)",
+    "further_reading_blurb": "아래는 Photoshop 용어와 학습 순서를 비교할 수 있도록 인용한 Adobe 공식 페이지입니다. 이 가이드의 본문은 SimplePhoto를 위해 새로 작성했으며 해당 페이지의 문구를 옮기지 않았습니다.",
+    "redirecting": "튜토리얼을 여는 중…",
+    "chapter": "제 {n} 장"
+  },
+  "de": {
+    "tutorials": "Tutorials",
+    "contents": "Inhalt",
+    "overview": "Übersicht",
+    "previous": "Zurück: {title}",
+    "next": "Weiter: {title}",
+    "skip": "Zum Inhalt springen",
+    "language": "Sprache",
+    "further_reading": "Weiterführende Links (externe Quellen, hier nicht zitiert)",
+    "further_reading_blurb": "Diese offiziellen Adobe-Seiten dienen dem Vergleich mit Photoshops Begriffen und Lernpfaden. Dieser Leitfaden ist ein Originaltext für SimplePhoto und übernimmt deren Wortlaut nicht.",
+    "redirecting": "Tutorials werden geöffnet…",
+    "chapter": "Kapitel {n}"
+  }
+}

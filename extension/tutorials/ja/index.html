@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr" data-lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>チュートリアル · SimplePhoto</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">本文へスキップ</a>
+  <header class="top">
+    <a class="brand" href="index.html">SimplePhoto</a>
+    <span class="tag">チュートリアル</span>
+    <div class="lang"><label for="lang-select">言語</label><select id="lang-select" name="lang">
+<option value="en">English</option>
+<option value="ja" selected>日本語</option>
+<option value="zh-hans">简体中文</option>
+<option value="zh-hant">繁體中文</option>
+<option value="fr">Français</option>
+<option value="ko">한국어</option>
+<option value="de">Deutsch</option>
+</select></div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="目次">
+      <h2>目次</h2>
+      <ol>
+        <li><a href="index.html" aria-current="page">概要</a></li>
+<li><a href="01-interface.html"><span class="num">01</span>インターフェイスとキャンバス</a></li>
+<li><a href="02-open-save.html"><span class="num">02</span>開く、保存、書き出し</a></li>
+<li><a href="03-crop-resize.html"><span class="num">03</span>切り抜き、画像サイズ、キャンバスサイズ</a></li>
+<li><a href="04-layers.html"><span class="num">04</span>レイヤー</a></li>
+<li><a href="05-selections.html"><span class="num">05</span>選択ツール</a></li>
+<li><a href="06-brushes.html"><span class="num">06</span>ブラシと消しゴム</a></li>
+<li><a href="07-adjustments.html"><span class="num">07</span>色調と色の補正</a></li>
+<li><a href="08-masks.html"><span class="num">08</span>レイヤーマスク</a></li>
+<li><a href="09-text.html"><span class="num">09</span>文字</a></li>
+<li><a href="10-transform.html"><span class="num">10</span>変形</a></li>
+<li><a href="11-retouch.html"><span class="num">11</span>レタッチ、修復、コピー</a></li>
+<li><a href="12-filters-blend.html"><span class="num">12</span>フィルターと描画モード</a></li>
+<li><a href="13-compositing.html"><span class="num">13</span>合成のワークフロー</a></li>
+<li><a href="14-nondestructive.html"><span class="num">14</span>非破壊編集</a></li>
+<li><a href="15-shortcuts.html"><span class="num">15</span>キーボードショートカット</a></li>
+      </ol>
+    </nav>
+    <main id="main">
+      <p class="kicker">SimplePhoto チュートリアル</p>
+<h1>学習の進め方</h1>
+<p class="lead">このカリキュラムは、なじみのある Photoshop 流の順番に沿っていますが、アプリ内の手順はすべて <strong>SimplePhoto</strong> 向けに書いてあります。SimplePhoto は Chrome で動くローカル編集ソフトで、エンジンはオープンソースの PhotoCraft です。メニューやツール名は Photoshop に近づけてあるので、両者を対照しやすいです。</p>
+<p>編集画面のホームで <strong>学ぶ</strong> を選ぶと、この目次が新しいタブで開きます。ページは拡張機能の中に同梱されており、外部のチュートリアルサイトへはもう動きません。上部の言語コントロールで、英語、簡体字中国語、繁体字中国語、日本語、韓国語、ドイツ語、フランス語を切り替えできます。編集ソフトがそれ以外の言語のときは、チュートリアルは英語で開きます。</p>
+<aside class="callout in-app">
+<h3>SimplePhoto での始め方</h3>
+<p>拡張機能を開くと、新規または既存の画像向けのホーム画面になり、右側に最近使ったファイルが表示されます。左のレールにはホームと「学ぶ」があります。タイトルバーではワークスペース、外観、UI 言語を切り替えできます。レイヤーパネルの表示は <kbd>F7</kbd> です。</p>
+</aside>
+<aside class="callout ps-only">
+<h3>Photoshop と異なる点</h3>
+<p>SimplePhoto は Adobe アカウントにサインインせず、Firefly / 生成塗りつぶし、クラウドドキュメント、Creative Cloud ライブラリもありません。ニューラルフィルターなど Adobe クラウドの機能は <strong>Photoshop のみ</strong> と考えてください。このガイドは、アプリにないボタンをでっち上げず、そういう考え方だけを注記します。</p>
+</aside>
+<h2>おすすめの進め方</h2>
+<p>まずワークスペース、ファイルの入出力、レイヤーに慣れ、次に選択と補正、最後に合成と非破壊の習慣へ進みます。一度に全部やる必要はありません。各章は、自分の写真で練習してください。</p>
+<div class="cards"><a href="01-interface.html"><strong><span class="num">01</span> <span>インターフェイスとキャンバス</span></strong><span>ワークスペースを覚える</span></a><a href="02-open-save.html"><strong><span class="num">02</span> <span>開く、保存、書き出し</span></strong><span>ファイルの読み込みと書き出し</span></a><a href="03-crop-resize.html"><strong><span class="num">03</span> <span>切り抜き、画像サイズ、キャンバスサイズ</span></strong><span>構図と出力サイズ</span></a><a href="04-layers.html"><strong><span class="num">04</span> <span>レイヤー</span></strong><span>上書きせずに重ねる</span></a><a href="05-selections.html"><strong><span class="num">05</span> <span>選択ツール</span></strong><span>選んでから編集する</span></a><a href="06-brushes.html"><strong><span class="num">06</span> <span>ブラシと消しゴム</span></strong><span>塗る・消す</span></a><a href="07-adjustments.html"><strong><span class="num">07</span> <span>色調と色の補正</span></strong><span>レベル・カーブ・色相</span></a><a href="08-masks.html"><strong><span class="num">08</span> <span>レイヤーマスク</span></strong><span>消さずに隠す</span></a><a href="09-text.html"><strong><span class="num">09</span> <span>文字</span></strong><span>タイトルとラベル</span></a><a href="10-transform.html"><strong><span class="num">10</span> <span>変形</span></strong><span>拡大縮小・回転・ワープ</span></a><a href="11-retouch.html"><strong><span class="num">11</span> <span>レタッチ、修復、コピー</span></strong><span>汚れや傷を直す</span></a><a href="12-filters-blend.html"><strong><span class="num">12</span> <span>フィルターと描画モード</span></strong><span>雰囲気と重ね方</span></a><a href="13-compositing.html"><strong><span class="num">13</span> <span>合成のワークフロー</span></strong><span>複数の画像を合成する</span></a><a href="14-nondestructive.html"><strong><span class="num">14</span> <span>非破壊編集</span></strong><span>後からやり直せるように</span></a><a href="15-shortcuts.html"><strong><span class="num">15</span> <span>キーボードショートカット</span></strong><span>ショートカット早見表</span></a></div>
+<section class="reading">
+<h2>参考資料（外部リンク。本文の引用ではありません）</h2>
+<p>用語やカリキュラムを Photoshop と対照できるよう、公式の Adobe ページを挙げています。このガイドは SimplePhoto 向けのオリジナル文章であり、それらの本文は転載していません。</p>
+<ul>
+<li><a href="https://helpx.adobe.com/photoshop/tutorials.html" rel="noopener noreferrer" target="_blank">Adobe: Photoshop tutorials</a></li>
+<li><a href="https://www.adobe.com/learn/photoshop/paths/photo-editing" rel="noopener noreferrer" target="_blank">Adobe Learn: Photo editing path</a></li>
+<li><a href="https://helpx.adobe.com/photoshop/desktop.html" rel="noopener noreferrer" target="_blank">Adobe: Photoshop desktop help</a></li>
+</ul>
+</section>
+
+      <nav class="pager">
+<span></span>
+<a href="01-interface.html">次へ：インターフェイスとキャンバス</a>
+</nav>
+    </main>
+  </div>
+  <script src="../app.js"></script>
+</body>
+</html>

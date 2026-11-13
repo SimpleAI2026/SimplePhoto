@@ -1,0 +1,44 @@
+[
+  {
+    "code": "en",
+    "name": "English",
+    "html_lang": "en",
+    "dir": "ltr"
+  },
+  {
+    "code": "ja",
+    "name": "日本語",
+    "html_lang": "ja",
+    "dir": "ltr"
+  },
+  {
+    "code": "zh-hans",
+    "name": "简体中文",
+    "html_lang": "zh-Hans",
+    "dir": "ltr"
+  },
+  {
+    "code": "zh-hant",
+    "name": "繁體中文",
+    "html_lang": "zh-Hant",
+    "dir": "ltr"
+  },
+  {
+    "code": "fr",
+    "name": "Français",
+    "html_lang": "fr",
+    "dir": "ltr"
+  },
+  {
+    "code": "ko",
+    "name": "한국어",
+    "html_lang": "ko",
+    "dir": "ltr"
+  },
+  {
+    "code": "de",
+    "name": "Deutsch",
+    "html_lang": "de",
+    "dir": "ltr"
+  }
+]

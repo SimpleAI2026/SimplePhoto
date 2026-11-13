@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr" data-lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ebenenmasken · Tutorials</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Zum Inhalt springen</a>
+  <header class="top">
+    <a class="brand" href="index.html">SimplePhoto</a>
+    <span class="tag">Tutorials</span>
+    <div class="lang"><label for="lang-select">Sprache</label><select id="lang-select" name="lang">
+<option value="en">English</option>
+<option value="ja">日本語</option>
+<option value="zh-hans">简体中文</option>
+<option value="zh-hant">繁體中文</option>
+<option value="fr">Français</option>
+<option value="ko">한국어</option>
+<option value="de" selected>Deutsch</option>
+</select></div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="Inhalt">
+      <h2>Inhalt</h2>
+      <ol>
+        <li><a href="index.html">Übersicht</a></li>
+<li><a href="01-interface.html"><span class="num">01</span>Oberfläche und Arbeitsfläche</a></li>
+<li><a href="02-open-save.html"><span class="num">02</span>Öffnen, speichern und exportieren</a></li>
+<li><a href="03-crop-resize.html"><span class="num">03</span>Zuschneiden, Bildgröße und Arbeitsfläche</a></li>
+<li><a href="04-layers.html"><span class="num">04</span>Ebenen</a></li>
+<li><a href="05-selections.html"><span class="num">05</span>Auswahlwerkzeuge</a></li>
+<li><a href="06-brushes.html"><span class="num">06</span>Pinsel und Radiergummi</a></li>
+<li><a href="07-adjustments.html"><span class="num">07</span>Tonwert- und Farbkorrekturen</a></li>
+<li><a href="08-masks.html" aria-current="page"><span class="num">08</span>Ebenenmasken</a></li>
+<li><a href="09-text.html"><span class="num">09</span>Text</a></li>
+<li><a href="10-transform.html"><span class="num">10</span>Transformieren</a></li>
+<li><a href="11-retouch.html"><span class="num">11</span>Retusche, Reparatur und Kopierstempel</a></li>
+<li><a href="12-filters-blend.html"><span class="num">12</span>Filter und Mischmodi</a></li>
+<li><a href="13-compositing.html"><span class="num">13</span>Compositing-Ablauf</a></li>
+<li><a href="14-nondestructive.html"><span class="num">14</span>Nicht-destruktives Bearbeiten</a></li>
+<li><a href="15-shortcuts.html"><span class="num">15</span>Tastenkürzel</a></li>
+      </ol>
+    </nav>
+    <main id="main">
+      <p class="kicker">Kapitel 08 · Kern</p>
+<h1>Ebenenmasken</h1>
+<p>Eine Maske ist eine Graustufenkarte der Sichtbarkeit einer Ebene: Weiß zeigt, Schwarz verbirgt, Grau ist teilweise. Sie ist kein Radiergummi — die Pixel bleiben, Sie können verborgene Bereiche später zurückmalen. Das ist der Schritt von „ich kann retuschieren“ zu „ich kann es mir noch anders überlegen“.</p>
+<aside class="callout in-app">
+<h3>In SimplePhoto</h3>
+<p>Fügen Sie eine Ebenenmaske über das Ebenenbedienfeld oder das Menü <strong>Ebene</strong> hinzu (alles einblenden, alles ausblenden oder anhand einer Auswahl ein-/ausblenden). Ist eine Auswahl aktiv, folgt die Maske ihr oft sofort. Malen Sie Schwarz oder Weiß auf der Maske; klicken Sie das Ebenenminiaturbild, um Pixel zu bearbeiten, und das Maskenminiaturbild für die Maske. Vektormasken stehen bereit, wenn Sie eine harte, pfadbasierte Kante wollen, die sich weiter ändern lässt.</p>
+</aside>
+<h2>Typische Anwendungen</h2>
+<ul>
+<li>Eine freigestellte Person auf einen neuen Hintergrund setzen und Haare auf der Maske verfeinern, statt Hintergrundpixel zu löschen.</li>
+<li>Eine Einstellungsebene auf Himmel oder Haut begrenzen: eine Maske hinzufügen und Bereiche ausmalen, die sich nicht ändern sollen.</li>
+<li>Auf der Maske einen Verlaufsübergang (unterschiedliche Belichtung oben und unten) bauen; das lässt sich leichter korrigieren, als die Pixel selbst zu bemalen.</li>
+</ul>
+<p>Prüfen Sie eine Maske auf Lücken oder matschige Kanten. Sitzt etwas nicht, ändern Sie die Pinselhärte oder führen Sie Auswählen und maskieren erneut aus und geben eine neue Maske aus — das ganze Dokument müssen Sie nicht neu aufbauen.</p>
+<aside class="callout ps-only">
+<h3>Nur in Photoshop</h3>
+<p>Einige Cloud-Schaltflächen „Motiv auswählen und automatisch maskieren“ und Aufgabenmasken im Arbeitsbereich Generatives Füllen gehören zu Photoshops Produktfluss. SimplePhoto baut Masken mit lokalen Auswahlwerkzeugen und Auswählen und maskieren.</p>
+</aside>
+<section class="reading">
+<h2>Weiterführende Links</h2>
+<ul>
+<li><a href="https://helpx.adobe.com/photoshop/using/masking-layers.html" rel="noopener noreferrer" target="_blank">Adobe: Masking layers</a></li>
+</ul>
+</section>
+
+      <nav class="pager">
+<a href="07-adjustments.html">Zurück: Tonwert- und Farbkorrekturen</a>
+<a href="09-text.html">Weiter: Text</a>
+</nav>
+    </main>
+  </div>
+  <script src="../app.js"></script>
+</body>
+</html>

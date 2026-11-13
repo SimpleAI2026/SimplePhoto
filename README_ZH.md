@@ -63,7 +63,7 @@ cd SimplePhoto
 | `branding/simplephoto-logo-source.png` | 规范源图 |
 | `branding/simplephoto-logo-1024.png` | 1024×1024 母版 |
 | `branding/simplephoto-app-128.png` | 128×128 应用 / 顶栏图标 |
-| `extension/icons/icon16.png` / `icon48.png` / `icon128.png` | Chrome 扩展工具栏与商店图标 |
+| `extension/icons/icon16.png` / `icon32.png` / `icon48.png` / `icon128.png` | Chrome 扩展工具栏与商店图标 |
 
 `./scripts/apply-branding-assets.sh` 会把 `branding/simplephoto-app-128.png` 复制到 PhotoCraft submodule 中供 `include_bytes!` 使用的资源路径。更换该 PNG 后**必须**再跑完整的 `./scripts/build-web-assets.sh`，WASM 内烘焙的顶栏图标才会更新。扩展工具栏图标在重新「加载已解压的扩展」后即可生效。
 

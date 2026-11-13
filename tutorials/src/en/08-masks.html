@@ -1,0 +1,34 @@
+<p class="kicker">Chapter 08 · Core</p>
+
+<h1>Layer masks</h1>
+
+<p>A mask is a grayscale map of a layer’s visibility: white reveals, black hides, gray is partial. It is not an eraser — the pixels remain, so you can paint hidden areas back later. This is the step from “I can retouch” to “I can still change my mind.”</p>
+<aside class="callout in-app">
+
+<h3>In SimplePhoto</h3>
+
+<p>Add a layer mask from the Layers panel or the <strong>Layer</strong> menu (reveal all, hide all, or reveal/hide based on a selection). If a selection is active, the mask often follows it immediately. Paint black or white on the mask to edit it; click the layer thumbnail to edit pixels, and the mask thumbnail to edit the mask. Vector masks are also available when you want a hard, path-based edge you can still revise.</p>
+</aside>
+
+<h2>Typical uses</h2>
+
+<ul>
+<li>Place a cut-out person on a new background and refine hair on the mask, instead of deleting background pixels.</li>
+<li>Limit an adjustment layer to a sky or to skin: add a mask and paint out the areas you do not want changed.</li>
+<li>Build a gradient transition (different exposure top and bottom) on the mask; it is easier to revise than painting the pixels themselves.</li>
+</ul>
+
+<p>When you inspect a mask, look for leaks or mushy edges. If something is off, change brush hardness or run Select and Mask again and output a new mask — you do not have to rebuild the whole document.</p>
+<aside class="callout ps-only">
+
+<h3>Photoshop-only notes</h3>
+
+<p>Some cloud “select subject and auto-mask” buttons, and task masks inside the Generative Fill workspace, belong to Photoshop’s product flow. SimplePhoto builds masks with local selection tools and Select and Mask.</p>
+</aside>
+<section class="reading">
+
+<h2>Further reading</h2>
+<ul>
+<li><a href="https://helpx.adobe.com/photoshop/using/masking-layers.html" rel="noopener noreferrer" target="_blank">Adobe: Masking layers</a></li>
+</ul>
+</section>

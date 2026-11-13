@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" dir="ltr" data-lang="zh-hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>合成工作流程 · 教學</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">跳到正文</a>
+  <header class="top">
+    <a class="brand" href="index.html">SimplePhoto</a>
+    <span class="tag">教學</span>
+    <div class="lang"><label for="lang-select">語言</label><select id="lang-select" name="lang">
+<option value="en">English</option>
+<option value="ja">日本語</option>
+<option value="zh-hans">简体中文</option>
+<option value="zh-hant" selected>繁體中文</option>
+<option value="fr">Français</option>
+<option value="ko">한국어</option>
+<option value="de">Deutsch</option>
+</select></div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="目錄">
+      <h2>目錄</h2>
+      <ol>
+        <li><a href="index.html">概覽</a></li>
+<li><a href="01-interface.html"><span class="num">01</span>介面與畫布</a></li>
+<li><a href="02-open-save.html"><span class="num">02</span>開啟、儲存與匯出</a></li>
+<li><a href="03-crop-resize.html"><span class="num">03</span>裁剪、影像大小與畫布大小</a></li>
+<li><a href="04-layers.html"><span class="num">04</span>圖層</a></li>
+<li><a href="05-selections.html"><span class="num">05</span>選取工具</a></li>
+<li><a href="06-brushes.html"><span class="num">06</span>畫筆與橡皮擦</a></li>
+<li><a href="07-adjustments.html"><span class="num">07</span>色調與顏色調整</a></li>
+<li><a href="08-masks.html"><span class="num">08</span>圖層遮色片</a></li>
+<li><a href="09-text.html"><span class="num">09</span>文字</a></li>
+<li><a href="10-transform.html"><span class="num">10</span>變形</a></li>
+<li><a href="11-retouch.html"><span class="num">11</span>修飾、修復與仿製</a></li>
+<li><a href="12-filters-blend.html"><span class="num">12</span>濾鏡與混合模式</a></li>
+<li><a href="13-compositing.html" aria-current="page"><span class="num">13</span>合成工作流程</a></li>
+<li><a href="14-nondestructive.html"><span class="num">14</span>非破壞性編輯</a></li>
+<li><a href="15-shortcuts.html"><span class="num">15</span>快速鍵</a></li>
+      </ol>
+    </nav>
+    <main id="main">
+      <p class="kicker">第 13 章 · 進階</p>
+<h1>合成工作流程</h1>
+<p>合成是把不止一張影像（或一層繪製）組合成一個看起來合理的畫面。關鍵不是某一個神奇工具，而是順序：選主體、放進新檔案、變換到合適透視、用遮色片修邊、再統一光色。</p>
+<h2>一條可重複的路徑</h2>
+<ol>
+<li>爲背景和主體分別準備檔案，或把主體複製到背景檔案的新圖層上。</li>
+<li>用選取範圍或物件選取得到大致輪廓，輸出爲圖層遮色片，再在「選取並遮住」或遮色片上修髮絲與半透明邊緣。</li>
+<li>任意變形匹配大小和地平線；需要貼地或貼牆時用透視或變形。</li>
+<li>看光源：主體的亮面和陰影方向必須與背景一致，可用曲線或色相/飽和度（最好是調整圖層加遮色片）貼近。</li>
+<li>在主體腳下或接觸面加陰影層（低不透明度、正片疊底或柔光），否則會像貼上去的貼紙。</li>
+<li>最後統一一點噪點或輕微的整體調色，讓來源不同的素材「像同一臺相機」。</li>
+</ol>
+<aside class="callout in-app">
+<h3>在 SimplePhoto 中</h3>
+<p>你可以使用開啟多個檔案、複製貼上圖層、置入或柵格化素材（以當前選單為準）。智慧型物件適合還要反覆縮放的元素。圖層羣組用來分開「背景」「人物」「顏色」「文字」。合成過程中隨時用眼睛圖標做 A/B 對比，不要一次合併全部圖層。</p>
+</aside>
+<aside class="callout ps-only">
+<h3>僅限 Photoshop 的概念</h3>
+<p>生成式填充「根據提示把兩張圖融在一起」、以及 Firefly 參考圖一致性，是 Photoshop 的生成式流程。SimplePhoto 的合成依賴你自己的選取範圍、遮色片、變換和調色。</p>
+</aside>
+<section class="reading">
+<h2>延伸閱讀</h2>
+<ul>
+<li><a href="https://helpx.adobe.com/photoshop/tutorials.html" rel="noopener noreferrer" target="_blank">Adobe: Photoshop tutorials (compositing courses)</a></li>
+<li><a href="https://www.adobe.com/learn/photoshop/paths/photo-editing" rel="noopener noreferrer" target="_blank">Adobe Learn: Photo editing path</a></li>
+</ul>
+</section>
+
+      <nav class="pager">
+<a href="12-filters-blend.html">上一章：濾鏡與混合模式</a>
+<a href="14-nondestructive.html">下一章：非破壞性編輯</a>
+</nav>
+    </main>
+  </div>
+  <script src="../app.js"></script>
+</body>
+</html>

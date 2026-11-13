@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" data-lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flux de compositing · Tutoriels</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Aller au contenu</a>
+  <header class="top">
+    <a class="brand" href="index.html">SimplePhoto</a>
+    <span class="tag">Tutoriels</span>
+    <div class="lang"><label for="lang-select">Langue</label><select id="lang-select" name="lang">
+<option value="en">English</option>
+<option value="ja">日本語</option>
+<option value="zh-hans">简体中文</option>
+<option value="zh-hant">繁體中文</option>
+<option value="fr" selected>Français</option>
+<option value="ko">한국어</option>
+<option value="de">Deutsch</option>
+</select></div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="Sommaire">
+      <h2>Sommaire</h2>
+      <ol>
+        <li><a href="index.html">Aperçu</a></li>
+<li><a href="01-interface.html"><span class="num">01</span>Interface et zone de travail</a></li>
+<li><a href="02-open-save.html"><span class="num">02</span>Ouvrir, enregistrer et exporter</a></li>
+<li><a href="03-crop-resize.html"><span class="num">03</span>Recadrage, taille de l’image et du plan de travail</a></li>
+<li><a href="04-layers.html"><span class="num">04</span>Calques</a></li>
+<li><a href="05-selections.html"><span class="num">05</span>Outils de sélection</a></li>
+<li><a href="06-brushes.html"><span class="num">06</span>Pinceaux et gomme</a></li>
+<li><a href="07-adjustments.html"><span class="num">07</span>Réglages de tonalité et de couleur</a></li>
+<li><a href="08-masks.html"><span class="num">08</span>Masques de fusion</a></li>
+<li><a href="09-text.html"><span class="num">09</span>Texte</a></li>
+<li><a href="10-transform.html"><span class="num">10</span>Transformation</a></li>
+<li><a href="11-retouch.html"><span class="num">11</span>Retouche, correction et tampon</a></li>
+<li><a href="12-filters-blend.html"><span class="num">12</span>Filtres et modes de fusion</a></li>
+<li><a href="13-compositing.html" aria-current="page"><span class="num">13</span>Flux de compositing</a></li>
+<li><a href="14-nondestructive.html"><span class="num">14</span>Édition non destructive</a></li>
+<li><a href="15-shortcuts.html"><span class="num">15</span>Raccourcis clavier</a></li>
+      </ol>
+    </nav>
+    <main id="main">
+      <p class="kicker">Chapitre 13 · Intermédiaire</p>
+<h1>Flux de compositing</h1>
+<p>Le compositing combine plus d’une image (ou un calque peint) en une image qui paraît cohérente. Le savoir-faire est moins un outil magique qu’une séquence : sélectionner le sujet, le placer dans un nouveau document, le transformer en perspective, affiner le bord avec un masque, puis unifier lumière et couleur.</p>
+<h2>Un chemin répétable</h2>
+<ol>
+<li>Préparez l’arrière-plan et le sujet comme documents séparés, ou copiez le sujet sur un nouveau calque dans le fichier de fond.</li>
+<li>Tracez un contour approximatif avec une sélection ou la sélection d’objet, sortez un masque de calque, puis affinez cheveux et verre dans Sélectionner et masquer ou sur le masque lui-même.</li>
+<li>Transformation libre pour accorder taille et horizon ; Perspective ou Déformation quand le sujet doit s’asseoir sur un sol ou un mur.</li>
+<li>Accordez la lumière : la direction des hautes lumières et des ombres sur le sujet doit convenir au fond. Courbes ou Teinte/Saturation (de préférence en calques de réglage masqués) aident.</li>
+<li>Ajoutez un calque d’ombre au point de contact (faible opacité, Produit ou Lumière tamisée). Sans elle, le sujet paraît collé.</li>
+<li>Terminez par un peu de grain partagé ou une légère étalonnage d’ensemble pour que des morceaux de caméras différentes fassent une seule prise.</li>
+</ol>
+<aside class="callout in-app">
+<h3>Dans SimplePhoto</h3>
+<p>Vous pouvez ouvrir plusieurs documents, copier-coller des calques, et placer ou rasteriser des illustrations (selon les menus actuels). Les objets intelligents conviennent aux pièces que vous continuerez à mettre à l’échelle. Les groupes de calques peuvent séparer Arrière-plan, Sujet, Couleur et Texte. Basculez la visibilité pour des contrôles A/B, et n’aplatissez pas trop tôt toute la pile.</p>
+</aside>
+<aside class="callout ps-only">
+<h3>Notes propres à Photoshop</h3>
+<p>Le remplissage génératif qui « mélange deux images à partir d’une invite », et la cohérence de référence Firefly, sont des flux génératifs de Photoshop. Le compositing dans SimplePhoto s’appuie sur vos sélections, masques, transformations et travail couleur.</p>
+</aside>
+<section class="reading">
+<h2>Pour aller plus loin</h2>
+<ul>
+<li><a href="https://helpx.adobe.com/photoshop/tutorials.html" rel="noopener noreferrer" target="_blank">Adobe: Photoshop tutorials (compositing courses)</a></li>
+<li><a href="https://www.adobe.com/learn/photoshop/paths/photo-editing" rel="noopener noreferrer" target="_blank">Adobe Learn: Photo editing path</a></li>
+</ul>
+</section>
+
+      <nav class="pager">
+<a href="12-filters-blend.html">Précédent : Filtres et modes de fusion</a>
+<a href="14-nondestructive.html">Suivant : Édition non destructive</a>
+</nav>
+    </main>
+  </div>
+  <script src="../app.js"></script>
+</body>
+</html>

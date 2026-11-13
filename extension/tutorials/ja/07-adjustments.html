@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr" data-lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>色調と色の補正 · チュートリアル</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">本文へスキップ</a>
+  <header class="top">
+    <a class="brand" href="index.html">SimplePhoto</a>
+    <span class="tag">チュートリアル</span>
+    <div class="lang"><label for="lang-select">言語</label><select id="lang-select" name="lang">
+<option value="en">English</option>
+<option value="ja" selected>日本語</option>
+<option value="zh-hans">简体中文</option>
+<option value="zh-hant">繁體中文</option>
+<option value="fr">Français</option>
+<option value="ko">한국어</option>
+<option value="de">Deutsch</option>
+</select></div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="目次">
+      <h2>目次</h2>
+      <ol>
+        <li><a href="index.html">概要</a></li>
+<li><a href="01-interface.html"><span class="num">01</span>インターフェイスとキャンバス</a></li>
+<li><a href="02-open-save.html"><span class="num">02</span>開く、保存、書き出し</a></li>
+<li><a href="03-crop-resize.html"><span class="num">03</span>切り抜き、画像サイズ、キャンバスサイズ</a></li>
+<li><a href="04-layers.html"><span class="num">04</span>レイヤー</a></li>
+<li><a href="05-selections.html"><span class="num">05</span>選択ツール</a></li>
+<li><a href="06-brushes.html"><span class="num">06</span>ブラシと消しゴム</a></li>
+<li><a href="07-adjustments.html" aria-current="page"><span class="num">07</span>色調と色の補正</a></li>
+<li><a href="08-masks.html"><span class="num">08</span>レイヤーマスク</a></li>
+<li><a href="09-text.html"><span class="num">09</span>文字</a></li>
+<li><a href="10-transform.html"><span class="num">10</span>変形</a></li>
+<li><a href="11-retouch.html"><span class="num">11</span>レタッチ、修復、コピー</a></li>
+<li><a href="12-filters-blend.html"><span class="num">12</span>フィルターと描画モード</a></li>
+<li><a href="13-compositing.html"><span class="num">13</span>合成のワークフロー</a></li>
+<li><a href="14-nondestructive.html"><span class="num">14</span>非破壊編集</a></li>
+<li><a href="15-shortcuts.html"><span class="num">15</span>キーボードショートカット</a></li>
+      </ol>
+    </nav>
+    <main id="main">
+      <p class="kicker">第 07 章 · 補正</p>
+<h1>色調と色の補正</h1>
+<p>たいていの写真は、「見た目」の前に、自然な明るさと色が必要です。まず使われる入り口は <strong>画像 → 色調補正</strong> で、これは現在のレイヤーの画素に書き込みます。あとから設定を見直したいときは、代わりに <strong>調整レイヤー</strong> を使います（第 14 章）。</p>
+<h2>まずこれらから</h2>
+<ul>
+<li><strong>レベル補正</strong>（<kbd>⌘L</kbd> / <kbd>Ctrl+L</kbd>）：黒・グレー・白のスライダーでシャドウ、中間調、ハイライトを決めます。色あせて見える写真に有効です。</li>
+<li><strong>トーンカーブ</strong>（<kbd>⌘M</kbd> / <kbd>Ctrl+M</kbd>）：グラフ上の点を動かして、より細かいコントラストや部分的な補正をします。S 字カーブはコントラストを上げます。</li>
+<li><strong>色相・彩度</strong> は、全体または特定の色範囲で色相、彩度、明度を変えます。派手な衣服を抑えたり、色かぶりを穏やかにしたりするのに向きます。</li>
+<li><strong>明るさ・コントラスト</strong> はより直感的ですが、レベル補正やトーンカーブほど精密ではありません。小さな調整向けです。</li>
+</ul>
+<aside class="callout in-app">
+<h3>SimplePhoto では</h3>
+<p>これらのコマンドは <strong>画像 → 色調補正</strong> にあります。ダイアログはたいてい先にプレビューし、確定するとヒストリーの一歩が残るので取り消しできます。<strong>レイヤー → 新規調整レイヤー</strong> で色相・彩度やトーンカーブなどを選ぶと、効果は画素と別のまま残ります。プロパティパネルで、その調整レイヤーを続けて編集できます。</p>
+</aside>
+<p>信頼できる順番：まず露出と黒点／白点（レベル補正またはトーンカーブ）、次に色かぶり、そのあとでスタイルのついたグレーディング。説明できないスライダーを十本動かすより、はっきりした変更を一つずつ行います。</p>
+<aside class="callout ps-only">
+<h3>Photoshop のみのメモ</h3>
+<p>クラウドの Camera Raw プロファイル、ニューラルフィルターの彩色、生成的な再着色は、SimplePhoto の機能として保証されません。メニューにコマンドがなければ Photoshop 固有とみなし、そのファイル形式で実際にある補正や Camera Raw 系のツールを使ってください。</p>
+</aside>
+<section class="reading">
+<h2>参考資料</h2>
+<ul>
+<li><a href="https://helpx.adobe.com/photoshop/using/adjusting-color-tone-image.html" rel="noopener noreferrer" target="_blank">Adobe: Adjusting color and tone</a></li>
+<li><a href="https://www.adobe.com/learn/photoshop/paths/photo-editing" rel="noopener noreferrer" target="_blank">Adobe Learn: Photo editing (lighting and color units)</a></li>
+</ul>
+</section>
+
+      <nav class="pager">
+<a href="06-brushes.html">前へ：ブラシと消しゴム</a>
+<a href="08-masks.html">次へ：レイヤーマスク</a>
+</nav>
+    </main>
+  </div>
+  <script src="../app.js"></script>
+</body>
+</html>

@@ -66,10 +66,15 @@ index 7aaf58ffc..9db1bd5dd 100644
  
  /// The tools, in toolbar order: shortcut id (`tools.select.<tool>`), Photoshop's name for it
 diff --git a/crates/ui-egui/src/canvas/start_screen.rs b/crates/ui-egui/src/canvas/start_screen.rs
-index b033500d0..ea8121bc2 100644
+index b033500d0..a6235a6aa 100644
 --- a/crates/ui-egui/src/canvas/start_screen.rs
 +++ b/crates/ui-egui/src/canvas/start_screen.rs
-@@ -164,7 +164,7 @@ fn render_start_rail(app: &mut PhotocraftApp, ui: &mut egui::Ui, rail_w: f32) {
+@@ -160,11 +160,11 @@ fn render_start_rail(app: &mut PhotocraftApp, ui: &mut egui::Ui, rail_w: f32) {
+         learn_color,
+     );
+     if learn_resp.clicked() {
+-        crate::links::open(app, ui.ctx(), crate::links::TUTORIALS);
++        crate::links::open(app, ui.ctx(), &crate::links::tutorials_url(app));
      }
  
      // 5. Bottom pinned community links
@@ -145,10 +150,10 @@ index b3a93a1ac..b6dc3e895 100644
          .query_all(egui_kittest::kittest::by().predicate(|n| n.bounding_box().is_some()))
          .map(|n| n.rect())
 diff --git a/crates/ui-egui/src/links.rs b/crates/ui-egui/src/links.rs
-index dc935b3da..9c23db399 100644
+index dc935b3da..3c4d54bc8 100644
 --- a/crates/ui-egui/src/links.rs
 +++ b/crates/ui-egui/src/links.rs
-@@ -1,21 +1,21 @@
+@@ -1,21 +1,29 @@
  //! Community and project links: the Help menu, the About dialog, the start screen and the title
 -//! bar all open these. URLs follow the crafting-app pattern (`getartcraft.com/apps/<app>`,
 -//! `github.com/storytold/<app>`).
@@ -169,6 +174,14 @@ index dc935b3da..9c23db399 100644
 +/// → `chrome-extension://<id>/tutorials/index.html`). `open` leaves relative URLs as-is so
 +/// the web/WASM fallback (`ctx.open_url` in a new tab) resolves against the current page.
 +pub const TUTORIALS: &str = "../tutorials/index.html";
++
++/// Home › Learn URL, tagged with the editor's `interface.language` (`auto` or a catalog code)
++/// so the bundled tutorials can open in the same language.
++pub fn tutorials_url(app: &PhotocraftApp) -> String {
++    let lang = app.session.prefs().interface.language.trim();
++    let lang = if lang.is_empty() { "auto" } else { lang };
++    format!("{TUTORIALS}?lang={lang}")
++}
 +pub const GITHUB: &str = "https://github.com/SimpleAI2026/SimplePhoto";
 +pub const ISSUES: &str = "https://github.com/SimpleAI2026/SimplePhoto/issues";
  
@@ -179,7 +192,7 @@ index dc935b3da..9c23db399 100644
  
  pub fn url_for(id: &str) -> Option<&'static str> {
      COMMANDS.iter().find(|c| c.0 == id).map(|c| c.1)
-@@ -33,24 +33,15 @@ pub fn open(app: &mut PhotocraftApp, ctx: &egui::Context, url: &str) -> Value {
+@@ -33,24 +41,15 @@ pub fn open(app: &mut PhotocraftApp, ctx: &egui::Context, url: &str) -> Value {
      json!({"url": url})
  }
  
@@ -207,7 +220,7 @@ index dc935b3da..9c23db399 100644
      let mut clicked: Option<&str> = None;
      ui.horizontal(|ui| {
          ui.spacing_mut().item_spacing.x = 0.0;
-@@ -75,7 +66,7 @@ mod tests {
+@@ -75,7 +74,7 @@ mod tests {
  
      #[test]
      fn links_open_through_the_platform_service() {
@@ -216,7 +229,7 @@ index dc935b3da..9c23db399 100644
          // They route through the `open_url` service rather than the unreliable `ctx.open_url`.
          use std::sync::{Arc, Mutex};
          let opened: Arc<Mutex<Vec<String>>> = Arc::new(Mutex::new(Vec::new()));
-@@ -94,9 +85,9 @@ mod tests {
+@@ -94,9 +93,9 @@ mod tests {
              crate::menus::invoke(&mut app, &ctx, id, json!({})).unwrap();
              assert_eq!(opened.lock().unwrap().last().map(String::as_str), Some(*url), "{id}");
          }
@@ -229,7 +242,7 @@ index dc935b3da..9c23db399 100644
      }
  
      #[test]
-@@ -106,9 +97,7 @@ mod tests {
+@@ -106,9 +105,7 @@ mod tests {
          assert_eq!(
              help,
              [
@@ -239,7 +252,7 @@ index dc935b3da..9c23db399 100644
                  "help.github",
                  "help.reportIssue",
                  "help.checkForUpdates",
-@@ -127,9 +116,9 @@ mod tests {
+@@ -127,9 +124,9 @@ mod tests {
          let mut app = PhotocraftApp::new(photocraft_engine::Session::new(), Default::default());
          let ctx = egui::Context::default();
          for (id, url) in [

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr" data-lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>레이어 · 튜토리얼</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 건너뛰기</a>
+  <header class="top">
+    <a class="brand" href="index.html">SimplePhoto</a>
+    <span class="tag">튜토리얼</span>
+    <div class="lang"><label for="lang-select">언어</label><select id="lang-select" name="lang">
+<option value="en">English</option>
+<option value="ja">日本語</option>
+<option value="zh-hans">简体中文</option>
+<option value="zh-hant">繁體中文</option>
+<option value="fr">Français</option>
+<option value="ko" selected>한국어</option>
+<option value="de">Deutsch</option>
+</select></div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="목차">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="index.html">개요</a></li>
+<li><a href="01-interface.html"><span class="num">01</span>인터페이스와 캔버스</a></li>
+<li><a href="02-open-save.html"><span class="num">02</span>열기, 저장, 내보내기</a></li>
+<li><a href="03-crop-resize.html"><span class="num">03</span>자르기, 이미지 크기, 캔버스 크기</a></li>
+<li><a href="04-layers.html" aria-current="page"><span class="num">04</span>레이어</a></li>
+<li><a href="05-selections.html"><span class="num">05</span>선택 도구</a></li>
+<li><a href="06-brushes.html"><span class="num">06</span>브러시와 지우개</a></li>
+<li><a href="07-adjustments.html"><span class="num">07</span>톤과 색상 조정</a></li>
+<li><a href="08-masks.html"><span class="num">08</span>레이어 마스크</a></li>
+<li><a href="09-text.html"><span class="num">09</span>문자</a></li>
+<li><a href="10-transform.html"><span class="num">10</span>변형</a></li>
+<li><a href="11-retouch.html"><span class="num">11</span>보정, 복구, 복제</a></li>
+<li><a href="12-filters-blend.html"><span class="num">12</span>필터와 혼합 모드</a></li>
+<li><a href="13-compositing.html"><span class="num">13</span>합성 작업 과정</a></li>
+<li><a href="14-nondestructive.html"><span class="num">14</span>비파괴 편집</a></li>
+<li><a href="15-shortcuts.html"><span class="num">15</span>단축키</a></li>
+      </ol>
+    </nav>
+    <main id="main">
+      <p class="kicker">제 04 장 · 핵심</p>
+<h1>레이어</h1>
+<p>레이어는 겹쳐 놓은 필름과 같습니다. 위 레이어가 아래를 가릴 수 있지만, 아래 픽셀을 파괴하지 않고 옮기거나 숨기거나 투명도를 조절할 수 있습니다. 본격적인 편집은 거의 항상 “배경 레이어 하나에 전부 그리지 않기”에서 시작합니다.</p>
+<h2>레이어 패널의 역할</h2>
+<ul>
+<li>쌓인 순서를 보고 드래그하여 바꿉니다.</li>
+<li>눈 아이콘을 눌러 레이어를 보이거나 숨깁니다.</li>
+<li>불투명도와 <strong>혼합 모드</strong>를 바꿉니다(나중에 자주 쓰게 됩니다).</li>
+<li>관련 레이어를 그룹으로 묶어 목록을 읽기 쉽게 합니다.</li>
+</ul>
+<aside class="callout in-app">
+<h3>SimplePhoto에서</h3>
+<p><strong>창 → 레이어</strong>(<kbd>F7</kbd>)를 엽니다. 레이어는 <strong>레이어</strong> 메뉴나 패널 버튼으로 만듭니다. <kbd>⇧⌘N</kbd> / <kbd>Ctrl+Shift+N</kbd>은 새 레이어 대화 상자를 열고, <kbd>⌥⇧⌘N</kbd> / <kbd>Ctrl+Alt+Shift+N</kbd>은 바로 만듭니다. 복제, 아래와 병합, 병합(평면화)도 할 수 있습니다. 문자, 도형, 스마트 오브젝트를 일반 픽셀로 만들 때는 래스터화합니다. 레이어를 스마트 오브젝트로 변환하면 비파괴 변형이 수월합니다(14장).</p>
+</aside>
+<h2>실무 습관</h2>
+<p>다음 주에도 읽을 수 있게 레이어 이름을 붙이세요. 피부, 하늘, 문자는 서로 다른 레이어에 둡니다. 한 단계가 잘못되면 그 레이어만 숨기거나 삭제하면 배경은 남습니다. 배경 레이어가 움직이지 않으면 먼저 일반 레이어로 바꿉니다.</p>
+<aside class="callout ps-only">
+<h3>Photoshop 전용 참고</h3>
+<p>비디오 레이어, 일부 3D 레이어 유형, Adobe Stock이나 클라우드 라이브러리에 연결된 레이어는 이 확장 프로그램 범위 밖입니다. SimplePhoto의 레이어 모델은 정지 이미지 편집과 합성에 맞춰져 있습니다.</p>
+</aside>
+<section class="reading">
+<h2>더 알아보기</h2>
+<ul>
+<li><a href="https://helpx.adobe.com/photoshop/using/layer-basics.html" rel="noopener noreferrer" target="_blank">Adobe: Layer basics</a></li>
+</ul>
+</section>
+
+      <nav class="pager">
+<a href="03-crop-resize.html">이전: 자르기, 이미지 크기, 캔버스 크기</a>
+<a href="05-selections.html">다음: 선택 도구</a>
+</nav>
+    </main>
+  </div>
+  <script src="../app.js"></script>
+</body>
+</html>

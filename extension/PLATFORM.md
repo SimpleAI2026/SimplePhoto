@@ -20,4 +20,6 @@ Pinned PhotoCraft: `2239ee9cb6c87583242ccd247f0a621f3d4d90ee`
 
 ## Bundled tutorials
 
-The start-screen **Learn** action opens `../tutorials/index.html` (resolved from the editor page to `chrome-extension://<id>/tutorials/index.html`) in a new tab. This is an extension page, so `web_accessible_resources` is not required. Packaged via `scripts/package-extension.sh` (copies all of `extension/`).
+The start-screen **Learn** action opens `../tutorials/index.html?lang={lang}` (resolved from the editor page to `chrome-extension://<id>/tutorials/index.html?lang=…`) in a new tab. `{lang}` is the editor interface language, or `auto`. This is an extension page, so `web_accessible_resources` is not required. Packaged via `scripts/package-extension.sh` (copies all of `extension/`).
+
+Tutorials ship in English, Simplified Chinese, Traditional Chinese, Japanese, Korean, German, and French (`en`, `zh-hans`, `zh-hant`, `ja`, `ko`, `de`, `fr`). The tutorial switcher lists only those seven. Any other editor language falls back to English. The editor's own language selector is unchanged.

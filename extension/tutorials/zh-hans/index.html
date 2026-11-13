@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr" data-lang="zh-hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>教程 · SimplePhoto</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">跳到正文</a>
+  <header class="top">
+    <a class="brand" href="index.html">SimplePhoto</a>
+    <span class="tag">教程</span>
+    <div class="lang"><label for="lang-select">语言</label><select id="lang-select" name="lang">
+<option value="en">English</option>
+<option value="ja">日本語</option>
+<option value="zh-hans" selected>简体中文</option>
+<option value="zh-hant">繁體中文</option>
+<option value="fr">Français</option>
+<option value="ko">한국어</option>
+<option value="de">Deutsch</option>
+</select></div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="目录">
+      <h2>目录</h2>
+      <ol>
+        <li><a href="index.html" aria-current="page">概览</a></li>
+<li><a href="01-interface.html"><span class="num">01</span>界面与画布</a></li>
+<li><a href="02-open-save.html"><span class="num">02</span>打开、保存与导出</a></li>
+<li><a href="03-crop-resize.html"><span class="num">03</span>裁剪、图像大小与画布大小</a></li>
+<li><a href="04-layers.html"><span class="num">04</span>图层</a></li>
+<li><a href="05-selections.html"><span class="num">05</span>选区工具</a></li>
+<li><a href="06-brushes.html"><span class="num">06</span>画笔与橡皮擦</a></li>
+<li><a href="07-adjustments.html"><span class="num">07</span>色调与颜色调整</a></li>
+<li><a href="08-masks.html"><span class="num">08</span>图层蒙版</a></li>
+<li><a href="09-text.html"><span class="num">09</span>文字</a></li>
+<li><a href="10-transform.html"><span class="num">10</span>变换</a></li>
+<li><a href="11-retouch.html"><span class="num">11</span>修饰、修复与仿制</a></li>
+<li><a href="12-filters-blend.html"><span class="num">12</span>滤镜与混合模式</a></li>
+<li><a href="13-compositing.html"><span class="num">13</span>合成工作流</a></li>
+<li><a href="14-nondestructive.html"><span class="num">14</span>非破坏性编辑</a></li>
+<li><a href="15-shortcuts.html"><span class="num">15</span>快捷键</a></li>
+      </ol>
+    </nav>
+    <main id="main">
+      <p class="kicker">SimplePhoto 教程</p>
+<h1>学习路径</h1>
+<p class="lead">这份教程按 Photoshop 常见学习顺序编写，但步骤以 <strong>SimplePhoto</strong> 为准。SimplePhoto 是嵌入浏览器的本地图像编辑器，核心能力来自开源项目 PhotoCraft，菜单与工具名称尽量贴近 Photoshop，方便对照学习。</p>
+<p>在编辑器主页左侧点 <strong>学习</strong> 就会打开本目录（新标签页）。文档位于扩展内部，不必访问外部教程网站。上方的语言菜单可在英语、简体中文、繁体中文、日语、韩语、德语和法语之间切换。若编辑器使用其他语言，教程会回退到英语。</p>
+<aside class="callout in-app">
+<h3>在 SimplePhoto 里怎么开始</h3>
+<p>打开扩展后会进入起始主页：可以新建或打开图像，右侧是最近文件。左侧栏有「主页」和「学习」。顶栏可切换工作区、外观和界面语言（简体中文在语言列表中）。图层面板可用 <kbd>F7</kbd> 打开或关闭。</p>
+</aside>
+<aside class="callout ps-only">
+<h3>和 Photoshop 不同的地方</h3>
+<p>SimplePhoto 不能登录 Adobe 账号，也没有 Firefly / 生成式填充、云文档、Creative Cloud Libraries 等在线服务。商业 Neural Filters 以及依赖 Adobe 云的功能请视为 <strong>仅 Photoshop</strong>。本教程遇到这类概念会单独标明，不会假装软件里有这些按钮。</p>
+</aside>
+<h2>建议顺序</h2>
+<p>先把界面、打开保存和图层跑通，再学选区与调整，最后才是合成与非破坏性流程。不必一天学完；每一章都可以对着一张自己的照片练习。</p>
+<div class="cards"><a href="01-interface.html"><strong><span class="num">01</span> <span>界面与画布</span></strong><span>先熟悉工作区</span></a><a href="02-open-save.html"><strong><span class="num">02</span> <span>打开、保存与导出</span></strong><span>把文件导入和导出</span></a><a href="03-crop-resize.html"><strong><span class="num">03</span> <span>裁剪、图像大小与画布大小</span></strong><span>取景与输出尺寸</span></a><a href="04-layers.html"><strong><span class="num">04</span> <span>图层</span></strong><span>用叠加代替覆盖</span></a><a href="05-selections.html"><strong><span class="num">05</span> <span>选区工具</span></strong><span>先选中，再编辑</span></a><a href="06-brushes.html"><strong><span class="num">06</span> <span>画笔与橡皮擦</span></strong><span>涂绘与擦除</span></a><a href="07-adjustments.html"><strong><span class="num">07</span> <span>色调与颜色调整</span></strong><span>色阶、曲线、色相</span></a><a href="08-masks.html"><strong><span class="num">08</span> <span>图层蒙版</span></strong><span>不删除，只隐藏</span></a><a href="09-text.html"><strong><span class="num">09</span> <span>文字</span></strong><span>标题与标注</span></a><a href="10-transform.html"><strong><span class="num">10</span> <span>变换</span></strong><span>缩放、旋转、变形</span></a><a href="11-retouch.html"><strong><span class="num">11</span> <span>修饰、修复与仿制</span></strong><span>修掉瑕疵</span></a><a href="12-filters-blend.html"><strong><span class="num">12</span> <span>滤镜与混合模式</span></strong><span>氛围与叠加</span></a><a href="13-compositing.html"><strong><span class="num">13</span> <span>合成工作流</span></strong><span>把多张图合成一张</span></a><a href="14-nondestructive.html"><strong><span class="num">14</span> <span>非破坏性编辑</span></strong><span>随时还能改</span></a><a href="15-shortcuts.html"><strong><span class="num">15</span> <span>快捷键</span></strong><span>常用快捷键一览</span></a></div>
+<section class="reading">
+<h2>延伸阅读（外部资料，非本教程原文）</h2>
+<p>以下链接指向 Adobe 官方帮助与学习路径，便于对照 Photoshop 的术语与课堂结构。正文为 SimplePhoto 原创说明，没有摘录这些页面的正文。</p>
+<ul>
+<li><a href="https://helpx.adobe.com/photoshop/tutorials.html" rel="noopener noreferrer" target="_blank">Adobe: Photoshop tutorials</a></li>
+<li><a href="https://www.adobe.com/learn/photoshop/paths/photo-editing" rel="noopener noreferrer" target="_blank">Adobe Learn: Photo editing path</a></li>
+<li><a href="https://helpx.adobe.com/photoshop/desktop.html" rel="noopener noreferrer" target="_blank">Adobe: Photoshop desktop help</a></li>
+</ul>
+</section>
+
+      <nav class="pager">
+<span></span>
+<a href="01-interface.html">下一章：界面与画布</a>
+</nav>
+    </main>
+  </div>
+  <script src="../app.js"></script>
+</body>
+</html>

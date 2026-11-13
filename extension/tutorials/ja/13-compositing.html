@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr" data-lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>合成のワークフロー · チュートリアル</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">本文へスキップ</a>
+  <header class="top">
+    <a class="brand" href="index.html">SimplePhoto</a>
+    <span class="tag">チュートリアル</span>
+    <div class="lang"><label for="lang-select">言語</label><select id="lang-select" name="lang">
+<option value="en">English</option>
+<option value="ja" selected>日本語</option>
+<option value="zh-hans">简体中文</option>
+<option value="zh-hant">繁體中文</option>
+<option value="fr">Français</option>
+<option value="ko">한국어</option>
+<option value="de">Deutsch</option>
+</select></div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="目次">
+      <h2>目次</h2>
+      <ol>
+        <li><a href="index.html">概要</a></li>
+<li><a href="01-interface.html"><span class="num">01</span>インターフェイスとキャンバス</a></li>
+<li><a href="02-open-save.html"><span class="num">02</span>開く、保存、書き出し</a></li>
+<li><a href="03-crop-resize.html"><span class="num">03</span>切り抜き、画像サイズ、キャンバスサイズ</a></li>
+<li><a href="04-layers.html"><span class="num">04</span>レイヤー</a></li>
+<li><a href="05-selections.html"><span class="num">05</span>選択ツール</a></li>
+<li><a href="06-brushes.html"><span class="num">06</span>ブラシと消しゴム</a></li>
+<li><a href="07-adjustments.html"><span class="num">07</span>色調と色の補正</a></li>
+<li><a href="08-masks.html"><span class="num">08</span>レイヤーマスク</a></li>
+<li><a href="09-text.html"><span class="num">09</span>文字</a></li>
+<li><a href="10-transform.html"><span class="num">10</span>変形</a></li>
+<li><a href="11-retouch.html"><span class="num">11</span>レタッチ、修復、コピー</a></li>
+<li><a href="12-filters-blend.html"><span class="num">12</span>フィルターと描画モード</a></li>
+<li><a href="13-compositing.html" aria-current="page"><span class="num">13</span>合成のワークフロー</a></li>
+<li><a href="14-nondestructive.html"><span class="num">14</span>非破壊編集</a></li>
+<li><a href="15-shortcuts.html"><span class="num">15</span>キーボードショートカット</a></li>
+      </ol>
+    </nav>
+    <main id="main">
+      <p class="kicker">第 13 章 · 中級</p>
+<h1>合成のワークフロー</h1>
+<p>合成は、複数の画像（または描いたレイヤー）を、ひと続きに感じられる絵にまとめることです。魔法のツール一つというより手順です。被写体を選び、新しいドキュメントに置き、遠近に合わせて変形し、マスクで輪郭を整え、光と色をそろえます。</p>
+<h2>繰り返せる道筋</h2>
+<ol>
+<li>背景と被写体を別ドキュメントとして用意するか、被写体を背景ファイルの新規レイヤーにコピーします。</li>
+<li>選択またはオブジェクト選択で荒い輪郭を取り、レイヤーマスクとして書き出し、髪やガラスは選択とマスクかマスク自体で整えます。</li>
+<li>自由変形で大きさと地平線を合わせ、地面や壁に乗せる必要があるときは遠近またはワープを使います。</li>
+<li>光を合わせます。被写体のハイライトと影の向きは、背景と一致しなければなりません。トーンカーブや色相・彩度（できればマスク付きの調整レイヤー）が役立ちます。</li>
+<li>接地付近に影のレイヤーを足します（低い不透明度、乗算またはソフトライト）。それがないと、被写体が貼り付いて見えます。</li>
+<li>最後に、共有の粒子を少し足すか、全体にゆるいグレーディングをかけて、別のカメラの断片が一つの撮影に見えるようにします。</li>
+</ol>
+<aside class="callout in-app">
+<h3>SimplePhoto では</h3>
+<p>複数のドキュメントを開き、レイヤーをコピー＆ペーストし、素材を配置またはラスタライズできます（そのときのメニューに従います）。スマートオブジェクトは、拡大縮小を続けるパーツに向きます。レイヤーグループで背景、被写体、色、文字を分けられます。表示を切り替えて A/B 確認し、スタック全体を早く統合しすぎないでください。</p>
+</aside>
+<aside class="callout ps-only">
+<h3>Photoshop のみのメモ</h3>
+<p>プロンプトから「二枚の絵をなじませる」生成塗りつぶしや、Firefly の参照の一貫性は、Photoshop の生成フローです。SimplePhoto の合成は、選択、マスク、変形、色の作業に依ります。</p>
+</aside>
+<section class="reading">
+<h2>参考資料</h2>
+<ul>
+<li><a href="https://helpx.adobe.com/photoshop/tutorials.html" rel="noopener noreferrer" target="_blank">Adobe: Photoshop tutorials (compositing courses)</a></li>
+<li><a href="https://www.adobe.com/learn/photoshop/paths/photo-editing" rel="noopener noreferrer" target="_blank">Adobe Learn: Photo editing path</a></li>
+</ul>
+</section>
+
+      <nav class="pager">
+<a href="12-filters-blend.html">前へ：フィルターと描画モード</a>
+<a href="14-nondestructive.html">次へ：非破壊編集</a>
+</nav>
+    </main>
+  </div>
+  <script src="../app.js"></script>
+</body>
+</html>

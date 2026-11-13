@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" dir="ltr" data-lang="zh-hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>色調與顏色調整 · 教學</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">跳到正文</a>
+  <header class="top">
+    <a class="brand" href="index.html">SimplePhoto</a>
+    <span class="tag">教學</span>
+    <div class="lang"><label for="lang-select">語言</label><select id="lang-select" name="lang">
+<option value="en">English</option>
+<option value="ja">日本語</option>
+<option value="zh-hans">简体中文</option>
+<option value="zh-hant" selected>繁體中文</option>
+<option value="fr">Français</option>
+<option value="ko">한국어</option>
+<option value="de">Deutsch</option>
+</select></div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="目錄">
+      <h2>目錄</h2>
+      <ol>
+        <li><a href="index.html">概覽</a></li>
+<li><a href="01-interface.html"><span class="num">01</span>介面與畫布</a></li>
+<li><a href="02-open-save.html"><span class="num">02</span>開啟、儲存與匯出</a></li>
+<li><a href="03-crop-resize.html"><span class="num">03</span>裁剪、影像大小與畫布大小</a></li>
+<li><a href="04-layers.html"><span class="num">04</span>圖層</a></li>
+<li><a href="05-selections.html"><span class="num">05</span>選取工具</a></li>
+<li><a href="06-brushes.html"><span class="num">06</span>畫筆與橡皮擦</a></li>
+<li><a href="07-adjustments.html" aria-current="page"><span class="num">07</span>色調與顏色調整</a></li>
+<li><a href="08-masks.html"><span class="num">08</span>圖層遮色片</a></li>
+<li><a href="09-text.html"><span class="num">09</span>文字</a></li>
+<li><a href="10-transform.html"><span class="num">10</span>變形</a></li>
+<li><a href="11-retouch.html"><span class="num">11</span>修飾、修復與仿製</a></li>
+<li><a href="12-filters-blend.html"><span class="num">12</span>濾鏡與混合模式</a></li>
+<li><a href="13-compositing.html"><span class="num">13</span>合成工作流程</a></li>
+<li><a href="14-nondestructive.html"><span class="num">14</span>非破壞性編輯</a></li>
+<li><a href="15-shortcuts.html"><span class="num">15</span>快速鍵</a></li>
+      </ol>
+    </nav>
+    <main id="main">
+      <p class="kicker">第 07 章 · 調整</p>
+<h1>色調與顏色調整</h1>
+<p>大多數照片先要處理「亮暗是否合理、顏色是否可信」，再談風格。常用入口在 <strong>影像 → 調整</strong>：它們直接改當前圖層的像素。若希望以後還能改參數，應改用<strong>調整圖層</strong>（見第 14 章）。</p>
+<h2>先掌握這幾個</h2>
+<ul>
+<li><strong>色階</strong>（Levels，<kbd>⌘L</kbd> / <kbd>Ctrl+L</kbd>）：用黑、灰、白三個滑塊設定暗部、中間調和亮部。適合把發灰的照片重新拉開反差。</li>
+<li><strong>曲線</strong>（Curves，<kbd>⌘M</kbd> / <kbd>Ctrl+M</kbd>）：在坐標系裡推點，可做更細的對比度和分區校正。S 形曲線會增加反差。</li>
+<li><strong>色相 / 飽和度</strong>（Hue/Saturation）：改整體或某個顏色範圍的色相、飽和度與明度。適合讓過飽和的衣服收斂，或微調偏色。</li>
+<li><strong>亮度 / 對比度</strong>：更直觀，但不如色階和曲線精細，適合輕微調整。</li>
+</ul>
+<aside class="callout in-app">
+<h3>在 SimplePhoto 中</h3>
+<p>上述命令都在 <strong>影像 → 調整</strong>。對話框通常帶預覽，確認後寫入步驟記錄，可用還原或歷史面板撤回。你也可以用 <strong>圖層 → 新增調整圖層</strong> 創建色相/飽和度、曲線等調整圖層，把效果與像素分開。屬性面板裡仍可繼續修改這些調整圖層。</p>
+</aside>
+<p>建議順序：先修正曝光和黑白場（色階或曲線），再處理白平衡或色偏，最後才加風格化的顏色。每次只做一個明確的目標，避免同時拖十個滑塊卻說不清爲什麼。</p>
+<aside class="callout ps-only">
+<h3>僅限 Photoshop 的概念</h3>
+<p>Adobe Camera Raw 濾鏡的雲端配置檔案、神經濾鏡上色、以及生成式「重新着色」不屬於 SimplePhoto 的保證功能。若選單裡沒有某一項，就把它當作 Photoshop 專有，改用本編輯器已有的調整或相機原始資料相關工具（若該檔案類型可用）。</p>
+</aside>
+<section class="reading">
+<h2>延伸閱讀</h2>
+<ul>
+<li><a href="https://helpx.adobe.com/photoshop/using/adjusting-color-tone-image.html" rel="noopener noreferrer" target="_blank">Adobe: Adjusting color and tone</a></li>
+<li><a href="https://www.adobe.com/learn/photoshop/paths/photo-editing" rel="noopener noreferrer" target="_blank">Adobe Learn: Photo editing (lighting and color units)</a></li>
+</ul>
+</section>
+
+      <nav class="pager">
+<a href="06-brushes.html">上一章：畫筆與橡皮擦</a>
+<a href="08-masks.html">下一章：圖層遮色片</a>
+</nav>
+    </main>
+  </div>
+  <script src="../app.js"></script>
+</body>
+</html>

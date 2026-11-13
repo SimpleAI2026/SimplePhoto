@@ -1,0 +1,146 @@
+{
+  "index": {
+    "en": "Learning path",
+    "ja": "学習の進め方",
+    "zh-hans": "学习路径",
+    "zh-hant": "學習路徑",
+    "fr": "Parcours d’apprentissage",
+    "ko": "학습 경로",
+    "de": "Lernpfad"
+  },
+  "01-interface": {
+    "en": "Interface and the canvas",
+    "ja": "インターフェイスとキャンバス",
+    "zh-hans": "界面与画布",
+    "zh-hant": "介面與畫布",
+    "fr": "Interface et zone de travail",
+    "ko": "인터페이스와 캔버스",
+    "de": "Oberfläche und Arbeitsfläche"
+  },
+  "02-open-save": {
+    "en": "Open, save, and export",
+    "ja": "開く、保存、書き出し",
+    "zh-hans": "打开、保存与导出",
+    "zh-hant": "開啟、儲存與匯出",
+    "fr": "Ouvrir, enregistrer et exporter",
+    "ko": "열기, 저장, 내보내기",
+    "de": "Öffnen, speichern und exportieren"
+  },
+  "03-crop-resize": {
+    "en": "Crop, image size, and canvas size",
+    "ja": "切り抜き、画像サイズ、キャンバスサイズ",
+    "zh-hans": "裁剪、图像大小与画布大小",
+    "zh-hant": "裁剪、影像大小與畫布大小",
+    "fr": "Recadrage, taille de l’image et du plan de travail",
+    "ko": "자르기, 이미지 크기, 캔버스 크기",
+    "de": "Zuschneiden, Bildgröße und Arbeitsfläche"
+  },
+  "04-layers": {
+    "en": "Layers",
+    "ja": "レイヤー",
+    "zh-hans": "图层",
+    "zh-hant": "圖層",
+    "fr": "Calques",
+    "ko": "레이어",
+    "de": "Ebenen"
+  },
+  "05-selections": {
+    "en": "Selection tools",
+    "ja": "選択ツール",
+    "zh-hans": "选区工具",
+    "zh-hant": "選取工具",
+    "fr": "Outils de sélection",
+    "ko": "선택 도구",
+    "de": "Auswahlwerkzeuge"
+  },
+  "06-brushes": {
+    "en": "Brushes and the eraser",
+    "ja": "ブラシと消しゴム",
+    "zh-hans": "画笔与橡皮擦",
+    "zh-hant": "畫筆與橡皮擦",
+    "fr": "Pinceaux et gomme",
+    "ko": "브러시와 지우개",
+    "de": "Pinsel und Radiergummi"
+  },
+  "07-adjustments": {
+    "en": "Tone and color adjustments",
+    "ja": "色調と色の補正",
+    "zh-hans": "色调与颜色调整",
+    "zh-hant": "色調與顏色調整",
+    "fr": "Réglages de tonalité et de couleur",
+    "ko": "톤과 색상 조정",
+    "de": "Tonwert- und Farbkorrekturen"
+  },
+  "08-masks": {
+    "en": "Layer masks",
+    "ja": "レイヤーマスク",
+    "zh-hans": "图层蒙版",
+    "zh-hant": "圖層遮色片",
+    "fr": "Masques de fusion",
+    "ko": "레이어 마스크",
+    "de": "Ebenenmasken"
+  },
+  "09-text": {
+    "en": "Type and text",
+    "ja": "文字",
+    "zh-hans": "文字",
+    "zh-hant": "文字",
+    "fr": "Texte",
+    "ko": "문자",
+    "de": "Text"
+  },
+  "10-transform": {
+    "en": "Transform",
+    "ja": "変形",
+    "zh-hans": "变换",
+    "zh-hant": "變形",
+    "fr": "Transformation",
+    "ko": "변형",
+    "de": "Transformieren"
+  },
+  "11-retouch": {
+    "en": "Retouch, heal, and clone",
+    "ja": "レタッチ、修復、コピー",
+    "zh-hans": "修饰、修复与仿制",
+    "zh-hant": "修飾、修復與仿製",
+    "fr": "Retouche, correction et tampon",
+    "ko": "보정, 복구, 복제",
+    "de": "Retusche, Reparatur und Kopierstempel"
+  },
+  "12-filters-blend": {
+    "en": "Filters and blend modes",
+    "ja": "フィルターと描画モード",
+    "zh-hans": "滤镜与混合模式",
+    "zh-hant": "濾鏡與混合模式",
+    "fr": "Filtres et modes de fusion",
+    "ko": "필터와 혼합 모드",
+    "de": "Filter und Mischmodi"
+  },
+  "13-compositing": {
+    "en": "Compositing workflow",
+    "ja": "合成のワークフロー",
+    "zh-hans": "合成工作流",
+    "zh-hant": "合成工作流程",
+    "fr": "Flux de compositing",
+    "ko": "합성 작업 과정",
+    "de": "Compositing-Ablauf"
+  },
+  "14-nondestructive": {
+    "en": "Non-destructive editing",
+    "ja": "非破壊編集",
+    "zh-hans": "非破坏性编辑",
+    "zh-hant": "非破壞性編輯",
+    "fr": "Édition non destructive",
+    "ko": "비파괴 편집",
+    "de": "Nicht-destruktives Bearbeiten"
+  },
+  "15-shortcuts": {
+    "en": "Keyboard shortcuts",
+    "ja": "キーボードショートカット",
+    "zh-hans": "快捷键",
+    "zh-hant": "快速鍵",
+    "fr": "Raccourcis clavier",
+    "ko": "단축키",
+    "de": "Tastenkürzel"
+  }
+}

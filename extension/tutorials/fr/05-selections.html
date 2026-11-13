@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" data-lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Outils de sélection · Tutoriels</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Aller au contenu</a>
+  <header class="top">
+    <a class="brand" href="index.html">SimplePhoto</a>
+    <span class="tag">Tutoriels</span>
+    <div class="lang"><label for="lang-select">Langue</label><select id="lang-select" name="lang">
+<option value="en">English</option>
+<option value="ja">日本語</option>
+<option value="zh-hans">简体中文</option>
+<option value="zh-hant">繁體中文</option>
+<option value="fr" selected>Français</option>
+<option value="ko">한국어</option>
+<option value="de">Deutsch</option>
+</select></div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="Sommaire">
+      <h2>Sommaire</h2>
+      <ol>
+        <li><a href="index.html">Aperçu</a></li>
+<li><a href="01-interface.html"><span class="num">01</span>Interface et zone de travail</a></li>
+<li><a href="02-open-save.html"><span class="num">02</span>Ouvrir, enregistrer et exporter</a></li>
+<li><a href="03-crop-resize.html"><span class="num">03</span>Recadrage, taille de l’image et du plan de travail</a></li>
+<li><a href="04-layers.html"><span class="num">04</span>Calques</a></li>
+<li><a href="05-selections.html" aria-current="page"><span class="num">05</span>Outils de sélection</a></li>
+<li><a href="06-brushes.html"><span class="num">06</span>Pinceaux et gomme</a></li>
+<li><a href="07-adjustments.html"><span class="num">07</span>Réglages de tonalité et de couleur</a></li>
+<li><a href="08-masks.html"><span class="num">08</span>Masques de fusion</a></li>
+<li><a href="09-text.html"><span class="num">09</span>Texte</a></li>
+<li><a href="10-transform.html"><span class="num">10</span>Transformation</a></li>
+<li><a href="11-retouch.html"><span class="num">11</span>Retouche, correction et tampon</a></li>
+<li><a href="12-filters-blend.html"><span class="num">12</span>Filtres et modes de fusion</a></li>
+<li><a href="13-compositing.html"><span class="num">13</span>Flux de compositing</a></li>
+<li><a href="14-nondestructive.html"><span class="num">14</span>Édition non destructive</a></li>
+<li><a href="15-shortcuts.html"><span class="num">15</span>Raccourcis clavier</a></li>
+      </ol>
+    </nav>
+    <main id="main">
+      <p class="kicker">Chapitre 05 · Cœur</p>
+<h1>Outils de sélection</h1>
+<p>Une sélection dit à l’éditeur « ne change que cette partie ». Les bords peuvent être nets ou adoucis (contour progressif). Ensuite, pinceaux, réglages et filtres s’appliquent dans cette zone (les masques, au chapitre 08, rendent cela encore plus souple).</p>
+<h2>Quel outil saisir</h2>
+<ul>
+<li><strong>Rectangle / Ellipse de sélection</strong> (<kbd>M</kbd>) : formes régulières ; aussi utile pour cadrer une affiche ou une aide au recadrage à bords francs.</li>
+<li><strong>Lasso / Lasso polygonal / Lasso magnétique</strong> (<kbd>L</kbd>) : contours libres. Le lasso magnétique tente de s’accrocher à un contour contrasté.</li>
+<li><strong>Outil Baguette magique</strong> (<kbd>W</kbd>) : cliquez des zones de couleur proche ; efficace sur des fonds unis.</li>
+<li><strong>Sélection rapide / Sélection d’objet</strong> (même groupe <kbd>W</kbd>) : peignez ou encadrez un sujet pour séparer une personne ou un objet de l’arrière-plan à grands traits.</li>
+</ul>
+<aside class="callout in-app">
+<h3>Dans SimplePhoto</h3>
+<p>Ces outils sont dans la barre de gauche ; un raccourci partagé fait défiler le groupe. Le menu <strong>Sélection</strong> propose Tout sélectionner, Désélectionner, Intervertir et Contour progressif. <strong>Sélectionner et masquer</strong> affine cheveux et bords semi-transparents ; vous pouvez obtenir une sélection, un masque de calque, un nouveau calque avec masque ou un nouveau document. La sélection d’objet a aussi les modes Nouveau, Ajouter, Soustraire et Intersection pour affiner la zone par étapes.</p>
+</aside>
+<h2>Habitudes pour une sélection plus propre</h2>
+<p>Faites d’abord une sélection approximative, puis zoomez pour soigner le bord. Ajoutez un peu de contour progressif pour une transition douce, ou utilisez le rayon et le contraste dans Sélectionner et masquer. Il est rarement utile de garder longtemps une sélection en « fourmis marchantes » — transformez-la en masque si vous voulez la revoir plus tard.</p>
+<aside class="callout ps-only">
+<h3>Notes propres à Photoshop</h3>
+<p>Certains détourages en un clic et des flux sélection + remplissage génératif dépendent des modèles cloud d’Adobe. SimplePhoto offre des outils locaux comme la sélection d’objet, mais n’attendez pas les mêmes résultats que l’espace de travail génératif de Photoshop.</p>
+</aside>
+<section class="reading">
+<h2>Pour aller plus loin</h2>
+<ul>
+<li><a href="https://helpx.adobe.com/photoshop/using/making-selections.html" rel="noopener noreferrer" target="_blank">Adobe: Making selections</a></li>
+<li><a href="https://www.adobe.com/learn/photoshop/paths/photo-editing" rel="noopener noreferrer" target="_blank">Adobe Learn: Photo editing (selection units)</a></li>
+</ul>
+</section>
+
+      <nav class="pager">
+<a href="04-layers.html">Précédent : Calques</a>
+<a href="06-brushes.html">Suivant : Pinceaux et gomme</a>
+</nav>
+    </main>
+  </div>
+  <script src="../app.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr" data-lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Compositing-Ablauf · Tutorials</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Zum Inhalt springen</a>
+  <header class="top">
+    <a class="brand" href="index.html">SimplePhoto</a>
+    <span class="tag">Tutorials</span>
+    <div class="lang"><label for="lang-select">Sprache</label><select id="lang-select" name="lang">
+<option value="en">English</option>
+<option value="ja">日本語</option>
+<option value="zh-hans">简体中文</option>
+<option value="zh-hant">繁體中文</option>
+<option value="fr">Français</option>
+<option value="ko">한국어</option>
+<option value="de" selected>Deutsch</option>
+</select></div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="Inhalt">
+      <h2>Inhalt</h2>
+      <ol>
+        <li><a href="index.html">Übersicht</a></li>
+<li><a href="01-interface.html"><span class="num">01</span>Oberfläche und Arbeitsfläche</a></li>
+<li><a href="02-open-save.html"><span class="num">02</span>Öffnen, speichern und exportieren</a></li>
+<li><a href="03-crop-resize.html"><span class="num">03</span>Zuschneiden, Bildgröße und Arbeitsfläche</a></li>
+<li><a href="04-layers.html"><span class="num">04</span>Ebenen</a></li>
+<li><a href="05-selections.html"><span class="num">05</span>Auswahlwerkzeuge</a></li>
+<li><a href="06-brushes.html"><span class="num">06</span>Pinsel und Radiergummi</a></li>
+<li><a href="07-adjustments.html"><span class="num">07</span>Tonwert- und Farbkorrekturen</a></li>
+<li><a href="08-masks.html"><span class="num">08</span>Ebenenmasken</a></li>
+<li><a href="09-text.html"><span class="num">09</span>Text</a></li>
+<li><a href="10-transform.html"><span class="num">10</span>Transformieren</a></li>
+<li><a href="11-retouch.html"><span class="num">11</span>Retusche, Reparatur und Kopierstempel</a></li>
+<li><a href="12-filters-blend.html"><span class="num">12</span>Filter und Mischmodi</a></li>
+<li><a href="13-compositing.html" aria-current="page"><span class="num">13</span>Compositing-Ablauf</a></li>
+<li><a href="14-nondestructive.html"><span class="num">14</span>Nicht-destruktives Bearbeiten</a></li>
+<li><a href="15-shortcuts.html"><span class="num">15</span>Tastenkürzel</a></li>
+      </ol>
+    </nav>
+    <main id="main">
+      <p class="kicker">Kapitel 13 · Fortgeschritten</p>
+<h1>Compositing-Ablauf</h1>
+<p>Compositing verbindet mehr als ein Bild (oder eine gemalte Ebene) zu einem Bild, das stimmig wirkt. Die Kunst ist weniger ein Zauberwerkzeug als eine Folge: Motiv auswählen, in ein neues Dokument setzen, in die Perspektive transformieren, die Kante mit einer Maske verfeinern, dann Licht und Farbe vereinheitlichen.</p>
+<h2>Ein wiederholbarer Weg</h2>
+<ol>
+<li>Hintergrund und Motiv als getrennte Dokumente vorbereiten oder das Motiv als neue Ebene in die Hintergrunddatei kopieren.</li>
+<li>Mit einer Auswahl oder der Objektauswahl einen groben Umriss bauen, als Ebenenmaske ausgeben, dann Haare und Glas in Auswählen und maskieren oder auf der Maske selbst verfeinern.</li>
+<li>Mit Frei transformieren Größe und Horizont anpassen; Perspektive oder Verkrümmen nutzen, wenn das Motiv auf einer Bodenebene oder einer Wand sitzen muss.</li>
+<li>Das Licht angleichen: Richtung von Licht und Schatten auf dem Motiv muss zum Hintergrund passen. Gradationskurven oder Farbton/Sättigung (am besten als maskierte Einstellungsebenen) helfen.</li>
+<li>Am Kontaktpunkt eine Schattenebene hinzufügen (niedrige Deckkraft, Multiplizieren oder Weiches Licht). Ohne sie wirkt das Motiv aufgeklebt.</li>
+<li>Zum Schluss etwas gemeinsame Körnung oder eine sanfte Gesamtgradation, damit Teile verschiedener Kameras wie eine Aufnahme wirken.</li>
+</ol>
+<aside class="callout in-app">
+<h3>In SimplePhoto</h3>
+<p>Sie können mehrere Dokumente öffnen, Ebenen kopieren und einfügen sowie Grafiken platzieren oder rasterisieren (je nach aktuellen Menüs). Smart-Objekte passen zu Teilen, die Sie weiter skalieren. Ebenengruppen können Hintergrund, Motiv, Farbe und Text trennen. Schalten Sie die Sichtbarkeit für A/B-Checks und reduzieren Sie den ganzen Stapel nicht zu früh.</p>
+</aside>
+<aside class="callout ps-only">
+<h3>Nur in Photoshop</h3>
+<p>Generatives Füllen, das „zwei Bilder aus einem Prompt vermischt“, und Firefly-Referenzkonsistenz sind generative Photoshop-Abläufe. Das Compositing in SimplePhoto stützt sich auf Ihre Auswahlen, Masken, Transformationen und Farbarbeit.</p>
+</aside>
+<section class="reading">
+<h2>Weiterführende Links</h2>
+<ul>
+<li><a href="https://helpx.adobe.com/photoshop/tutorials.html" rel="noopener noreferrer" target="_blank">Adobe: Photoshop tutorials (compositing courses)</a></li>
+<li><a href="https://www.adobe.com/learn/photoshop/paths/photo-editing" rel="noopener noreferrer" target="_blank">Adobe Learn: Photo editing path</a></li>
+</ul>
+</section>
+
+      <nav class="pager">
+<a href="12-filters-blend.html">Zurück: Filter und Mischmodi</a>
+<a href="14-nondestructive.html">Weiter: Nicht-destruktives Bearbeiten</a>
+</nav>
+    </main>
+  </div>
+  <script src="../app.js"></script>
+</body>
+</html>

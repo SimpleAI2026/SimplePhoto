@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr" data-lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>非破壊編集 · チュートリアル</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">本文へスキップ</a>
+  <header class="top">
+    <a class="brand" href="index.html">SimplePhoto</a>
+    <span class="tag">チュートリアル</span>
+    <div class="lang"><label for="lang-select">言語</label><select id="lang-select" name="lang">
+<option value="en">English</option>
+<option value="ja" selected>日本語</option>
+<option value="zh-hans">简体中文</option>
+<option value="zh-hant">繁體中文</option>
+<option value="fr">Français</option>
+<option value="ko">한국어</option>
+<option value="de">Deutsch</option>
+</select></div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="目次">
+      <h2>目次</h2>
+      <ol>
+        <li><a href="index.html">概要</a></li>
+<li><a href="01-interface.html"><span class="num">01</span>インターフェイスとキャンバス</a></li>
+<li><a href="02-open-save.html"><span class="num">02</span>開く、保存、書き出し</a></li>
+<li><a href="03-crop-resize.html"><span class="num">03</span>切り抜き、画像サイズ、キャンバスサイズ</a></li>
+<li><a href="04-layers.html"><span class="num">04</span>レイヤー</a></li>
+<li><a href="05-selections.html"><span class="num">05</span>選択ツール</a></li>
+<li><a href="06-brushes.html"><span class="num">06</span>ブラシと消しゴム</a></li>
+<li><a href="07-adjustments.html"><span class="num">07</span>色調と色の補正</a></li>
+<li><a href="08-masks.html"><span class="num">08</span>レイヤーマスク</a></li>
+<li><a href="09-text.html"><span class="num">09</span>文字</a></li>
+<li><a href="10-transform.html"><span class="num">10</span>変形</a></li>
+<li><a href="11-retouch.html"><span class="num">11</span>レタッチ、修復、コピー</a></li>
+<li><a href="12-filters-blend.html"><span class="num">12</span>フィルターと描画モード</a></li>
+<li><a href="13-compositing.html"><span class="num">13</span>合成のワークフロー</a></li>
+<li><a href="14-nondestructive.html" aria-current="page"><span class="num">14</span>非破壊編集</a></li>
+<li><a href="15-shortcuts.html"><span class="num">15</span>キーボードショートカット</a></li>
+      </ol>
+    </nav>
+    <main id="main">
+      <p class="kicker">第 14 章 · 中級</p>
+<h1>非破壊編集</h1>
+<p>非破壊とは、元のファイルからやり直さなくても、まだ考え直せるということです。画素を塗りつぶしたり、切り抜きを間違えたり、統合してしまうと、完全に戻すのは難しくなります。効果を画素から分けておくことが、いちばん身につけたい習慣です。</p>
+<h2>守る価値のあるルール</h2>
+<ul>
+<li>元のファイルを残し、唯一の JPEG を上書き保存しないでください。</li>
+<li>レベル補正、トーンカーブ、色相・彩度は、毎回写真レイヤーに焼き込まず、調整レイヤーを使います。</li>
+<li>画素を消す代わりに、マスクで隠します。</li>
+<li>何度も変形する素材はスマートオブジェクトに変換し、スマートフィルターを優先します。</li>
+<li>早めに統合せず、グループで整理します。統合や平面コピーの書き出しは、納品が求めるときだけです。</li>
+</ul>
+<aside class="callout in-app">
+<h3>SimplePhoto では</h3>
+<p><strong>レイヤー → 新規調整レイヤー</strong> は、あとから直せるトーンカーブ、色相・彩度などを作ります。<strong>レイヤー → スマートオブジェクト → スマートオブジェクトに変換</strong> のあと、自由変形や一部のフィルターをより安全に付けられます。ヒストリーは直近の手順を取り消せますが、長期のバージョンデータベースではありません。大事な節目では名前を付けて保存してください。ブラシのレタッチは専用レイヤーに置き、必要なときは描画モードやクリッピングマスクで範囲を制限します。</p>
+</aside>
+<aside class="callout ps-only">
+<h3>Photoshop のみのメモ</h3>
+<p>自動のクラウドバージョン、Creative Cloud のファイル履歴、クラウドスナップショットに依存する一部のヒストリーブラシの作業は、SimplePhoto にはありません。自分でローカルに保存した版と、ドキュメント内のレイヤー構造を頼りにしてください。</p>
+</aside>
+<section class="reading">
+<h2>参考資料</h2>
+<ul>
+<li><a href="https://helpx.adobe.com/photoshop/using/layer-basics.html" rel="noopener noreferrer" target="_blank">Adobe: Layer basics</a></li>
+<li><a href="https://helpx.adobe.com/photoshop/using/masking-layers.html" rel="noopener noreferrer" target="_blank">Adobe: Masking layers</a></li>
+</ul>
+</section>
+
+      <nav class="pager">
+<a href="13-compositing.html">前へ：合成のワークフロー</a>
+<a href="15-shortcuts.html">次へ：キーボードショートカット</a>
+</nav>
+    </main>
+  </div>
+  <script src="../app.js"></script>
+</body>
+</html>

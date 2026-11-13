@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" data-lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Réglages de tonalité et de couleur · Tutoriels</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Aller au contenu</a>
+  <header class="top">
+    <a class="brand" href="index.html">SimplePhoto</a>
+    <span class="tag">Tutoriels</span>
+    <div class="lang"><label for="lang-select">Langue</label><select id="lang-select" name="lang">
+<option value="en">English</option>
+<option value="ja">日本語</option>
+<option value="zh-hans">简体中文</option>
+<option value="zh-hant">繁體中文</option>
+<option value="fr" selected>Français</option>
+<option value="ko">한국어</option>
+<option value="de">Deutsch</option>
+</select></div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="Sommaire">
+      <h2>Sommaire</h2>
+      <ol>
+        <li><a href="index.html">Aperçu</a></li>
+<li><a href="01-interface.html"><span class="num">01</span>Interface et zone de travail</a></li>
+<li><a href="02-open-save.html"><span class="num">02</span>Ouvrir, enregistrer et exporter</a></li>
+<li><a href="03-crop-resize.html"><span class="num">03</span>Recadrage, taille de l’image et du plan de travail</a></li>
+<li><a href="04-layers.html"><span class="num">04</span>Calques</a></li>
+<li><a href="05-selections.html"><span class="num">05</span>Outils de sélection</a></li>
+<li><a href="06-brushes.html"><span class="num">06</span>Pinceaux et gomme</a></li>
+<li><a href="07-adjustments.html" aria-current="page"><span class="num">07</span>Réglages de tonalité et de couleur</a></li>
+<li><a href="08-masks.html"><span class="num">08</span>Masques de fusion</a></li>
+<li><a href="09-text.html"><span class="num">09</span>Texte</a></li>
+<li><a href="10-transform.html"><span class="num">10</span>Transformation</a></li>
+<li><a href="11-retouch.html"><span class="num">11</span>Retouche, correction et tampon</a></li>
+<li><a href="12-filters-blend.html"><span class="num">12</span>Filtres et modes de fusion</a></li>
+<li><a href="13-compositing.html"><span class="num">13</span>Flux de compositing</a></li>
+<li><a href="14-nondestructive.html"><span class="num">14</span>Édition non destructive</a></li>
+<li><a href="15-shortcuts.html"><span class="num">15</span>Raccourcis clavier</a></li>
+      </ol>
+    </nav>
+    <main id="main">
+      <p class="kicker">Chapitre 07 · Réglages</p>
+<h1>Réglages de tonalité et de couleur</h1>
+<p>La plupart des photos ont besoin d’une lumière et d’une couleur crédibles avant d’avoir besoin d’un « look ». L’entrée habituelle est <strong>Image → Réglages</strong>, qui écrit dans les pixels du calque actif. Pour revoir les valeurs plus tard, utilisez plutôt un <strong>calque de réglage</strong> (chapitre 14).</p>
+<h2>Commencez par ceux-ci</h2>
+<ul>
+<li><strong>Niveaux</strong> (<kbd>⌘L</kbd> / <kbd>Ctrl+L</kbd>) : les curseurs noir, gris et blanc fixent ombres, tons moyens et hautes lumières. Utile quand une photo paraît délavée.</li>
+<li><strong>Courbes</strong> (<kbd>⌘M</kbd> / <kbd>Ctrl+M</kbd>) : déplacez des points sur un graphique pour un contraste plus fin et des corrections locales. Une courbe en S augmente le contraste.</li>
+<li><strong>Teinte/Saturation</strong> change teinte, saturation et luminosité globalement ou dans une plage de couleur — pratique pour calmer un vêtement trop vif ou atténuer une dominante.</li>
+<li><strong>Luminosité/Contraste</strong> est plus littéral mais moins précis que Niveaux ou Courbes ; gardez-le pour de petits gestes.</li>
+</ul>
+<aside class="callout in-app">
+<h3>Dans SimplePhoto</h3>
+<p>Ces commandes sont sous <strong>Image → Réglages</strong>. Les boîtes affichent en général un aperçu d’abord ; valider écrit une étape d’historique que vous pouvez annuler. Vous pouvez aussi choisir <strong>Calque → Nouveau calque de réglage</strong> pour Teinte/Saturation, Courbes et similaires, afin que l’effet reste séparé des pixels. Le panneau Propriétés continue d’éditer ces calques de réglage.</p>
+</aside>
+<p>Un ordre fiable : corriger d’abord l’exposition et les points noir/blanc (Niveaux ou Courbes), puis une dominante, et seulement ensuite une étalonnage stylisé. Changez une chose claire à la fois, au lieu de bouger dix curseurs que vous ne savez pas expliquer.</p>
+<aside class="callout ps-only">
+<h3>Notes propres à Photoshop</h3>
+<p>Les profils Camera Raw dans le cloud, la colorisation par Filtres neuronaux et le recolorage génératif ne sont pas des fonctions garanties de SimplePhoto. Si une commande manque au menu, traitez-la comme spécifique à Photoshop et utilisez les réglages ou outils Camera Raw réellement présents pour ce type de fichier.</p>
+</aside>
+<section class="reading">
+<h2>Pour aller plus loin</h2>
+<ul>
+<li><a href="https://helpx.adobe.com/photoshop/using/adjusting-color-tone-image.html" rel="noopener noreferrer" target="_blank">Adobe: Adjusting color and tone</a></li>
+<li><a href="https://www.adobe.com/learn/photoshop/paths/photo-editing" rel="noopener noreferrer" target="_blank">Adobe Learn: Photo editing (lighting and color units)</a></li>
+</ul>
+</section>
+
+      <nav class="pager">
+<a href="06-brushes.html">Précédent : Pinceaux et gomme</a>
+<a href="08-masks.html">Suivant : Masques de fusion</a>
+</nav>
+    </main>
+  </div>
+  <script src="../app.js"></script>
+</body>
+</html>

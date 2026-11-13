@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" dir="ltr" data-lang="zh-hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>濾鏡與混合模式 · 教學</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">跳到正文</a>
+  <header class="top">
+    <a class="brand" href="index.html">SimplePhoto</a>
+    <span class="tag">教學</span>
+    <div class="lang"><label for="lang-select">語言</label><select id="lang-select" name="lang">
+<option value="en">English</option>
+<option value="ja">日本語</option>
+<option value="zh-hans">简体中文</option>
+<option value="zh-hant" selected>繁體中文</option>
+<option value="fr">Français</option>
+<option value="ko">한국어</option>
+<option value="de">Deutsch</option>
+</select></div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="目錄">
+      <h2>目錄</h2>
+      <ol>
+        <li><a href="index.html">概覽</a></li>
+<li><a href="01-interface.html"><span class="num">01</span>介面與畫布</a></li>
+<li><a href="02-open-save.html"><span class="num">02</span>開啟、儲存與匯出</a></li>
+<li><a href="03-crop-resize.html"><span class="num">03</span>裁剪、影像大小與畫布大小</a></li>
+<li><a href="04-layers.html"><span class="num">04</span>圖層</a></li>
+<li><a href="05-selections.html"><span class="num">05</span>選取工具</a></li>
+<li><a href="06-brushes.html"><span class="num">06</span>畫筆與橡皮擦</a></li>
+<li><a href="07-adjustments.html"><span class="num">07</span>色調與顏色調整</a></li>
+<li><a href="08-masks.html"><span class="num">08</span>圖層遮色片</a></li>
+<li><a href="09-text.html"><span class="num">09</span>文字</a></li>
+<li><a href="10-transform.html"><span class="num">10</span>變形</a></li>
+<li><a href="11-retouch.html"><span class="num">11</span>修飾、修復與仿製</a></li>
+<li><a href="12-filters-blend.html" aria-current="page"><span class="num">12</span>濾鏡與混合模式</a></li>
+<li><a href="13-compositing.html"><span class="num">13</span>合成工作流程</a></li>
+<li><a href="14-nondestructive.html"><span class="num">14</span>非破壞性編輯</a></li>
+<li><a href="15-shortcuts.html"><span class="num">15</span>快速鍵</a></li>
+      </ol>
+    </nav>
+    <main id="main">
+      <p class="kicker">第 12 章 · 效果</p>
+<h1>濾鏡與混合模式</h1>
+<p>濾鏡改變一層（或選取範圍）的像素外觀：模糊、銳化、噪點、扭曲等。混合模式決定這一層如何與下面的層合成：變亮、變暗、疊加對比，或只保留紋理。兩者都很容易「加過頭」，所以要經常做前後對比。</p>
+<aside class="callout in-app">
+<h3>在 SimplePhoto 中</h3>
+<p><strong>濾鏡</strong> 選單按類別組織，例如模糊中的高斯模糊。許多濾鏡會開啟帶預覽的對話框，寫入步驟記錄。智慧型物件可以承載智能濾鏡，便於以後改參數或開關（見第 14 章）。混合模式在圖層面板的下拉列表中，可鍵盤或滾輪瀏覽（以當前控件為準）。常見起點：<strong>正片疊底</strong> 壓暗、 <strong>濾色</strong> 提亮、<strong>疊加 / 柔光</strong> 做對比，<strong>明度</strong> 只借用明暗而儘量不改顏色。</p>
+</aside>
+<h2>實用組合</h2>
+<ul>
+<li>複製一層，高斯模糊後再把混合模式改爲柔光，可做柔和的光感，再靠遮色片限制範圍。</li>
+<li>把紋理層設爲疊加或柔光，降低不透明度，給平面色塊增加質感。</li>
+<li>銳化（例如 USM）放在接近完成時，並且先在 100% 檢視下判斷，避免網上預覽被放大後出現白邊。</li>
+</ul>
+<aside class="callout ps-only">
+<h3>僅限 Photoshop 的概念</h3>
+<p>Neural Filters、部分依賴雲的風格化濾鏡，以及 Firefly 效果，是 Photoshop 產品功能。若 SimplePhoto 的濾鏡選單裡沒有同名項，請不要對照網上 Photoshop 截圖強行尋找。</p>
+</aside>
+<section class="reading">
+<h2>延伸閱讀</h2>
+<ul>
+<li><a href="https://www.adobe.com/learn/photoshop/paths/photo-editing" rel="noopener noreferrer" target="_blank">Adobe Learn: Photo editing (effects units)</a></li>
+</ul>
+</section>
+
+      <nav class="pager">
+<a href="11-retouch.html">上一章：修飾、修復與仿製</a>
+<a href="13-compositing.html">下一章：合成工作流程</a>
+</nav>
+    </main>
+  </div>
+  <script src="../app.js"></script>
+</body>
+</html>

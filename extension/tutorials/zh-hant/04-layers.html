@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" dir="ltr" data-lang="zh-hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>圖層 · 教學</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">跳到正文</a>
+  <header class="top">
+    <a class="brand" href="index.html">SimplePhoto</a>
+    <span class="tag">教學</span>
+    <div class="lang"><label for="lang-select">語言</label><select id="lang-select" name="lang">
+<option value="en">English</option>
+<option value="ja">日本語</option>
+<option value="zh-hans">简体中文</option>
+<option value="zh-hant" selected>繁體中文</option>
+<option value="fr">Français</option>
+<option value="ko">한국어</option>
+<option value="de">Deutsch</option>
+</select></div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="目錄">
+      <h2>目錄</h2>
+      <ol>
+        <li><a href="index.html">概覽</a></li>
+<li><a href="01-interface.html"><span class="num">01</span>介面與畫布</a></li>
+<li><a href="02-open-save.html"><span class="num">02</span>開啟、儲存與匯出</a></li>
+<li><a href="03-crop-resize.html"><span class="num">03</span>裁剪、影像大小與畫布大小</a></li>
+<li><a href="04-layers.html" aria-current="page"><span class="num">04</span>圖層</a></li>
+<li><a href="05-selections.html"><span class="num">05</span>選取工具</a></li>
+<li><a href="06-brushes.html"><span class="num">06</span>畫筆與橡皮擦</a></li>
+<li><a href="07-adjustments.html"><span class="num">07</span>色調與顏色調整</a></li>
+<li><a href="08-masks.html"><span class="num">08</span>圖層遮色片</a></li>
+<li><a href="09-text.html"><span class="num">09</span>文字</a></li>
+<li><a href="10-transform.html"><span class="num">10</span>變形</a></li>
+<li><a href="11-retouch.html"><span class="num">11</span>修飾、修復與仿製</a></li>
+<li><a href="12-filters-blend.html"><span class="num">12</span>濾鏡與混合模式</a></li>
+<li><a href="13-compositing.html"><span class="num">13</span>合成工作流程</a></li>
+<li><a href="14-nondestructive.html"><span class="num">14</span>非破壞性編輯</a></li>
+<li><a href="15-shortcuts.html"><span class="num">15</span>快速鍵</a></li>
+      </ol>
+    </nav>
+    <main id="main">
+      <p class="kicker">第 04 章 · 核心</p>
+<h1>圖層</h1>
+<p>圖層是疊在一起的透明膠片：上面的會擋住下面的，但你可以移動、隱藏或降低不透明度，而不必毀掉下面的像素。幾乎所有認真的修圖都從「不要只在背景上一筆改死」開始。</p>
+<h2>圖層面板裡做什麼</h2>
+<ul>
+<li>查看疊放順序，拖動可重新排列。</li>
+<li>點選眼睛圖標顯示或隱藏。</li>
+<li>調整不透明度和<strong>混合模式</strong>（下一章之後會經常用到）。</li>
+<li>把相關圖層放進組，避免列表失控。</li>
+</ul>
+<aside class="callout in-app">
+<h3>在 SimplePhoto 中</h3>
+<p>開啟 <strong>視窗 → 圖層</strong>（<kbd>F7</kbd>）。新增圖層：<strong>圖層</strong> 選單或面板按鈕；<kbd>⇧⌘N</kbd> / <kbd>Ctrl+Shift+N</kbd> 會先彈出「新增圖層」對話框，<kbd>⌥⇧⌘N</kbd> / <kbd>Ctrl+Alt+Shift+N</kbd> 可直接新增。常見操作還有複製圖層、向下合併、拼合影像。需要把文字、形狀或智慧型物件變成普通像素時，使用柵格化相關命令。也支援將圖層轉換爲智慧型物件，便於非破壞變換（見第 14 章）。</p>
+</aside>
+<h2>實踐建議</h2>
+<p>給圖層起能看懂的名字；修皮膚、改天空、加文字不要擠在同一層。改錯了，關掉那一層或把它拖進垃圾桶即可，背景還在。背景層若無法移動，先將它轉爲普通圖層。</p>
+<aside class="callout ps-only">
+<h3>僅限 Photoshop 的概念</h3>
+<p>影片圖層、部分 3D 圖層，以及和 Adobe Stock / 雲端庫鏈接的圖層，不屬於本擴充功能的使用範圍。SimplePhoto 的圖層模型面向靜態影像編輯與合成。</p>
+</aside>
+<section class="reading">
+<h2>延伸閱讀</h2>
+<ul>
+<li><a href="https://helpx.adobe.com/photoshop/using/layer-basics.html" rel="noopener noreferrer" target="_blank">Adobe: Layer basics</a></li>
+</ul>
+</section>
+
+      <nav class="pager">
+<a href="03-crop-resize.html">上一章：裁剪、影像大小與畫布大小</a>
+<a href="05-selections.html">下一章：選取工具</a>
+</nav>
+    </main>
+  </div>
+  <script src="../app.js"></script>
+</body>
+</html>

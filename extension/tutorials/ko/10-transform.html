@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr" data-lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>변형 · 튜토리얼</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 건너뛰기</a>
+  <header class="top">
+    <a class="brand" href="index.html">SimplePhoto</a>
+    <span class="tag">튜토리얼</span>
+    <div class="lang"><label for="lang-select">언어</label><select id="lang-select" name="lang">
+<option value="en">English</option>
+<option value="ja">日本語</option>
+<option value="zh-hans">简体中文</option>
+<option value="zh-hant">繁體中文</option>
+<option value="fr">Français</option>
+<option value="ko" selected>한국어</option>
+<option value="de">Deutsch</option>
+</select></div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="목차">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="index.html">개요</a></li>
+<li><a href="01-interface.html"><span class="num">01</span>인터페이스와 캔버스</a></li>
+<li><a href="02-open-save.html"><span class="num">02</span>열기, 저장, 내보내기</a></li>
+<li><a href="03-crop-resize.html"><span class="num">03</span>자르기, 이미지 크기, 캔버스 크기</a></li>
+<li><a href="04-layers.html"><span class="num">04</span>레이어</a></li>
+<li><a href="05-selections.html"><span class="num">05</span>선택 도구</a></li>
+<li><a href="06-brushes.html"><span class="num">06</span>브러시와 지우개</a></li>
+<li><a href="07-adjustments.html"><span class="num">07</span>톤과 색상 조정</a></li>
+<li><a href="08-masks.html"><span class="num">08</span>레이어 마스크</a></li>
+<li><a href="09-text.html"><span class="num">09</span>문자</a></li>
+<li><a href="10-transform.html" aria-current="page"><span class="num">10</span>변형</a></li>
+<li><a href="11-retouch.html"><span class="num">11</span>보정, 복구, 복제</a></li>
+<li><a href="12-filters-blend.html"><span class="num">12</span>필터와 혼합 모드</a></li>
+<li><a href="13-compositing.html"><span class="num">13</span>합성 작업 과정</a></li>
+<li><a href="14-nondestructive.html"><span class="num">14</span>비파괴 편집</a></li>
+<li><a href="15-shortcuts.html"><span class="num">15</span>단축키</a></li>
+      </ol>
+    </nav>
+    <main id="main">
+      <p class="kicker">제 10 장 · 변형</p>
+<h1>변형</h1>
+<p>변형은 레이어나 선택한 픽셀을 크기 조절, 회전, 기울이기, 원근 적용합니다. 거의 모든 합성에서 조각을 맞는 크기와 각도로 옮겨야 합니다. 주의: 일반 래스터 레이어에 큰 변형을 반복하면 매번 부드러워집니다. 스마트 오브젝트가 그 문제를 줄입니다(14장).</p>
+<aside class="callout in-app">
+<h3>SimplePhoto에서</h3>
+<p>보통의 시작은 <strong>편집 → 자유 변형</strong>(<kbd>⌘T</kbd> / <kbd>Ctrl+T</kbd>)입니다. 모서리를 끌어 크기를 조절하고, 상자 밖을 끌어 회전한 뒤 확인하여 적용합니다. <strong>편집 → 변형</strong>에는 크기 조절, 회전, 기울이기, 왜곡, 원근, 뒤틀기도 있습니다. <strong>복사본 자유 변형</strong>(<kbd>⌘⌥T</kbd> / <kbd>Ctrl+Alt+T</kbd>)은 복제본을 변형합니다. 스마트 오브젝트는 스마트 오브젝트 뒤틀기도 사용할 수 있습니다.</p>
+</aside>
+<h2>작업 팁</h2>
+<p>Shift가 비율을 고정하는지는 현재 옵션과 환경 설정에 달렸습니다. 추측하지 말고 옵션 막대를 보세요. 원본 해상도를 훨씬 넘는 확대는 부드럽게 보입니다. 가능하면 더 높은 해상도 소스를 쓰세요. 뒤틀기와 원근은 그래픽을 벽이나 상자에 앉히는 데 도움이 되지만, 소실점을 봐서 “거의 맞아 보이게만” 끝나지 않도록 하세요.</p>
+<aside class="callout ps-only">
+<h3>Photoshop 전용 참고</h3>
+<p>변형 뒤 빈 영역을 생성하는 일부 기능은 Photoshop 전용입니다. SimplePhoto는 변형 후 Firefly로 픽셀을 만들어 주지 않습니다. 틈은 다른 레이어나 복제로 직접 메우세요.</p>
+</aside>
+<section class="reading">
+<h2>더 알아보기</h2>
+<ul>
+<li><a href="https://www.adobe.com/learn/photoshop/paths/photo-editing" rel="noopener noreferrer" target="_blank">Adobe Learn: Photo editing (resizing / transform units)</a></li>
+</ul>
+</section>
+
+      <nav class="pager">
+<a href="09-text.html">이전: 문자</a>
+<a href="11-retouch.html">다음: 보정, 복구, 복제</a>
+</nav>
+    </main>
+  </div>
+  <script src="../app.js"></script>
+</body>
+</html>

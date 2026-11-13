@@ -1,0 +1,287 @@
+{
+  "sections": {
+    "basics": {
+      "en": "Basics",
+      "ja": "基礎",
+      "zh-hans": "基础",
+      "zh-hant": "基礎",
+      "fr": "Bases",
+      "ko": "기초",
+      "de": "Grundlagen"
+    },
+    "core": {
+      "en": "Core",
+      "ja": "中核",
+      "zh-hans": "核心",
+      "zh-hant": "核心",
+      "fr": "Cœur",
+      "ko": "핵심",
+      "de": "Kern"
+    },
+    "painting": {
+      "en": "Painting",
+      "ja": "ペイント",
+      "zh-hans": "绘画",
+      "zh-hant": "繪製",
+      "fr": "Peinture",
+      "ko": "페인팅",
+      "de": "Malen"
+    },
+    "adjustments": {
+      "en": "Adjustments",
+      "ja": "補正",
+      "zh-hans": "调整",
+      "zh-hant": "調整",
+      "fr": "Réglages",
+      "ko": "조정",
+      "de": "Einstellungen"
+    },
+    "type": {
+      "en": "Type",
+      "ja": "文字",
+      "zh-hans": "文字",
+      "zh-hant": "文字",
+      "fr": "Texte",
+      "ko": "문자",
+      "de": "Text"
+    },
+    "transform": {
+      "en": "Transform",
+      "ja": "変形",
+      "zh-hans": "变换",
+      "zh-hant": "變形",
+      "fr": "Transformation",
+      "ko": "변형",
+      "de": "Transformieren"
+    },
+    "retouch": {
+      "en": "Retouch",
+      "ja": "レタッチ",
+      "zh-hans": "修饰",
+      "zh-hant": "修飾",
+      "fr": "Retouche",
+      "ko": "보정",
+      "de": "Retusche"
+    },
+    "effects": {
+      "en": "Effects",
+      "ja": "効果",
+      "zh-hans": "效果",
+      "zh-hant": "效果",
+      "fr": "Effets",
+      "ko": "효과",
+      "de": "Effekte"
+    },
+    "intermediate": {
+      "en": "Intermediate",
+      "ja": "中級",
+      "zh-hans": "进阶",
+      "zh-hant": "進階",
+      "fr": "Intermédiaire",
+      "ko": "중급",
+      "de": "Fortgeschritten"
+    },
+    "reference": {
+      "en": "Reference",
+      "ja": "リファレンス",
+      "zh-hans": "速查",
+      "zh-hant": "速查",
+      "fr": "Référence",
+      "ko": "참고",
+      "de": "Referenz"
+    }
+  },
+  "headings": {
+    "in_simplephoto": {
+      "en": "In SimplePhoto",
+      "ja": "SimplePhoto では",
+      "zh-hans": "在 SimplePhoto 中",
+      "zh-hant": "在 SimplePhoto 中",
+      "fr": "Dans SimplePhoto",
+      "ko": "SimplePhoto에서",
+      "de": "In SimplePhoto"
+    },
+    "photoshop_only_notes": {
+      "en": "Photoshop-only notes",
+      "ja": "Photoshop のみのメモ",
+      "zh-hans": "仅 Photoshop 的概念",
+      "zh-hant": "僅限 Photoshop 的概念",
+      "fr": "Notes propres à Photoshop",
+      "ko": "Photoshop 전용 참고",
+      "de": "Nur in Photoshop"
+    },
+    "starting_in_simplephoto": {
+      "en": "Starting in SimplePhoto",
+      "ja": "SimplePhoto での始め方",
+      "zh-hans": "在 SimplePhoto 里怎么开始",
+      "zh-hant": "在 SimplePhoto 裡如何開始",
+      "fr": "Démarrer dans SimplePhoto",
+      "ko": "SimplePhoto에서 시작하기",
+      "de": "Einstieg in SimplePhoto"
+    },
+    "where_not_photoshop": {
+      "en": "Where this is not Photoshop",
+      "ja": "Photoshop と異なる点",
+      "zh-hans": "和 Photoshop 不同的地方",
+      "zh-hant": "與 Photoshop 不同之處",
+      "fr": "Ce qui n’est pas Photoshop",
+      "ko": "Photoshop과 다른 점",
+      "de": "Wo dies nicht Photoshop ist"
+    },
+    "further_reading_short": {
+      "en": "Further reading",
+      "ja": "参考資料",
+      "zh-hans": "延伸阅读",
+      "zh-hant": "延伸閱讀",
+      "fr": "Pour aller plus loin",
+      "ko": "더 알아보기",
+      "de": "Weiterführende Links"
+    },
+    "index_kicker": {
+      "en": "SimplePhoto tutorials",
+      "ja": "SimplePhoto チュートリアル",
+      "zh-hans": "SimplePhoto 教程",
+      "zh-hant": "SimplePhoto 教學",
+      "fr": "Tutoriels SimplePhoto",
+      "ko": "SimplePhoto 튜토리얼",
+      "de": "SimplePhoto-Tutorials"
+    }
+  },
+  "blurbs": {
+    "01-interface": {
+      "en": "Learn the workspace",
+      "ja": "ワークスペースを覚える",
+      "zh-hans": "先熟悉工作区",
+      "zh-hant": "先熟悉工作區",
+      "fr": "Découvrir l’espace de travail",
+      "ko": "작업 영역 익히기",
+      "de": "Den Arbeitsbereich kennenlernen"
+    },
+    "02-open-save": {
+      "en": "Get files in and out",
+      "ja": "ファイルの読み込みと書き出し",
+      "zh-hans": "把文件导入和导出",
+      "zh-hant": "把檔案導入與匯出",
+      "fr": "Faire entrer et sortir les fichiers",
+      "ko": "파일 열고 보내기",
+      "de": "Dateien hinein und hinaus"
+    },
+    "03-crop-resize": {
+      "en": "Framing and output size",
+      "ja": "構図と出力サイズ",
+      "zh-hans": "取景与输出尺寸",
+      "zh-hant": "構圖與輸出尺寸",
+      "fr": "Cadrage et taille de sortie",
+      "ko": "구도와 출력 크기",
+      "de": "Bildausschnitt und Ausgabegröße"
+    },
+    "04-layers": {
+      "en": "Stack instead of overwrite",
+      "ja": "上書きせずに重ねる",
+      "zh-hans": "用叠加代替覆盖",
+      "zh-hant": "用疊加代替覆蓋",
+      "fr": "Empiler au lieu d’écraser",
+      "ko": "덮어쓰지 말고 쌓기",
+      "de": "Stapeln statt überschreiben"
+    },
+    "05-selections": {
+      "en": "Select, then edit",
+      "ja": "選んでから編集する",
+      "zh-hans": "先选中，再编辑",
+      "zh-hant": "先選取，再編輯",
+      "fr": "Sélectionner, puis modifier",
+      "ko": "선택한 다음 편집",
+      "de": "Auswählen, dann bearbeiten"
+    },
+    "06-brushes": {
+      "en": "Paint and erase",
+      "ja": "塗る・消す",
+      "zh-hans": "涂绘与擦除",
+      "zh-hant": "塗繪與擦除",
+      "fr": "Peindre et effacer",
+      "ko": "칠하고 지우기",
+      "de": "Malen und radieren"
+    },
+    "07-adjustments": {
+      "en": "Levels, Curves, Hue",
+      "ja": "レベル・カーブ・色相",
+      "zh-hans": "色阶、曲线、色相",
+      "zh-hant": "色階、曲線、色相",
+      "fr": "Niveaux, courbes, teinte",
+      "ko": "레벨, 곡선, 색조",
+      "de": "Tonwertkorrektur, Gradationskurven, Farbton"
+    },
+    "08-masks": {
+      "en": "Hide without deleting",
+      "ja": "消さずに隠す",
+      "zh-hans": "不删除，只隐藏",
+      "zh-hant": "不刪除，只隱藏",
+      "fr": "Masquer sans supprimer",
+      "ko": "지우지 않고 숨기기",
+      "de": "Verbergen, ohne zu löschen"
+    },
+    "09-text": {
+      "en": "Titles and labels",
+      "ja": "タイトルとラベル",
+      "zh-hans": "标题与标注",
+      "zh-hant": "標題與標註",
+      "fr": "Titres et légendes",
+      "ko": "제목과 라벨",
+      "de": "Titel und Beschriftungen"
+    },
+    "10-transform": {
+      "en": "Scale, rotate, warp",
+      "ja": "拡大縮小・回転・ワープ",
+      "zh-hans": "缩放、旋转、变形",
+      "zh-hant": "縮放、旋轉、扭曲",
+      "fr": "Échelle, rotation, déformation",
+      "ko": "크기 조절, 회전, 왜곡",
+      "de": "Skalieren, drehen, verkrümmen"
+    },
+    "11-retouch": {
+      "en": "Heal blemishes",
+      "ja": "汚れや傷を直す",
+      "zh-hans": "修掉瑕疵",
+      "zh-hant": "修掉瑕疵",
+      "fr": "Corriger les défauts",
+      "ko": "잡티 제거",
+      "de": "Makel retuschieren"
+    },
+    "12-filters-blend": {
+      "en": "Mood and stacking",
+      "ja": "雰囲気と重ね方",
+      "zh-hans": "氛围与叠加",
+      "zh-hant": "氛圍與疊加",
+      "fr": "Ambiance et fusion",
+      "ko": "분위기와 혼합",
+      "de": "Stimmung und Überblendung"
+    },
+    "13-compositing": {
+      "en": "Combine several images",
+      "ja": "複数の画像を合成する",
+      "zh-hans": "把多张图合成一张",
+      "zh-hant": "把多張圖合成一張",
+      "fr": "Combiner plusieurs images",
+      "ko": "여러 이미지 합성",
+      "de": "Mehrere Bilder kombinieren"
+    },
+    "14-nondestructive": {
+      "en": "Stay able to revise",
+      "ja": "後からやり直せるように",
+      "zh-hans": "随时还能改",
+      "zh-hant": "隨時還能改",
+      "fr": "Garder la possibilité de réviser",
+      "ko": "언제든 다시 고칠 수 있게",
+      "de": "Änderbar bleiben"
+    },
+    "15-shortcuts": {
+      "en": "A compact key list",
+      "ja": "ショートカット早見表",
+      "zh-hans": "常用快捷键一览",
+      "zh-hant": "常用快捷鍵一覽",
+      "fr": "Liste compacte des raccourcis",
+      "ko": "단축키 한눈에 보기",
+      "de": "Kompakte Tastenliste"
+    }
+  }
+}

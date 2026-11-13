@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr" data-lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>レイヤーマスク · チュートリアル</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">本文へスキップ</a>
+  <header class="top">
+    <a class="brand" href="index.html">SimplePhoto</a>
+    <span class="tag">チュートリアル</span>
+    <div class="lang"><label for="lang-select">言語</label><select id="lang-select" name="lang">
+<option value="en">English</option>
+<option value="ja" selected>日本語</option>
+<option value="zh-hans">简体中文</option>
+<option value="zh-hant">繁體中文</option>
+<option value="fr">Français</option>
+<option value="ko">한국어</option>
+<option value="de">Deutsch</option>
+</select></div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="目次">
+      <h2>目次</h2>
+      <ol>
+        <li><a href="index.html">概要</a></li>
+<li><a href="01-interface.html"><span class="num">01</span>インターフェイスとキャンバス</a></li>
+<li><a href="02-open-save.html"><span class="num">02</span>開く、保存、書き出し</a></li>
+<li><a href="03-crop-resize.html"><span class="num">03</span>切り抜き、画像サイズ、キャンバスサイズ</a></li>
+<li><a href="04-layers.html"><span class="num">04</span>レイヤー</a></li>
+<li><a href="05-selections.html"><span class="num">05</span>選択ツール</a></li>
+<li><a href="06-brushes.html"><span class="num">06</span>ブラシと消しゴム</a></li>
+<li><a href="07-adjustments.html"><span class="num">07</span>色調と色の補正</a></li>
+<li><a href="08-masks.html" aria-current="page"><span class="num">08</span>レイヤーマスク</a></li>
+<li><a href="09-text.html"><span class="num">09</span>文字</a></li>
+<li><a href="10-transform.html"><span class="num">10</span>変形</a></li>
+<li><a href="11-retouch.html"><span class="num">11</span>レタッチ、修復、コピー</a></li>
+<li><a href="12-filters-blend.html"><span class="num">12</span>フィルターと描画モード</a></li>
+<li><a href="13-compositing.html"><span class="num">13</span>合成のワークフロー</a></li>
+<li><a href="14-nondestructive.html"><span class="num">14</span>非破壊編集</a></li>
+<li><a href="15-shortcuts.html"><span class="num">15</span>キーボードショートカット</a></li>
+      </ol>
+    </nav>
+    <main id="main">
+      <p class="kicker">第 08 章 · 中核</p>
+<h1>レイヤーマスク</h1>
+<p>マスクは、レイヤーの見え方を示すグレースケールの地図です。白は表示、黒は非表示、灰色は部分的です。消しゴムではなく、画素は残るので、隠した部分をあとから描き戻せます。「レタッチできる」から「まだ考え直せる」への一歩です。</p>
+<aside class="callout in-app">
+<h3>SimplePhoto では</h3>
+<p>レイヤーマスクは、レイヤーパネルか <strong>レイヤー</strong> メニューから追加します（すべてを表示、すべてを隠す、選択範囲に基づいて表示／隠す）。選択範囲があるときは、マスクがすぐにそれに従うことが多いです。マスクの上に黒または白を塗って編集します。画素を編集するときはレイヤーのサムネイル、マスクを編集するときはマスクのサムネイルをクリックします。硬い、パスベースの輪郭をあとから直したいときは、ベクトルマスクも使えます。</p>
+</aside>
+<h2>よくある使い方</h2>
+<ul>
+<li>切り抜いた人物を新しい背景に置き、背景画素を消す代わりに、マスク上で髪を整えます。</li>
+<li>調整レイヤーを空や肌だけに効かせる：マスクを足し、変えたくないところを塗りつぶして除外します。</li>
+<li>マスク上にグラデーションの遷移（上下で露出が違うなど）を作ります。画素そのものを塗るより、あとから直しやすいです。</li>
+</ul>
+<p>マスクを点検するときは、漏れやぼんやりした端を探します。おかしいところがあれば、ブラシの硬さを変えるか、選択とマスクをもう一度実行して新しいマスクを書き出します。ドキュメント全体を作り直す必要はありません。</p>
+<aside class="callout ps-only">
+<h3>Photoshop のみのメモ</h3>
+<p>クラウドの「被写体を選択して自動マスク」ボタンや、生成塗りつぶしワークスペース内のタスクマスクは、Photoshop 製品の流れに属します。SimplePhoto では、ローカルの選択ツールと選択とマスクでマスクを作ります。</p>
+</aside>
+<section class="reading">
+<h2>参考資料</h2>
+<ul>
+<li><a href="https://helpx.adobe.com/photoshop/using/masking-layers.html" rel="noopener noreferrer" target="_blank">Adobe: Masking layers</a></li>
+</ul>
+</section>
+
+      <nav class="pager">
+<a href="07-adjustments.html">前へ：色調と色の補正</a>
+<a href="09-text.html">次へ：文字</a>
+</nav>
+    </main>
+  </div>
+  <script src="../app.js"></script>
+</body>
+</html>

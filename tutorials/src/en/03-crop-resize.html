@@ -1,0 +1,38 @@
+<p class="kicker">Chapter 03 · Basics</p>
+
+<h1>Crop, image size, and canvas size</h1>
+
+<p>These three are easy to confuse. <strong>Crop</strong> throws away pixels outside a frame. <strong>Image Size</strong> changes how many pixels the picture has (enlarging or shrinking the whole image). <strong>Canvas Size</strong> changes the working area — you can add empty margins or trim edges — without resampling the subject the way Image Size does.</p>
+<aside class="callout in-app">
+
+<h3>In SimplePhoto</h3>
+
+<ul>
+<li>The <strong>Crop Tool</strong> (<kbd>C</kbd>) draws a crop box; confirm to apply. The same group includes Perspective Crop for edges that recede in perspective.</li>
+<li><strong>Image → Image Size</strong> (<kbd>⌘⌥I</kbd> / <kbd>Ctrl+Alt+I</kbd>) changes width and height. Watch whether proportions are constrained, and which resampling method you chose.</li>
+<li><strong>Image → Canvas Size</strong> (<kbd>⌘⌥C</kbd> / <kbd>Ctrl+Alt+C</kbd>) changes the canvas and the anchor (which side new space is added on).</li>
+</ul>
+</aside>
+
+<h2>When to use which</h2>
+
+<ul>
+<li>To reframe and drop extra background: crop.</li>
+<li>To deliver an image whose long side is 2000 pixels: Image Size.</li>
+<li>To add a white border, or to make a square canvas without stretching the photo: Canvas Size, then move the layer if needed.</li>
+</ul>
+
+<p>Enlarging a photo a long way does not invent real detail; new pixels are estimated. Prefer capturing more resolution over heavy upsampling. Shrinking is usually safer, but check type and thin lines.</p>
+<aside class="callout ps-only">
+
+<h3>Photoshop-only notes</h3>
+
+<p>Generative Expand fills crop-frame padding with AI-generated content. That is a Photoshop cloud feature; SimplePhoto has no equivalent button. To extend a scene, clone, patch, or place another image yourself.</p>
+</aside>
+<section class="reading">
+
+<h2>Further reading</h2>
+<ul>
+<li><a href="https://www.adobe.com/learn/photoshop/paths/photo-editing" rel="noopener noreferrer" target="_blank">Adobe Learn: Photo editing (crop / resize units in the official path)</a></li>
+</ul>
+</section>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr" data-lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>레이어 마스크 · 튜토리얼</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 건너뛰기</a>
+  <header class="top">
+    <a class="brand" href="index.html">SimplePhoto</a>
+    <span class="tag">튜토리얼</span>
+    <div class="lang"><label for="lang-select">언어</label><select id="lang-select" name="lang">
+<option value="en">English</option>
+<option value="ja">日本語</option>
+<option value="zh-hans">简体中文</option>
+<option value="zh-hant">繁體中文</option>
+<option value="fr">Français</option>
+<option value="ko" selected>한국어</option>
+<option value="de">Deutsch</option>
+</select></div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="목차">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="index.html">개요</a></li>
+<li><a href="01-interface.html"><span class="num">01</span>인터페이스와 캔버스</a></li>
+<li><a href="02-open-save.html"><span class="num">02</span>열기, 저장, 내보내기</a></li>
+<li><a href="03-crop-resize.html"><span class="num">03</span>자르기, 이미지 크기, 캔버스 크기</a></li>
+<li><a href="04-layers.html"><span class="num">04</span>레이어</a></li>
+<li><a href="05-selections.html"><span class="num">05</span>선택 도구</a></li>
+<li><a href="06-brushes.html"><span class="num">06</span>브러시와 지우개</a></li>
+<li><a href="07-adjustments.html"><span class="num">07</span>톤과 색상 조정</a></li>
+<li><a href="08-masks.html" aria-current="page"><span class="num">08</span>레이어 마스크</a></li>
+<li><a href="09-text.html"><span class="num">09</span>문자</a></li>
+<li><a href="10-transform.html"><span class="num">10</span>변형</a></li>
+<li><a href="11-retouch.html"><span class="num">11</span>보정, 복구, 복제</a></li>
+<li><a href="12-filters-blend.html"><span class="num">12</span>필터와 혼합 모드</a></li>
+<li><a href="13-compositing.html"><span class="num">13</span>합성 작업 과정</a></li>
+<li><a href="14-nondestructive.html"><span class="num">14</span>비파괴 편집</a></li>
+<li><a href="15-shortcuts.html"><span class="num">15</span>단축키</a></li>
+      </ol>
+    </nav>
+    <main id="main">
+      <p class="kicker">제 08 장 · 핵심</p>
+<h1>레이어 마스크</h1>
+<p>마스크는 레이어 가시성의 그레이스케일 지도입니다. 흰색은 드러내고, 검정은 숨기며, 회색은 부분적입니다. 지우개가 아니므로 픽셀은 남고, 숨긴 영역을 나중에 다시 칠해 살릴 수 있습니다. “보정할 수 있다”에서 “아직 마음을 바꿀 수 있다”로 가는 단계입니다.</p>
+<aside class="callout in-app">
+<h3>SimplePhoto에서</h3>
+<p>레이어 마스크는 레이어 패널이나 <strong>레이어</strong> 메뉴에서 추가합니다(모두 표시, 모두 숨김, 선택에 따라 표시/숨김). 선택이 활성화되어 있으면 마스크가 곧 그것을 따르는 경우가 많습니다. 마스크 위에 검거나 흰 색을 칠해 편집하고, 픽셀을 편집할 때는 레이어 축소판을, 마스크를 편집할 때는 마스크 축소판을 클릭하세요. 나중에 고칠 수 있는 단단한 패스 가장자리가 필요하면 벡터 마스크도 사용할 수 있습니다.</p>
+</aside>
+<h2>전형적인 용도</h2>
+<ul>
+<li>오려 낸 사람을 새 배경에 놓고, 배경 픽셀을 지우는 대신 마스크에서 머리카락을 다듬습니다.</li>
+<li>조정 레이어를 하늘이나 피부에만 적용하려면 마스크를 더하고, 바꾸고 싶지 않은 곳을 칠해 제외합니다.</li>
+<li>마스크에 그라데이션 전환(위아래 노출이 다름)을 만듭니다. 픽셀 자체를 칠하는 것보다 고치기 쉽습니다.</li>
+</ul>
+<p>마스크를 검사할 때는 새어 나오거나 뭉개진 가장자리를 찾으세요. 문제가 있으면 브러시 경도를 바꾸거나 선택 및 마스크를 다시 실행해 새 마스크를 출력하면 됩니다. 문서 전체를 다시 만들 필요는 없습니다.</p>
+<aside class="callout ps-only">
+<h3>Photoshop 전용 참고</h3>
+<p>일부 클라우드 “피사체 선택 후 자동 마스크” 버튼과 생성형 채우기 작업 영역의 작업 마스크는 Photoshop 제품 흐름에 속합니다. SimplePhoto는 로컬 선택 도구와 선택 및 마스크로 마스크를 만듭니다.</p>
+</aside>
+<section class="reading">
+<h2>더 알아보기</h2>
+<ul>
+<li><a href="https://helpx.adobe.com/photoshop/using/masking-layers.html" rel="noopener noreferrer" target="_blank">Adobe: Masking layers</a></li>
+</ul>
+</section>
+
+      <nav class="pager">
+<a href="07-adjustments.html">이전: 톤과 색상 조정</a>
+<a href="09-text.html">다음: 문자</a>
+</nav>
+    </main>
+  </div>
+  <script src="../app.js"></script>
+</body>
+</html>

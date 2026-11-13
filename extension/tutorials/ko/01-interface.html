@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr" data-lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>인터페이스와 캔버스 · 튜토리얼</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 건너뛰기</a>
+  <header class="top">
+    <a class="brand" href="index.html">SimplePhoto</a>
+    <span class="tag">튜토리얼</span>
+    <div class="lang"><label for="lang-select">언어</label><select id="lang-select" name="lang">
+<option value="en">English</option>
+<option value="ja">日本語</option>
+<option value="zh-hans">简体中文</option>
+<option value="zh-hant">繁體中文</option>
+<option value="fr">Français</option>
+<option value="ko" selected>한국어</option>
+<option value="de">Deutsch</option>
+</select></div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="목차">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="index.html">개요</a></li>
+<li><a href="01-interface.html" aria-current="page"><span class="num">01</span>인터페이스와 캔버스</a></li>
+<li><a href="02-open-save.html"><span class="num">02</span>열기, 저장, 내보내기</a></li>
+<li><a href="03-crop-resize.html"><span class="num">03</span>자르기, 이미지 크기, 캔버스 크기</a></li>
+<li><a href="04-layers.html"><span class="num">04</span>레이어</a></li>
+<li><a href="05-selections.html"><span class="num">05</span>선택 도구</a></li>
+<li><a href="06-brushes.html"><span class="num">06</span>브러시와 지우개</a></li>
+<li><a href="07-adjustments.html"><span class="num">07</span>톤과 색상 조정</a></li>
+<li><a href="08-masks.html"><span class="num">08</span>레이어 마스크</a></li>
+<li><a href="09-text.html"><span class="num">09</span>문자</a></li>
+<li><a href="10-transform.html"><span class="num">10</span>변형</a></li>
+<li><a href="11-retouch.html"><span class="num">11</span>보정, 복구, 복제</a></li>
+<li><a href="12-filters-blend.html"><span class="num">12</span>필터와 혼합 모드</a></li>
+<li><a href="13-compositing.html"><span class="num">13</span>합성 작업 과정</a></li>
+<li><a href="14-nondestructive.html"><span class="num">14</span>비파괴 편집</a></li>
+<li><a href="15-shortcuts.html"><span class="num">15</span>단축키</a></li>
+      </ol>
+    </nav>
+    <main id="main">
+      <p class="kicker">제 01 장 · 기초</p>
+<h1>인터페이스와 캔버스</h1>
+<p>편집기를 작업대라고 생각해 보세요. 가운데에 캔버스가 있고, 주변에 도구와 패널이 있습니다. 이 영역을 먼저 익혀야 이후 장에서 어디를 봐야 할지 알 수 있습니다.</p>
+<h2>화면에 보이는 것</h2>
+<ul>
+<li><strong>제목 표시줄</strong>: 문서 이름, 메뉴, 작업 영역 전환, 모양, 언어.</li>
+<li><strong>도구 모음</strong>: 선택, 자르기, 브러시, 문자, 보정, 도형, 손, 확대/축소. 관련 도구는 단축키를 공유하는 경우가 많으며, 길게 누르거나 오른쪽 클릭으로 그룹을 펼칩니다.</li>
+<li><strong>캔버스</strong>: 편집 중인 이미지입니다. 손 도구나 Space를 눌러 이동하고, <kbd>Z</kbd>로 확대/축소합니다.</li>
+<li><strong>패널</strong>: 레이어, 작업 내역, 브러시 설정, 속성 등. <strong>창</strong> 메뉴에서 보이거나 숨깁니다.</li>
+</ul>
+<aside class="callout in-app">
+<h3>SimplePhoto에서</h3>
+<p>홈 다음에 편집기로 들어갑니다. <kbd>V</kbd>는 이동, <kbd>H</kbd>는 손, <kbd>Z</kbd>는 확대/축소, <kbd>R</kbd>은 보기 회전(화면만 돌리며, 항상 픽셀을 회전하는 것은 아닙니다). <strong>보기</strong> 메뉴에 화면에 맞추기와 실제 픽셀 확대가 있습니다. 작업 내역은 <strong>창 → 작업 내역</strong>에 있습니다. 레이어는 <kbd>F7</kbd>로 전환합니다.</p>
+</aside>
+<h2>캔버스와 문서</h2>
+<p>캔버스는 문서의 작업 영역이며, 픽셀은 여기에 있습니다. 이미지가 창보다 작을 수도, 이동이 필요할 만큼 클 수도 있습니다. “지금 어느 레이어에 있고 배율은 얼마인가”를 익히는 일이, 바로 보정에 뛰어드는 것보다 중요합니다. 실행 취소는 <strong>편집</strong> 메뉴나 작업 내역 패널에서 한 단계 되돌립니다.</p>
+<aside class="callout ps-only">
+<h3>Photoshop 전용 참고</h3>
+<p>Photoshop에는 Discover 패널, 클라우드 동기화 작업 영역, 클라우드 기반 컨텍스트 작업 막대 기능도 있습니다. SimplePhoto에도 작업 영역과 컨텍스트 작업 막대(<strong>창 → 컨텍스트 작업 막대</strong>)는 있지만, Adobe 클라우드와는 동기화되지 않습니다.</p>
+</aside>
+<section class="reading">
+<h2>더 알아보기</h2>
+<ul>
+<li><a href="https://helpx.adobe.com/photoshop/using/workspace-basics.html" rel="noopener noreferrer" target="_blank">Adobe: Workspace basics</a></li>
+<li><a href="https://helpx.adobe.com/photoshop/desktop.html" rel="noopener noreferrer" target="_blank">Adobe: Photoshop desktop help</a></li>
+</ul>
+</section>
+
+      <nav class="pager">
+<a href="index.html">이전: 학습 경로</a>
+<a href="02-open-save.html">다음: 열기, 저장, 내보내기</a>
+</nav>
+    </main>
+  </div>
+  <script src="../app.js"></script>
+</body>
+</html>

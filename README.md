@@ -63,7 +63,7 @@ Canonical paintbrush logo (user-provided PNG):
 | `branding/simplephoto-logo-source.png` | Canonical source |
 | `branding/simplephoto-logo-1024.png` | 1024×1024 master |
 | `branding/simplephoto-app-128.png` | 128×128 app / title-bar mark |
-| `extension/icons/icon16.png` / `icon48.png` / `icon128.png` | Chrome extension toolbar & store icons |
+| `extension/icons/icon16.png` / `icon32.png` / `icon48.png` / `icon128.png` | Chrome extension toolbar & store icons |
 
 `./scripts/apply-branding-assets.sh` copies `branding/simplephoto-app-128.png` into the PhotoCraft submodule asset path used by `include_bytes!` for the in-app title-bar icon. **A full `./scripts/build-web-assets.sh` is required** after changing that PNG so the baked WASM picks up the new mark. Extension chrome icons update as soon as you reload the unpacked extension.
 

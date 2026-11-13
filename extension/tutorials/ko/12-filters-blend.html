@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr" data-lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>필터와 혼합 모드 · 튜토리얼</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 건너뛰기</a>
+  <header class="top">
+    <a class="brand" href="index.html">SimplePhoto</a>
+    <span class="tag">튜토리얼</span>
+    <div class="lang"><label for="lang-select">언어</label><select id="lang-select" name="lang">
+<option value="en">English</option>
+<option value="ja">日本語</option>
+<option value="zh-hans">简体中文</option>
+<option value="zh-hant">繁體中文</option>
+<option value="fr">Français</option>
+<option value="ko" selected>한국어</option>
+<option value="de">Deutsch</option>
+</select></div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="목차">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="index.html">개요</a></li>
+<li><a href="01-interface.html"><span class="num">01</span>인터페이스와 캔버스</a></li>
+<li><a href="02-open-save.html"><span class="num">02</span>열기, 저장, 내보내기</a></li>
+<li><a href="03-crop-resize.html"><span class="num">03</span>자르기, 이미지 크기, 캔버스 크기</a></li>
+<li><a href="04-layers.html"><span class="num">04</span>레이어</a></li>
+<li><a href="05-selections.html"><span class="num">05</span>선택 도구</a></li>
+<li><a href="06-brushes.html"><span class="num">06</span>브러시와 지우개</a></li>
+<li><a href="07-adjustments.html"><span class="num">07</span>톤과 색상 조정</a></li>
+<li><a href="08-masks.html"><span class="num">08</span>레이어 마스크</a></li>
+<li><a href="09-text.html"><span class="num">09</span>문자</a></li>
+<li><a href="10-transform.html"><span class="num">10</span>변형</a></li>
+<li><a href="11-retouch.html"><span class="num">11</span>보정, 복구, 복제</a></li>
+<li><a href="12-filters-blend.html" aria-current="page"><span class="num">12</span>필터와 혼합 모드</a></li>
+<li><a href="13-compositing.html"><span class="num">13</span>합성 작업 과정</a></li>
+<li><a href="14-nondestructive.html"><span class="num">14</span>비파괴 편집</a></li>
+<li><a href="15-shortcuts.html"><span class="num">15</span>단축키</a></li>
+      </ol>
+    </nav>
+    <main id="main">
+      <p class="kicker">제 12 장 · 효과</p>
+<h1>필터와 혼합 모드</h1>
+<p>필터는 레이어나 선택의 모습을 바꿉니다. 흐림, 선명하게, 노이즈, 왜곡 등입니다. 혼합 모드는 그 레이어가 아래와 어떻게 합쳐질지를 정합니다. 밝게, 어둡게, 대비 추가, 질감만 남기기 등입니다. 둘 다 과하기 쉬우니 앞뒤를 자주 비교하세요.</p>
+<aside class="callout in-app">
+<h3>SimplePhoto에서</h3>
+<p><strong>필터</strong> 메뉴는 범주별로 묶여 있으며, 예를 들어 흐림 아래 가우시안 흐림 효과가 있습니다. 많은 필터는 미리보기 대화 상자를 열고 작업 내역 단계를 남깁니다. 스마트 오브젝트는 스마트 필터를 담을 수 있어 나중에 고치거나 켜고 끌 수 있습니다(14장). 혼합 모드는 레이어 패널 드롭다운에 있습니다(컨트롤에 따라 키보드나 휠을 쓸 수도 있습니다). 시작점으로 유용한 것은 어둡게 하는 <strong>곱하기</strong>, 밝게 하는 <strong>스크린</strong>, 대비를 위한 <strong>오버레이 / 소프트 라이트</strong>, 색을 덜 가져가며 밝기만 빌리는 <strong>광도</strong>입니다.</p>
+</aside>
+<h2>유용한 조합</h2>
+<ul>
+<li>레이어를 복제하고 가우시안 흐림 효과를 적용한 뒤, 복사본을 소프트 라이트로 두고 마스크로 효과를 제한하면 부드러운 광채가 됩니다.</li>
+<li>질감 레이어를 오버레이나 소프트 라이트로 두고 불투명도를 낮춰, 밋밋한 색에 입자를 더합니다.</li>
+<li>선명하게(언샤프 마스크 등)는 마지막 근처에, 100% 확대에서 판단하세요. 나중에야 보이는 후광을 만들지 않기 위함입니다.</li>
+</ul>
+<aside class="callout ps-only">
+<h3>Photoshop 전용 참고</h3>
+<p>신경망 필터, 일부 클라우드 스타일화 필터, Firefly 효과는 Photoshop 제품 기능입니다. 같은 이름이 SimplePhoto 필터 메뉴에 없으면 Photoshop 스크린샷에서 찾지 마세요.</p>
+</aside>
+<section class="reading">
+<h2>더 알아보기</h2>
+<ul>
+<li><a href="https://www.adobe.com/learn/photoshop/paths/photo-editing" rel="noopener noreferrer" target="_blank">Adobe Learn: Photo editing (effects units)</a></li>
+</ul>
+</section>
+
+      <nav class="pager">
+<a href="11-retouch.html">이전: 보정, 복구, 복제</a>
+<a href="13-compositing.html">다음: 합성 작업 과정</a>
+</nav>
+    </main>
+  </div>
+  <script src="../app.js"></script>
+</body>
+</html>

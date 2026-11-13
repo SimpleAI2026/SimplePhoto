@@ -1,0 +1,28 @@
+<p class="kicker">第 03 章 · 基礎</p>
+<h1>切り抜き、画像サイズ、カンバスサイズ</h1>
+<p>この三つは混同しやすいです。<strong>切り抜き</strong> は枠の外の画素を捨てます。<strong>画像サイズ</strong> は絵そのものの画素数を変えます（画像全体を拡大または縮小）。<strong>カンバスサイズ</strong> は作業領域を変えます。余白を足したり端を切ったりできますが、画像サイズのように被写体を再サンプルするわけではありません。</p>
+<aside class="callout in-app">
+<h3>SimplePhoto では</h3>
+<ul>
+<li><strong>切り抜きツール</strong>（<kbd>C</kbd>）で切り抜き枠を描き、確定して適用します。同じグループには、遠近で奥へ逃げている辺向けの遠近切り抜きもあります。</li>
+<li><strong>画像 → 画像サイズ</strong>（<kbd>⌘⌥I</kbd> / <kbd>Ctrl+Alt+I</kbd>）は幅と高さを変えます。比率が固定されているか、どの再サンプル方法を選んだかを確認してください。</li>
+<li><strong>画像 → カンバスサイズ</strong>（<kbd>⌘⌥C</kbd> / <kbd>Ctrl+Alt+C</kbd>）はカンバスとアンカー（新しい領域がどの辺に足されるか）を変えます。</li>
+</ul>
+</aside>
+<h2>どれを使うか</h2>
+<ul>
+<li>再フレーミングして余分な背景を落とす：切り抜き。</li>
+<li>長辺を 2000 ピクセルにして納品する：画像サイズ。</li>
+<li>白い枠を足す、または写真を伸ばさずに正方形のカンバスにする：カンバスサイズ。必要ならレイヤーを動かします。</li>
+</ul>
+<p>写真を大きく引き伸ばしても、本物のディテールは生まれません。新しい画素は推定です。無理な拡大より、撮影時に解像度を確保するほうがよいです。縮小は比較的安全ですが、文字や細い線は確認してください。</p>
+<aside class="callout ps-only">
+<h3>Photoshop のみのメモ</h3>
+<p>生成拡張（Generative Expand）は、切り抜き枠の余白を AI 生成で埋めます。これは Photoshop のクラウド機能で、SimplePhoto に同等のボタンはありません。場面を広げるには、自分でコピー、パッチ、別画像の配置を行います。</p>
+</aside>
+<section class="reading">
+<h2>参考資料</h2>
+<ul>
+<li><a href="https://www.adobe.com/learn/photoshop/paths/photo-editing" rel="noopener noreferrer" target="_blank">Adobe Learn: Photo editing (crop / resize units in the official path)</a></li>
+</ul>
+</section>

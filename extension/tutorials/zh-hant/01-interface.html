@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" dir="ltr" data-lang="zh-hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>介面與畫布 · 教學</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">跳到正文</a>
+  <header class="top">
+    <a class="brand" href="index.html">SimplePhoto</a>
+    <span class="tag">教學</span>
+    <div class="lang"><label for="lang-select">語言</label><select id="lang-select" name="lang">
+<option value="en">English</option>
+<option value="ja">日本語</option>
+<option value="zh-hans">简体中文</option>
+<option value="zh-hant" selected>繁體中文</option>
+<option value="fr">Français</option>
+<option value="ko">한국어</option>
+<option value="de">Deutsch</option>
+</select></div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="目錄">
+      <h2>目錄</h2>
+      <ol>
+        <li><a href="index.html">概覽</a></li>
+<li><a href="01-interface.html" aria-current="page"><span class="num">01</span>介面與畫布</a></li>
+<li><a href="02-open-save.html"><span class="num">02</span>開啟、儲存與匯出</a></li>
+<li><a href="03-crop-resize.html"><span class="num">03</span>裁剪、影像大小與畫布大小</a></li>
+<li><a href="04-layers.html"><span class="num">04</span>圖層</a></li>
+<li><a href="05-selections.html"><span class="num">05</span>選取工具</a></li>
+<li><a href="06-brushes.html"><span class="num">06</span>畫筆與橡皮擦</a></li>
+<li><a href="07-adjustments.html"><span class="num">07</span>色調與顏色調整</a></li>
+<li><a href="08-masks.html"><span class="num">08</span>圖層遮色片</a></li>
+<li><a href="09-text.html"><span class="num">09</span>文字</a></li>
+<li><a href="10-transform.html"><span class="num">10</span>變形</a></li>
+<li><a href="11-retouch.html"><span class="num">11</span>修飾、修復與仿製</a></li>
+<li><a href="12-filters-blend.html"><span class="num">12</span>濾鏡與混合模式</a></li>
+<li><a href="13-compositing.html"><span class="num">13</span>合成工作流程</a></li>
+<li><a href="14-nondestructive.html"><span class="num">14</span>非破壞性編輯</a></li>
+<li><a href="15-shortcuts.html"><span class="num">15</span>快速鍵</a></li>
+      </ol>
+    </nav>
+    <main id="main">
+      <p class="kicker">第 01 章 · 基礎</p>
+<h1>介面與畫布</h1>
+<p>影像編輯軟體的介面可以想成一張工作檯：中間是畫布，四周是工具和面板。先認識這些區域，後面每一章才知道該看哪裡。</p>
+<h2>你會看到什麼</h2>
+<ul>
+<li><strong>頂欄</strong>：檔案名、選單、工作區切換、外觀和語言。</li>
+<li><strong>工具欄</strong>：選取、裁剪、筆刷、文字、修復、形狀、抓手和縮放等。同類工具往往共用一個快捷鍵，長按或右鍵可展開隱藏項。</li>
+<li><strong>畫布</strong>：正在編輯的影像。使用抓手工具或按住空格可以平移；<kbd>Z</kbd> 縮放。</li>
+<li><strong>面板</strong>：圖層、步驟記錄、筆刷設定、屬性等。選單 <strong>視窗</strong> 可顯示或隱藏它們。</li>
+</ul>
+<aside class="callout in-app">
+<h3>在 SimplePhoto 中</h3>
+<p>起始首頁完成後進入編輯檢視。按 <kbd>V</kbd> 使用移動工具，<kbd>H</kbd> 抓手，<kbd>Z</kbd> 縮放，<kbd>R</kbd> 旋轉檢視（改變觀察角度，不一定旋轉像素）。<strong>檢視</strong> 選單提供適應螢幕、實際像素等。步驟記錄在 <strong>視窗 → 步驟記錄</strong>。圖層面板預設可用 <kbd>F7</kbd> 開關。</p>
+</aside>
+<h2>畫布與檔案</h2>
+<p>「畫布」是檔案的工作範圍，像素存在於此。影像可以比視窗小，也可以大到需要平移。先習慣「我在哪一層、當前放大到多少」，比急着修圖更重要。需要撤銷時，用 <strong>編輯 → 還原</strong> 或步驟記錄面板逐步後退。</p>
+<aside class="callout ps-only">
+<h3>僅限 Photoshop 的概念</h3>
+<p>Photoshop 還有「發現」面板、工作區雲同步，以及部分依賴 Adobe 雲的上下文任務欄功能。SimplePhoto 也有工作區和上下文任務欄（<strong>視窗 → Contextual Task Bar</strong>），但不會同步到 Adobe 雲。</p>
+</aside>
+<section class="reading">
+<h2>延伸閱讀</h2>
+<ul>
+<li><a href="https://helpx.adobe.com/photoshop/using/workspace-basics.html" rel="noopener noreferrer" target="_blank">Adobe: Workspace basics</a></li>
+<li><a href="https://helpx.adobe.com/photoshop/desktop.html" rel="noopener noreferrer" target="_blank">Adobe: Photoshop desktop help</a></li>
+</ul>
+</section>
+
+      <nav class="pager">
+<a href="index.html">上一章：學習路徑</a>
+<a href="02-open-save.html">下一章：開啟、儲存與匯出</a>
+</nav>
+    </main>
+  </div>
+  <script src="../app.js"></script>
+</body>
+</html>
