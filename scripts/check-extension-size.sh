@@ -4,7 +4,7 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 EDITOR="$ROOT/extension/editor"
 # Soft budget: plan/06 originally suggested 28 MiB. Trunk release wasm grew with
 # the photocraft pin: ~29 MiB on 287352bf, ~30 MiB on 3d60ad01, ~37.6 MiB on
-# 2239ee9cb (v0.23.1-era tip, catalogs embedded). Allow 40 MiB wasm / 40 MiB zip
+# e052eabf4 (updated pin). Allow 40 MiB wasm / 40 MiB zip
 # (still far below Chrome Web Store package limits).
 MAX_WASM=$((40 * 1024 * 1024))
 MAX_ZIP=$((40 * 1024 * 1024))

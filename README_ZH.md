@@ -70,7 +70,7 @@ cd SimplePhoto
 ## 开发说明
 
 - 实现计划从 [`plan/README.md`](plan/README.md) 开始；i18n/品牌里程碑见 [`plan/08-i18n-branding-logo.md`](plan/08-i18n-branding-logo.md)。
-- PhotoCraft 以 Git submodule 钉在 `thirdparty/photocraft`（SHA `2239ee9cb6c87583242ccd247f0a621f3d4d90ee`）。
+- PhotoCraft 以 Git submodule 钉在 `thirdparty/photocraft`（SHA `e052eabf4be74612725400955d184f85d208c0f0`）。
 - 对上游的永久改动只进 `patches/*.patch`。用 `./scripts/apply-patches.sh` 从钉住基线应用；不要把脏 submodule 当真相源。策略见 [`plan/patches.md`](plan/patches.md)。
 - 平台 / 桥接说明：`extension/PLATFORM.md`。
 - `extension/editor/` 下构建产物被 **gitignore**，由 `build-web-assets.sh` 重新生成。
