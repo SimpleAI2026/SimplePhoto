@@ -16,13 +16,13 @@ Chrome 网上应用店可用的 **1280×800** PNG（深色背景 `#262626` 留�
 |------|------|
 | 启动 / 欢迎页 | [`docs/store/screenshot-01-splash-1280x800.png`](docs/store/screenshot-01-splash-1280x800.png) |
 | 编辑画笔 `icon128` | [`docs/store/screenshot-02-editor-1280x800.png`](docs/store/screenshot-02-editor-1280x800.png) |
-| 内置教程（日语目录页） | [`docs/tutorials-preview.png`](docs/tutorials-preview.png) |
+| 内置教程（简体中文目录页） | [`docs/tutorials-preview-zh.png`](docs/tutorials-preview-zh.png) |
 
 ![SimplePhoto 启动页](docs/store/screenshot-01-splash-1280x800.png)
 
 ![SimplePhoto 编辑画笔图标](docs/store/screenshot-02-editor-1280x800.png)
 
-![SimplePhoto 内置教程](docs/tutorials-preview.png)
+![SimplePhoto 内置教程](docs/tutorials-preview-zh.png)
 
 ## 功能
 
@@ -91,7 +91,7 @@ cd SimplePhoto
 - 对上游的永久改动只进 `patches/*.patch`。用 `./scripts/apply-patches.sh` 从钉住基线应用；不要把脏 submodule 当真相源。策略见 [`plan/patches.md`](plan/patches.md)。
 - 平台 / 桥接说明：`extension/PLATFORM.md`。
 - `extension/editor/` 下构建产物被 **gitignore**，由 `build-web-assets.sh` 重新生成。
-- 内置教程（主页「学习」）：[`extension/tutorials/`](extension/tutorials/index.html)。章节源文件：`tutorials/src/<lang>/`。构建脚本：[`scripts/build-tutorials.py`](scripts/build-tutorials.py)。说明见 [`tutorials/README.md`](tutorials/README.md)。预览图：[`docs/tutorials-preview.png`](docs/tutorials-preview.png)。
+- 内置教程（主页「学习」）：[`extension/tutorials/`](extension/tutorials/index.html)。章节源文件：`tutorials/src/<lang>/`。构建脚本：[`scripts/build-tutorials.py`](scripts/build-tutorials.py)。说明见 [`tutorials/README.md`](tutorials/README.md)。预览图：[`docs/tutorials-preview-zh.png`](docs/tutorials-preview-zh.png)。
 
 ## 致谢
 
