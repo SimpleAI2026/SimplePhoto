@@ -6,6 +6,8 @@
 
 本仓库是 PhotoCraft 的**包装层 / 产品壳**，**不主张**拥有 PhotoCraft。上游 PhotoCraft 仍归其作者与贡献者所有（[storytold/photocraft](https://github.com/storytold/photocraft)），通常采用 MIT / Apache-2.0。SimplePhoto 提供 Chrome 扩展打包、品牌壳、patch 工作流与构建脚本（见下文）。
 
+当前扩展版本为 **0.1.7**（`extension/manifest.json`）。
+
 ## 截图
 
 Chrome 网上应用店可用的 **1280×800** PNG（深色背景 `#262626` 留白居中）放在 [`docs/store/`](docs/store/)。提交扩展时请上传这些文件：
@@ -14,17 +16,21 @@ Chrome 网上应用店可用的 **1280×800** PNG（深色背景 `#262626` 留�
 |------|------|
 | 启动 / 欢迎页 | [`docs/store/screenshot-01-splash-1280x800.png`](docs/store/screenshot-01-splash-1280x800.png) |
 | 编辑画笔 `icon128` | [`docs/store/screenshot-02-editor-1280x800.png`](docs/store/screenshot-02-editor-1280x800.png) |
+| 内置教程（日语目录页） | [`docs/tutorials-preview.png`](docs/tutorials-preview.png) |
 
 ![SimplePhoto 启动页](docs/store/screenshot-01-splash-1280x800.png)
 
 ![SimplePhoto 编辑画笔图标](docs/store/screenshot-02-editor-1280x800.png)
 
+![SimplePhoto 内置教程](docs/tutorials-preview.png)
+
 ## 功能
 
 - **本地 WASM 编辑器** — PhotoCraft 运行在扩展页（`extension/editor/`），遵循 MV3 CSP（`wasm-unsafe-eval`）。
 - **语言选择** — 顶栏控件接入 PhotoCraft 现有的 `interface.language` / i18n（含简体中文）。
+- **内置教程** — 主页「学习」会在扩展内打开教程。现提供英语、简体中文、繁体中文、日语、韩语、德语、法语（`en`、`zh-hans`、`zh-hant`、`ja`、`ko`、`de`、`fr`）。「学习」会通过 `?lang=` 传入编辑器语言；若该语言没有教程，则回退到英语。教程页内的语言菜单只列出这七种语言。
 - **打开 / 保存** — 从浏览器打开图片；保存/导出走 Web 下载语义。
-- **SimplePhoto 品牌** — 画笔 Logo 见 [`branding/`](branding/)，工具栏图标见 [`extension/icons/`](extension/icons/)，Help/About/启动页文案经 patches 调整。
+- **SimplePhoto 品牌** — 画笔 Logo 见 [`branding/`](branding/)，工具栏图标见 [`extension/icons/`](extension/icons/)，Help/About/启动页文案经 patches 调整。圆角方形图标在圆角外的角落为透明（alpha 为 0）。
 
 ## 快速开始（加载已解压的扩展）
 
@@ -48,10 +54,21 @@ cd SimplePhoto
 3. **加载已解压的扩展程序** → 选择本仓库的 `extension/` 目录
 4. 点击工具栏图标打开编辑器 → Open 图片 → Export/Save 下载
 
-可选打包（产物在 gitignore 的 `dist/`）：
+### 打包
+
+产物写到 gitignore 的 `dist/`，文件名为 `dist/simplephoto-extension-<version>.zip`。
 
 ```bash
-./scripts/package-extension.sh --skip-build   # 或去掉 --skip-build 做全量重建
+./scripts/package-extension.sh            # 完整打包：重建 WASM，再打包 extension/
+./scripts/package-extension.sh --skip-build   # 仅打包，适用于 extension/editor/ 已经构建好的情况
+```
+
+更换 photocraft 钉住版本、patches 或顶栏图标后需要完整打包。仅改教程、manifest 或工具栏图标时，使用 `--skip-build` 即可。
+
+教程章节源文件在 `tutorials/src/<lang>/`。修改后重新生成扩展内页面：
+
+```bash
+./scripts/build-tutorials.py
 ```
 
 ## 品牌资源
@@ -65,7 +82,7 @@ cd SimplePhoto
 | `branding/simplephoto-app-128.png` | 128×128 应用 / 顶栏图标 |
 | `extension/icons/icon16.png` / `icon32.png` / `icon48.png` / `icon128.png` | Chrome 扩展工具栏与商店图标 |
 
-`./scripts/apply-branding-assets.sh` 会把 `branding/simplephoto-app-128.png` 复制到 PhotoCraft submodule 中供 `include_bytes!` 使用的资源路径。更换该 PNG 后**必须**再跑完整的 `./scripts/build-web-assets.sh`，WASM 内烘焙的顶栏图标才会更新。扩展工具栏图标在重新「加载已解压的扩展」后即可生效。
+这些 PNG 是圆角方形，圆角外的角落像素被遮罩为透明（alpha 为 0）。`./scripts/apply-branding-assets.sh` 会把 `branding/simplephoto-app-128.png` 复制到 PhotoCraft submodule 中供 `include_bytes!` 使用的资源路径。更换该 PNG 后**必须**再跑完整的 `./scripts/build-web-assets.sh`，WASM 内烘焙的顶栏图标才会更新。扩展工具栏图标在重新「加载已解压的扩展」后即可生效。
 
 ## 开发说明
 
@@ -74,7 +91,7 @@ cd SimplePhoto
 - 对上游的永久改动只进 `patches/*.patch`。用 `./scripts/apply-patches.sh` 从钉住基线应用；不要把脏 submodule 当真相源。策略见 [`plan/patches.md`](plan/patches.md)。
 - 平台 / 桥接说明：`extension/PLATFORM.md`。
 - `extension/editor/` 下构建产物被 **gitignore**，由 `build-web-assets.sh` 重新生成。
-- 内置教程（主页「学习」）：[`extension/tutorials/`](extension/tutorials/index.html)。说明见 [`tutorials/README.md`](tutorials/README.md)。
+- 内置教程（主页「学习」）：[`extension/tutorials/`](extension/tutorials/index.html)。章节源文件：`tutorials/src/<lang>/`。构建脚本：[`scripts/build-tutorials.py`](scripts/build-tutorials.py)。说明见 [`tutorials/README.md`](tutorials/README.md)。预览图：[`docs/tutorials-preview.png`](docs/tutorials-preview.png)。
 
 ## 致谢
 

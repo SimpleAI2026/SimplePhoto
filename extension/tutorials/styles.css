@@ -31,7 +31,9 @@ body {
 }
 .skip:focus { left: 12px; background: var(--paper); padding: 6px 10px; z-index: 10; }
 .top {
-  display: flex; align-items: center; gap: 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
   padding: 14px 28px;
   border-bottom: 1px solid var(--line);
   background: rgba(251, 247, 240, 0.9);
@@ -53,7 +55,12 @@ body {
   border-left: 1px solid var(--line);
   padding-left: 14px;
 }
-.lang { margin-left: auto; display: flex; gap: 4px; }
+.lang {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 .lang button {
   font-family: var(--sans);
   font-size: 0.78rem;
@@ -201,18 +208,29 @@ html[data-lang="en"] .zh { display: none; }
 .lang label {
   font-family: var(--sans);
   font-size: 0.78rem;
+  line-height: 1.2;
   color: var(--muted);
-  margin-right: 8px;
+  margin: 0;
 }
 .lang select {
+  box-sizing: border-box;
   font-family: var(--sans);
   font-size: 0.82rem;
+  line-height: 1.2;
+  height: 2rem;
+  margin: 0;
+  padding: 0 1.6rem 0 0.55rem;
   border: 1px solid var(--line);
-  background: #fff;
-  color: var(--ink);
-  padding: 5px 8px;
   border-radius: 8px;
+  color: var(--ink);
   max-width: 16rem;
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%231c1915' d='M1.15 1.4L6 6.25 10.85 1.4' stroke='%231c1915' stroke-width='1.2' fill-opacity='0' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.45rem center;
+  background-size: 0.7rem 0.45rem;
 }
 /* Trampoline */
 body.trampoline { display: flex; min-height: 100vh; align-items: center; justify-content: center; }
